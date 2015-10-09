@@ -1,0 +1,10 @@
+yum install firewalld
+
+systemctl start firewalld
+firewall-cmd --zone=public --add-port=30001/tcp --permanent
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --complete-reload
+
+
+systemctl stop firewalld

@@ -1,0 +1,21 @@
+There were 217 failed login attempts since the last successful login.
+
+
+1. 修改ssh默认端口
+
+vi /etc/ssh/sshd_config
+
+Port 22         //这行去掉#号， 改成自己的端口号例如 30001
+
+
+2. 修改#PermitRootLogin yes
+PermitRootLogin no
+
+systemctl restart sshd.service
+
+
+
+
+
+
+

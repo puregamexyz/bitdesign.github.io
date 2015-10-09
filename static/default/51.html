@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/51.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b7.html">游戏创造</a>&gt;
-            <a href="http://www.b.com/static/default/51.html" >一句话讲明白碰撞检测中3个掩码的关系</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>一句话讲明白碰撞检测中3个掩码的关系</a>
           </div>
           <div class="info-title">
             <h4>一句话讲明白碰撞检测中3个掩码的关系</h4>
@@ -74,8 +78,15 @@
             <div>碰撞检测中有3个掩码参数，共同决定碰撞效果。分别是分类掩码，碰撞掩码，测试掩码。一句话理清3个掩码之间的关系如下:</div><div><br></div><div>当A物体的分类掩码和B物体的碰撞掩码逻辑与非零时，触发碰撞。A和B发生碰撞后，继续检测A物体的分类掩码和B物体的测试掩码逻辑与的结果，继续非零，则发出碰撞消息（即能被回调函数捕获).</div><div>另外有一点需要注意：所有逻辑与的检测均为交叉检测，例如:A物体的分类掩码和B物体的碰撞掩码逻辑与，B物体的分类掩码和A物体的碰撞掩码逻辑与, 需要同时非0。测试掩码检测同理。</div><div><a href="http://www.bit1010.com/static/default/51.html" target="_blank" style="color: rgb(255, 0, 0);">简化描述：仅当CategoryBitmask&amp;CollisionBitmask交叉检测非0时发生碰撞, 发生碰撞后CategoryBitmask和ContactTestBitmask继续做逻辑与，仍非0才发出碰撞消息。</a></div><div><br></div><div>举一个实际的例子：</div><div>现有 HERO（1个)，子弹(多个)，敌人(多个)。 HERO不停发射子弹攻击敌人。碰撞检测需求为: HERO和多个子弹直接互不碰撞。HERO或子弹与敌人接触后，发生碰撞，并发出碰撞消息。</div><div>分析设置如下:</div><div><br></div><div>HERO和子弹一致，即把HERO看做一颗子弹， HERO和子弹不碰但和敌人碰</div><div><br></div><div>1. 碰撞参数设置</div><div>子弹 &nbsp; 分类码0010 &nbsp;碰撞码0001 &nbsp; 0010&amp;0001=0000 则保证内部不碰撞 &nbsp;</div><div>敌人 &nbsp; 分类码1001 &nbsp;碰撞码0010 &nbsp; 1001&amp;0010=0000 内部不碰</div><div>交叉检测 &nbsp; 子弹分类码0010&amp;敌人碰撞码0010=0010 ,且子弹碰撞码0001&amp;敌人分类码1001=0001 即子弹和敌人产生碰撞反应</div><div>&nbsp;</div><div>2.碰撞消息设置 &nbsp;</div><div>子弹 &nbsp; 检测码0001</div><div>敌人 &nbsp; 检测码0010</div><div><br></div><div>子弹分类码0010 &amp; 敌人检测码0010 非零&nbsp;</div><div>敌人分类码1001 &amp; 子弹检测码0001 非零&nbsp;</div><div>由于交叉检测同时非0,所以发出碰撞消息，才能被回调函数捕获</div><div><br></div><div>设置思路：</div><div>1.先保证同一类内部不发生碰撞，不发生碰到就更谈不上发出碰撞消息</div><div>2.调整参数，使不同类之间发生碰撞，且不影响同类之间的碰撞。</div><div>3. 发生碰撞后，继续调整测试码，决定是否发出碰撞消息。</div><div><br></div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/51.html">http://www.b.com/static/default/51.html</a></li>
-                <li>转载请注明: Administrator 2015-08-25 11:33:08 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-08-25 11:33:08 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=51">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

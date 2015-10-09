@@ -1,0 +1,10 @@
+mv portal  `date +%Y%m%d` 
+wget https://github.com/bitdesign/bitword/archive/master.zip
+unzip master.zip
+mv bitword-master portal
+
+cd portal
+rm -rf config backup static upload count
+
+cd ../`date +%Y%m%d` 
+cp -R  config backup static upload  count ../portal

@@ -1,0 +1,3 @@
+﻿    粒子系统是做出好游戏的一道天然屏障，是亮点，更是难点。只靠在网络上搜罗别人的特效是没有前途的，必须深刻理解，才能为所欲为。
+    粒子系统在wikipedia中的定义为: A particle system is a technique in game physics and computer graphics that uses a large number of very small sprites or other graphic objects to simulate certain kinds of "fuzzy" phenomena. 用大量的精灵或其他图形对象模拟出的“毛茸茸的，模糊的，混沌”的对象。关键字为“大量”和“模拟”,所有使用粒子系统的主要内容就是为大量的例子调试各种模拟参数以达到自己想象中的效果。
+    本文以Quick3.5为开发环境，以Cocos2d Particle Builder为粒子编辑器，一起实践学习并最终真正掌握cocos中的粒子系统。

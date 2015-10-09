@@ -1,0 +1,135 @@
+    粒子系统中的参数很多，但并不是无限多，只要有足够耐心是可以逐个搞清楚的。本次实验中作者对例子系统的参数进行了粗略统计和分类。共3大类，19个小类，38个参数。以下面的例子描述每个参数的具体含义，如果真要得心应手，光靠看一遍是没用的，必须一个一个参数自己调一遍。
+
+function TestScene:ctor()
+
+
+-- 以指定粒子数目创建粒子系统
+local emitter = cc.ParticleSystemQuad:createWithTotalParticles(1000)
+
+
+
+--设置粒子属性 共3大类，19个小类，38个参数
+
+-- 一. 粒子常规属性设置  共6小类 18个参数
+
+-- 1. 粒子大小
+
+-- 粒子出生时的大小为多少个像素
+emitter:setStartSize(100.0)
+-- 出生时大小的浮动值
+emitter:setStartSizeVar(100.0)
+
+-- 粒子消亡时的大小 cc.PARTICLE_START_SIZE_EQUAL_TO_END_SIZE 表示一生中大小不变
+emitter:setEndSize(cc.PARTICLE_START_SIZE_EQUAL_TO_END_SIZE )
+emitter:setEndSizeVar(0)
+
+
+-- 2. 粒子的颜色
+-- cc.c4f 的4个数值分别代表红 绿 蓝  透明度 取值范围都是0到1
+emitter:setStartColor(cc.c4f(0.5, 0.5, 0.5, 1.0))
+emitter:setStartColorVar(cc.c4f(0.5, 0.5, 0.5, 1.0))
+emitter:setEndColor(cc.c4f(0.1, 0.1, 0.1, 0.2))
+emitter:setEndColorVar(cc.c4f(0.1, 0.1, 0.1, 0.2))
+
+
+--3. 每个粒子的自转速度
+emitter:setStartSpin(0)
+emitter:setStartSizeVar(0)
+emitter:setEndSpin(0)
+emitter:setEndSpinVar(0)
+
+--4. 粒子的寿命 时间单位：秒
+emitter:setLife(2)
+emitter:setLifeVar(0.3)
+
+
+--5. 粒子的发射角度 和允许角度的浮动范围
+emitter:setAngle(0)
+emitter:setAngleVar(360)
+
+--6. 粒子的出生坐标
+emitter:setPosition(display.cx, display.cy)
+emitter:setPosVar(cc.p(0, 0))
+
+
+
+
+-- 二 .粒子的发射模式  共8小类 14个参数
+
+ --1. 半径模式 从圆心向周围发射粒子
+    emitter:setEmitterMode(cc.PARTICLE_MODE_RADIUS)
+
+-- 2. 重力模式 向重力加速度的向量方向发射粒子
+-- emitter:setEmitterMode(cc.PARTICLE_MODE_GRAVITY)
+
+
+if emitter:getEmitterMode() == cc.PARTICLE_MODE_RADIUS then
+
+    -- 半径模式下以下属性生效
+
+    -- a. 粒子生成时距离圆心的距离 即起始半径
+    emitter:setStartRadius(100)
+    emitter:setStartRadiusVar(0)
+
+    -- b. 消亡时的半径
+    emitter:setEndRadius(500)
+    emitter:setEndRadiusVar(0)
+
+    -- c. 围绕生成点的公转速度
+    emitter:setRotatePerSecond(10)
+    emitter:setRotatePerSecondVar(0)
+
+else
+    -- 重力模式下以下属性生效
+
+    -- a. 重力的方向
+    emitter:setGravity(cc.p(0, 0))
+
+    -- b. 射出时的速度
+    emitter:setSpeed(50)
+    emitter:setSpeedVar(10)
+
+    -- c. 半径加速度
+    emitter:setRadialAccel(80)
+    emitter:setRadialAccelVar(0)
+
+    -- d. 正切加速度
+    emitter:setTangentialAccel(0)
+    emitter:setTangentialAccelVar(0)
+
+end
+
+
+ -- 三. 系统属性 共5小类 6个参数
+
+ -- 1. 发射速率，即每秒发射多少个粒子
+ emitter:setEmissionRate(emitter:getTotalParticles() / emitter:getLife())
+
+-- 2. 粒子系统的持续时间 -1表示无限时间
+emitter:setDuration(-1)
+
+
+-- 3. 渲染方式
+  -- 用于系统渲染的OpenGL的渲染函数
+ -- emitter:setBlendFunc(cc.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA))
+ emitter:setBlendFunc(cc.blendFunc(gl.SRC_ALPHA , gl.ONE_MINUS_SRC_ALPHA))
+ 
+  -- 是否启用高亮渲染
+  emitter:setBlendAdditive(true)
+
+
+
+-- 4. 粒子的移动方式  具体区别，在后续的调试过程中再做区分
+-- 自由移动 cc.POSITION_TYPE_FREE    0x0
+-- 一组一组移动 cc.POSITION_TYPE_GROUPED  0x2
+-- 相对移动 cc.POSITION_TYPE_RELATIVE 0x1
+emitter:setPositionType(cc.POSITION_TYPE_FREE)
+
+-- 5. 纹理
+emitter:setTexture(cc.Director:getInstance():getTextureCache():addImage("a.png"))
+
+
+emitter:setAutoRemoveOnFinish(true)
+emitter:addTo(self)  
+
+end

@@ -1,0 +1,9 @@
+1. 安装PackegeControl
+下载 https://sublime.wbond.net/Package%20Control.sublime-package
+将Package Control.sublime-package粘贴到Sublime3安装目录的Packages文件夹，例如：C:\Program Files (x86)\Sublime Text 3\Packages
+重启Sublime3
+
+2.安装QuickXDev
+Preferences--Packege Control然后选择Packege Control：Install Packege
+输入QuickXDev
+等待完成安装即可

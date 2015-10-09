@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/27.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b2.html">网站建设</a>&gt;
-            <a href="http://www.b.com/static/default/27.html" >CentOS VPS + squid + stunnel 搭建代理服务器</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>CentOS VPS + squid + stunnel 搭建代理服务器</a>
           </div>
           <div class="info-title">
             <h4>CentOS VPS + squid + stunnel 搭建代理服务器</h4>
@@ -74,8 +78,15 @@
             <div><span style="line-height: 1.42857143;">1. 安装squid</span><br></div><div>yum install squid</div><div><br></div><div>2. 生成SSH证书</div><div><br></div><div>openssl req -new &gt; squid.csr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[1024]</div><div>openssl rsa -in privkey.pem -out squid.key &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [1024]</div><div>openssl x509 -in squid.csr -out squid.crt -req -signkey squid.key -days 36500</div><div>mv squid* /etc/squid/</div><div>&nbsp;</div><div>3. 配置squid&nbsp;</div><div><br></div><div>vi /etc/squid/squid.conf</div><div>将 http_port 3128 注释掉,替换为</div><div>https_port 443 cert=/etc/squid/squid.crt key=/etc/squid/squid.key</div><div>将 http_access deny all 改为 &nbsp;http_access allow all</div><div><br></div><div>4.启动squid</div><div><br></div><div>cd /usr/sbin/</div><div>./squid -z</div><div>./squid reload</div><div>./squid restart</div><div><br></div><div>netstat -an|grep 443 来查看443的加密代理端口是否启用</div><div><br></div><div><br></div><div><br></div><div>5. 本地客户端配置</div><div><br></div><div>下载stunnel,地址:ftp://ftp.stunnel.org/stunnel/&nbsp;</div><div><br></div><div>安装后启动。在configutation中配置stunnel.conf,把原来内容清空，写入：</div><div><br></div><div>client = yes</div><div>[https]</div><div>accept = 127.0.0.1:8088</div><div>connect = 目标IP:443</div><div><br></div><div>然后reload配置</div><div>配置IE的代理，如果是Chrome可以使用SwitchySharp</div><div>HTTP Proxy:127.0.0.1 &nbsp; Port:8088</div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/27.html">http://www.b.com/static/default/27.html</a></li>
-                <li>转载请注明: Administrator 2015-07-29 13:00:52 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-07-29 13:00:52 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=27">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

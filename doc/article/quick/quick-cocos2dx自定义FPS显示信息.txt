@@ -1,0 +1,16 @@
+1. 在quick中打开或关闭FPS显示信息有2种方法
+
+一是通过修改config.lua中的DEBUG_FPS中的值;
+二是通过程序控制cc.Director:getInstance():setDisplayStats(true) 
+
+2.自定义FPS值及其显示信息
+
+自定义帧数，系统默认值为60帧，现修改为每秒50帧
+cc.Director:getInstance():setAnimationInterval(1/50)
+
+可通过一个Label来显示FPS或其他信息
+self.label = cc.ui.UILabel.new({text = "", size = 18, color = cc.c3b(71,163,35) })
+self.label:align(display.BOTTOM_RIGHT, display.width, display.top - 30):addTo(self)
+
+然后在帧更新函数中更新Label的文本
+self.label:setString(string.format("FPS %.1f", 1/dt ) )

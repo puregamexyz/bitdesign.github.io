@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/40.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b7.html">游戏创造</a>&gt;
-            <a href="http://www.b.com/static/default/40.html" >完全掌握粒子系统（1） - 自带的一些实现</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>完全掌握粒子系统（1） - 自带的一些实现</a>
           </div>
           <div class="info-title">
             <h4>完全掌握粒子系统（1） - 自带的一些实现</h4>
@@ -74,8 +78,15 @@
             <div>&nbsp; &nbsp; cocos2dx中分为点粒子系统CCParticleSystemPoint和方形粒子系统CCParticleSystemQuad， quick中的例子系统均以CCParticleSystemQuad为基础,即cc.ParticleSystemQuad。系统本身提供了"丰富“”的例子效果，爆炸,烟花,火焰,花束,星系,流星,漩涡,雪,烟,太阳,雨等。不用太当真，每次放开一行注释， 把每种自带的效果运行一下看看热闹就可以了，实际中没什么用。</div><div><br></div><div style="text-align: justify; background:#eee;"><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; </span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;<a href="http://www.bit1010.com/default_40.html" target="_blank"> function MainScene:ctor()</a></span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; local emitter = nil</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- 每次放开一行 运行查看效果</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleFlower:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleGalaxy:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleFireworks:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleSpiral:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleSun:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleMeteor:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleFire:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleSmoke:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleExplosion:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; -- emitter = cc.ParticleSnow:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; emitter = cc.ParticleRain:create()</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; emitter:setAutoRemoveOnFinish(true)</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; emitter:setPosition(display.cx, display.cy)</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; &nbsp; &nbsp; emitter:addTo(self)</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp;&nbsp;</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);">&nbsp; &nbsp; end</span></div><div style="line-height: 1.2;"><span style="color: rgb(57, 132, 198);"><br></span></div></div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/40.html">http://www.b.com/static/default/40.html</a></li>
-                <li>转载请注明: Administrator 2015-08-12 16:50:08 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-08-12 16:50:08 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=40">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

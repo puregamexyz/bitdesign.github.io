@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/46.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b10.html">美工基础</a>&gt;
-            <a href="http://www.b.com/static/default/46.html" >使用笔刷制作游戏中的特效</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>使用笔刷制作游戏中的特效</a>
           </div>
           <div class="info-title">
             <h4>使用笔刷制作游戏中的特效</h4>
@@ -74,8 +78,15 @@
             <div>使用笔刷制作一些游戏中的效果可以起到事半功倍的效果。根据需要下载需要的笔刷特效，导入PS中即可。特此记<span style="line-height: 1.42857143;">下导入流程，以供参考。</span></div><div><img src="/upload/20150818145013340.png" style="width: 212px;"></div><div><br></div><div><img src="/upload/20150818145019254.png" style="width: 386px;"><br></div><div><br></div><div>有一种gbr后缀格式的笔刷，需要用GIMP（http://www.gimp.org/downloads/）打开，然后导出为png文件。然后在<span style="line-height: 1.42857143;">PS中打开PNG文件 然后选择 编辑-定义画笔预设，即可将png转为PS的笔刷。这里是已经导出的一张喷射光的笔刷</span><span style="line-height: 1.42857143;">png。</span></div><div><img src="/upload/20150818145243308.png" style="width: 299px;"></div><div>调整画笔的角度：</div><div>选择任意一个画笔，然后在 窗口--画笔 中调整</div><div><br></div><div><img src="/upload/20150818152221848.png" style="width: 258px;"><br></div><div><br></div><div><br></div><div><br></div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/46.html">http://www.b.com/static/default/46.html</a></li>
-                <li>转载请注明: Administrator 2015-08-18 14:53:20 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-08-18 14:53:20 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=46">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

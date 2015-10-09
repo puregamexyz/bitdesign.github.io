@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/23.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b7.html">游戏创造</a>&gt;
-            <a href="http://www.b.com/static/default/23.html" >Sublime3高频使用的快捷键汇总</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>Sublime3高频使用的快捷键汇总</a>
           </div>
           <div class="info-title">
             <h4>Sublime3高频使用的快捷键汇总</h4>
@@ -74,8 +78,15 @@
             <ul><li>删除当前行 Ctrl+X</li><li>查找替换 Ctrl+Shift+F 其中当前文件</li><li>复制当前行&nbsp;Ctrl+Shift+D&nbsp;</li><li>注释当前行 Ctrl + / &nbsp;</li><li>注释选中的多行&nbsp;Ctrl+Shift+ /</li></ul>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/23.html">http://www.b.com/static/default/23.html</a></li>
-                <li>转载请注明: Administrator 2015-07-17 14:56:28 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-07-17 14:56:28 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=23">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

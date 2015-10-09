@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>newlisp</title>
+    </head>
+
+    <body>
+
+        <form action="/dragonfly_forms" method="POST">
+
+            <input name="foo" type="text" />
+
+            <input type="submit" value="Submit" name="submit1" />
+
+        </form>
+
+        <% (when ($POST "foo") %>
+        <p><span class="code"><%=($POST "foo")%></span></p>
+        <%)%>
+    </body>
+</html>
+
+
+

@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/30.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b2.html">网站建设</a>&gt;
-            <a href="http://www.b.com/static/default/30.html" >NewLisp Web开发实战(2)–添加自定义页面</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>NewLisp Web开发实战(2)–添加自定义页面</a>
           </div>
           <div class="info-title">
             <h4>NewLisp Web开发实战(2)–添加自定义页面</h4>
@@ -74,8 +78,15 @@
             <p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">1. 添加静态页面</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">在dragonfly-newlisp-master/example-site/views下新建hello.html, 内容如下</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&lt;!DOCTYPE html&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&lt;html&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;head&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;newlisp&lt;/title&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;/head&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;body&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp;hello word!</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;/body&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&lt;/html&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">访问测试&nbsp;<br>//http://127.0.0.1:8080/hello</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">http://www.bit1010.com:8080/hello</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><img src="upload/20150806152308470.png" style="width: 395px;"><br></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><a href="http://www.bit1010.com/wp-content/uploads/2015/08/hello.png" data-lightbox="image_lg" style="color: rgb(255, 97, 0); text-decoration: underline; outline: none; transition: 0.5s;"></a></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">2. 添加动态页面<br>动态页面也是添加views下，默认后缀同样为html，以POST一个Form表单为例， test_form.html, 内容如下</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&lt;!DOCTYPE html&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&lt;html&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;head&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;newlisp formtest&lt;/title&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;/head&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;body&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;form action="/test_form" method="POST"&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input name="userName" type="text" /&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" value="Subit" name="Submit" /&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/form&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;% (when ($POST "userName") %&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;%=($POST "foo")%&gt;&lt;/p&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &nbsp; &nbsp; &lt;%)%&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&nbsp; &nbsp; &lt;/body&gt;</span><br><span style="background-color: rgb(211, 211, 211);">&lt;/html&gt;</span></p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;">http://www.bit1010.com:8080/test_form</p><p style="margin-bottom: 15px; padding: 0px; font-family: Verdana, 'Microsoft YaHei'; color: rgb(69, 69, 69); font-size: 16px; line-height: 30px;"><img src="upload/20150806152321693.png" style="width: 386px;"><br></p>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/30.html">http://www.b.com/static/default/30.html</a></li>
-                <li>转载请注明: Administrator 2015-08-06 15:23:24 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-08-06 15:23:24 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=30">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

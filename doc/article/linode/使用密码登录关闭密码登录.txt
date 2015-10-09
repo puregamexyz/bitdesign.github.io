@@ -1,0 +1,47 @@
+
+1.      在用户目录下新建一个.ssh目录，并将其目录权限改为700（仅用户自身有读写操作权限）：
+# mkdir .ssh
+# chmod 700 .ssh
+2.      进入.ssh目录，使用ssh-keygen命令生成rsa密钥对：
+# ssh-keygen –t rsa  (一路回车即可)
+3.      这时生成了两个文件：id_rsa和id_rsa.pub，其中前一个为私钥，后一个为公钥，公钥须保留在服务器上，私钥拷贝到客户端机器上
+4.      在.ssh目录中新建一个文件名为：authorized_keys，将公钥内容拷贝到这个文件中，并将文件权限改为600（仅用户自身有读写权限）
+# touch authorized_keys
+# cat id_rsa.pub >> authorized_keys
+# chmod 600 authorized_keys
+到此，服务器端的密钥设置完成，这里需注意要保证.ssh和authorized_keys都仅用户自身有写权限，否则验证无效，这也是系统处于安全性考虑做的设置。
+三、客户端密钥的设置
+
+Windows系统 
+在Windows系统下，一般我们采用不同的X server工具来登录，需要先将私钥导入到登录工具的密钥管理器，建立一个新的连接，用户名和主机的填写与采用用户名密码登录一样，登录不再选择”Password”而是”Public key"，User Name填写自己的登录用户名，User Key选择之前导入的服务器私钥 ，保存之后，即可无密码登录。
+
+
+Linux系统
+Linux系统下设置同样先将服务器私钥拷贝到客户端
+1.      与服务器端一样，在用户目录下新建一个.ssh目录，并将其目录权限改为700（仅用户自身有读写操作权限）：
+       # mkdir .ssh
+      # chmod 700 .ssh
+2.      将私钥id_rsa拷贝到.ssh目录下，检查文件权限是否为600，如果不是，需要更改文件权限为600
+      # mv  id_rsa  ./.ssh
+      # chmod 600 id_rsa
+3.      这时即设置完毕，输入ssh命令，即可直接连接到服务器，无需输入用户名密码
+      # ssh –l 用户名 服务器IP
+4.      如果需要从客户端通过密钥认证的方式登录不同的服务器，私钥的名称不能都是用id_rsa，这是可以在.ssh目录下建立一个config文件来进行区分，config文件权限同样设为600
+      # touch config
+      # chmod 600 config
+5.      为config文件添加内容如下：
+      User username      //username 填写自己的登录用户名
+      Host server_IP   //设置服务器IP
+      IdentityFile ~/.ssh/rsa_file   //rsa_file填写私钥名称
+      Port 22
+这样，用户可以将私钥id_rsa改为与config文件中irs_file同名的文件名，就可以匹配登录服务器了。
+
+
+
+
+
+
+
+11、有了密钥登录VPS，我们就可以禁止用密码登录这种验证方式了，还是编辑配置：vim /etc/ssh/sshd_config，添加一行：PasswordAuthentication no，如果有了这一行，请把yes改成no，保存，重启SSH服务，生效。
+
+systemctl restart sshd.service

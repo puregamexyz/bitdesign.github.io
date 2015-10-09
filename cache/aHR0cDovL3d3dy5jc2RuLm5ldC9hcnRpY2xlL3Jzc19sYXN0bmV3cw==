@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"> 
+	<channel> 
+	<title>CSDN最新资讯</title> 
+	<link>http://news.csdn.net</link> 
+	<description></description> 
+		<lastBuildDate>Tue, 25 Aug 2015 10:06:39</lastBuildDate> 
+					<item>
+				<title><![CDATA[AngularJS在2015]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825527]]></link>
+				<description><![CDATA[AngularJS框架现在已经进入成熟期，1.4版本大幅优化了性能，也提供了新的路由机制，我们完全可以放心地把它用在以各类管控系统为主的Web应用中，以强大的开发效率去快速推出产品。]]></description>
+				<author><![CDATA[徐飞]]></author>
+				<pubDate>Mon, 24 Aug 2015 17:36:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825527]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[谁将是传统密码的终结者]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825526-password]]></link>
+				<description><![CDATA[传统密码终将会被各种新型的身份验证识别技术彻底取代，身份验证入口也最终会有一个行业标准，而谁将会是那个“无密胜有密的信息安全时代”的开路先锋，还需要大家后续对信息安全方面新进展的密切关注。]]></description>
+				<author><![CDATA[董世晓]]></author>
+				<pubDate>Mon, 24 Aug 2015 17:34:03</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825526-password]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[洛杉矶市中心发生的爆炸扰乱了数据中心的运作]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825524]]></link>
+				<description><![CDATA[周四晚上在洛杉矶市中心发生了爆炸，使得周围很多建筑物受到波及，其中位于West Wilshi周围的数据中心都很大程度的断电，造成了不必要的损失。]]></description>
+				<author><![CDATA[李子健]]></author>
+				<pubDate>Mon, 24 Aug 2015 16:26:17</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825524]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[冯耀明：Java和Rust在实现多线程编程时的异同]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825523]]></link>
+				<description><![CDATA[冯耀明本次分享了：用Rust实现一个典型的生产者和消费者的题目，希望程序员能够用生产者和消费者这样的模式来解决匹配的问题，主要是通过一个例子来比较Java和Rust在实现多线程编程时的异同。]]></description>
+				<author><![CDATA[钱曙光]]></author>
+				<pubDate>Mon, 24 Aug 2015 16:11:37</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825523]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[MathWorks程邺：机器人时代未来已来]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825522-Bobocup-Mathworks]]></link>
+				<description><![CDATA[在不久前结束的合肥世界机器人世界杯上，来自不同国家的参赛选手带着精心打造的机器人为观众奉上了一场盛宴，也让人看出机器人时代真的已经到来。]]></description>
+				<author><![CDATA[Zion]]></author>
+				<pubDate>Mon, 24 Aug 2015 13:53:35</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825522-Bobocup-Mathworks]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[乐视云求变：用生态云颠覆传统云盈利模式]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-21/2825512]]></link>
+				<description><![CDATA[深度解读贾跃亭宣布乐视云去“乐视化”之后，乐视云生态云服务平台战略是怎么样的？乐视云如何通过CDN和行业云的“全免费”切入点来颠覆传统云盈利模式？又将如何通过开放合伙人模式来释放股权实现共赢？]]></description>
+				<author><![CDATA[郭雪梅]]></author>
+				<pubDate>Mon, 24 Aug 2015 14:06:24</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-21/2825512]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[2015“云+未来”腾讯云技术领袖峰会于9月隆重举行（嘉宾名单公布）]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825521]]></link>
+				<description><![CDATA[9月15日，腾讯云与CSDN将在深圳前海华侨城JW万豪酒店共同举办2015“云+未来”腾讯云技术领袖峰会。届时腾讯多位T4级技术大咖、互联网+的行业大佬等亲身讲述技术实践中的经验与故事，畅想与众不同的云中未来世界。]]></description>
+				<author><![CDATA[CSDN]]></author>
+				<pubDate>Mon, 24 Aug 2015 11:20:58</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825521]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[中国第二届CSS开发者大会视频&PPT全部免费观看]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825520-css-conf]]></link>
+				<description><![CDATA[中国第二届CSS开发者大会在上海成功举办。大会邀请到阿里前端开发专家@勾三股四，百姓网前端工程师@CSS魔法，W3C副总监Mike Smith多位国内外行业知名前端专家，共话CSS之美。本文集合了大会上所有的演讲视频和PPT。]]></description>
+				<author><![CDATA[w3ctech]]></author>
+				<pubDate>Mon, 24 Aug 2015 10:34:50</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825520-css-conf]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[MDCC 2105|有胆你就来！免费展位征集上线启动]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825519]]></link>
+				<description><![CDATA[MDCC2015大会主办方特别开放了MDCC免费展位征集活动。我们热烈欢迎有特色、具有创新性的移动应用团队，申请获取自己的专属展位，获取属于你的展示舞台，与近万名与会者相约MDCC进行深度展示与交流。]]></description>
+				<author><![CDATA[子曰]]></author>
+				<pubDate>Mon, 24 Aug 2015 10:11:45</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825519]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[东软：业务基础平台成为互联网+转型背后的IT支撑]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825518]]></link>
+				<description><![CDATA[东软自1995年来到武汉已经有20年，于2002年成立华中大区，业务覆盖湖北、湖南、江西三省，员工超过200人，为本地企业、政府及相关部门提供信息化建设的前沿解决方案。]]></description>
+				<author><![CDATA[付江]]></author>
+				<pubDate>Mon, 24 Aug 2015 09:23:19</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825518]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Stack Overflow创始人：VR在五年内不会成为主流]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825517]]></link>
+				<description><![CDATA[Stack Overflow创始人、程序员大牛Jeff Atwood近日撰文称，在VR技术上挑战非常艰巨，就他个人体验到的来看，VR在5年之内成为主流是不太可能的，甚至在10-20年内都难发生。]]></description>
+				<author><![CDATA[Jeff Atwood]]></author>
+				<pubDate>Mon, 24 Aug 2015 07:47:55</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825517]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[浅谈 CloudStack 与 ZStack 架构与性能]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825516]]></link>
+				<description><![CDATA[本文将对CloudStack与ZStack功能与架构进行浅析，探讨这两个开源IaaS方案的特点，同时提供两者使用模拟器的方式，并在模拟器的场景做一些性能测试。]]></description>
+				<author><![CDATA[郭华星]]></author>
+				<pubDate>Mon, 24 Aug 2015 06:38:40</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825516]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[刘鹏：不了解计算广告就难以真正理解大数据]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-21/2825510]]></link>
+				<description><![CDATA[大数据、人工智能技术变现的模式，当前首推在线广告。《计算广告》作者刘鹏（北冥乘海生）近日接受了CSDN记者的专访，介绍了技术从业者需要如何响应计算广告的发展。]]></description>
+				<author><![CDATA[周建丁]]></author>
+				<pubDate>Mon, 24 Aug 2015 06:27:00</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-21/2825510]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[谈DevOps中的容器安全]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-22/2825515]]></link>
+				<description><![CDATA[容器技术可以为DevOps提供显著的优势，包括提高系统的扩展性、资源利用率和弹性。然而除下容器与主系统完全解耦，这种使用就会存在潜在的安全隐患。]]></description>
+				<author><![CDATA[Chris Taschner]]></author>
+				<pubDate>Sat, 22 Aug 2015 23:07:27</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-22/2825515]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Swift编程规范：保持代码优美的10个方法]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825503-swift-style-guide]]></link>
+				<description><![CDATA[继Objective-C风格指南之后，RayWenderlich团队为帮助开发者实现代码的优美与一致性、可读性和简洁性，共同编写了Swift风格指南，包含命名、空格、注释、类和结构体、函数声明、闭包表达式、类型、控制流、分号等。]]></description>
+				<author><![CDATA[Ray Wenderlich]]></author>
+				<pubDate>Fri, 21 Aug 2015 21:10:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825503-swift-style-guide]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[深入分析Docker镜像原理]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-21/2825511]]></link>
+				<description><![CDATA[8月20日晚上8点30分，CSDN Container微信群邀请到DaoCloud软件工程师孙宏亮，他带来了Docker镜像原理的深度分享，分享内容包含两个部分：1.Docker镜像的基本知识；2.Dockerfile、Docker镜像与Docker容器的关系。]]></description>
+				<author><![CDATA[孙宏亮]]></author>
+				<pubDate>Fri, 21 Aug 2015 13:50:20</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-21/2825511]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[实战解析Android架构设计原则]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825506]]></link>
+				<description><![CDATA[好的软件设计必须能够帮助开发者发展和扩充解决方案，保持代码清晰健壮，并且可扩展，易于维护，而不必每件事都重写代码。面对软件存在的问题，必须遵守SOLID原则，不要过度工程化，尽可能降低框架中模块的依赖性。]]></description>
+				<author><![CDATA[Fernando Cejas]]></author>
+				<pubDate>Fri, 21 Aug 2015 10:26:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825506]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[专访冯耀明：Rust具有C的速度且不用担心内存泄露]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825509]]></link>
+				<description><![CDATA[人生能有几个十年，何况在宝贵的青春年华里，创业者冯耀明在毕业十年后重新回顾自己的一路走来，总结自己的技术之路、创业之路，以及仍然在不断探索的路上——对现代编程语言Rust也有研究。]]></description>
+				<author><![CDATA[钱曙光]]></author>
+				<pubDate>Thu, 20 Aug 2015 19:57:12</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825509]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【微信群活动报名】用Rust实现一个典型的生产者和消费者的题目]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825508]]></link>
+				<description><![CDATA[在8月24日，兰泽信息科技联合创始人冯耀明将在CSDN Rust 学习交流群分享他的Rust使用经历，以及用Rust实现《一个典型的生产者和消费者的题目和实现》的过程和思考。]]></description>
+				<author><![CDATA[钱曙光]]></author>
+				<pubDate>Thu, 20 Aug 2015 19:39:12</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825508]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[无责任Windows Azure SDK .NET开发入门（三）：Azure AD 管理用户信息]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825507]]></link>
+				<description><![CDATA[无责任Windows Azure SDK .NET开发入门篇，将带来一系列基础文章：从Windows Azure开发前准备工作、使用Azure AD 管理用户信息、创建管理“云”服务、到使用Blob Storage服务等，帮助读者轻易上手使用这套开发工具。]]></description>
+				<author><![CDATA[王豫翔]]></author>
+				<pubDate>Thu, 20 Aug 2015 18:37:13</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825507]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[如何基于Vert.x实现远程调用？]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825505-Vert.x]]></link>
+				<description><![CDATA[Vert.x是一款基于JVM的轻量级、非阻塞、高并发的异步应用开发框架，旨在为现代移动、Web以及企业应用设计而来。Vert.x的核心是用Java编写的。]]></description>
+				<author><![CDATA[刘小溪]]></author>
+				<pubDate>Thu, 20 Aug 2015 17:06:39</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825505-Vert.x]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[EC2容器业务新测量指标—集群级指标与业务级指标]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-24/2825528]]></link>
+				<description><![CDATA[Amazon EC2 Container Service（亚马逊EC2容器业务）帮助你创建，运行和伸缩基于Docker的各种应用。]]></description>
+				<author><![CDATA[Jeff Barr]]></author>
+				<pubDate>Mon, 24 Aug 2015 17:40:04</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-24/2825528]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[普元：从分钟级切换灾备云说起的云数据中心方法论]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825502]]></link>
+				<description><![CDATA[从为神华集团构建异构数据中心灾备云，实现应用层分钟级的切换入手，看普元如何将数十年实践经验抽象成云数据中心构建的方法论归纳为五级规划，八大流程。]]></description>
+				<author><![CDATA[郭雪梅]]></author>
+				<pubDate>Thu, 20 Aug 2015 11:48:21</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825502]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[你应该掌握的七种回归技术]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825492]]></link>
+				<description><![CDATA[本文解释了回归分析及其优势，重点总结了应该掌握的线性回归、逻辑回归、多项式回归、逐步回归、岭回归、套索回归、ElasticNet回归等七种最常用的回归技术及其关键要素，最后介绍了选择正确的回归模型的关键因素。]]></description>
+				<author><![CDATA[Sunil Ray]]></author>
+				<pubDate>Thu, 20 Aug 2015 22:31:39</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825492]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[数据安全驱动越来越多的数据中心战略决策]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825501]]></link>
+				<description><![CDATA[BRUNS-PAK首席工程师、独立设计师、数据中心的建设者Mark Evanko认为，数据中心的战略决策目前最大的问题是确定需要被应用到数据的安全级别。]]></description>
+				<author><![CDATA[Michael Vizard]]></author>
+				<pubDate>Thu, 20 Aug 2015 11:21:17</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825501]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Go 1.5如期发布，完全告别C代码]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-20/2825499-Go]]></link>
+				<description><![CDATA[Google官方终于发布了Go 1.5版本，这是Go语言的第六个重要版本。该版本彻底移除C代码，Runtime、Compiler、Linker均由Go编写。目前，Go 1.5现已开放下载并支持Windows、Mac OS X和Linux平台。]]></description>
+				<author><![CDATA[夏梦竹]]></author>
+				<pubDate>Thu, 20 Aug 2015 11:17:27</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-20/2825499-Go]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【CSDN前端讲堂】专家带你全面认识React，填平开发中遇到的坑]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825497]]></link>
+				<description><![CDATA[搭桥专家与前端开发者，畅聊前沿前端技术，CSDN前端大讲堂（微信公开课）正式推出，本期将邀请对React有深入研发实践，Strikingly.com CTO、联合创始人郭达峰与前端开发者畅聊React。]]></description>
+				<author><![CDATA[陈秋歌]]></author>
+				<pubDate>Wed, 19 Aug 2015 22:19:57</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825497]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[技术人创业难在哪？ 投资人、孵化器这样看]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825496]]></link>
+				<description><![CDATA[技术人创业必须要花很多时间和股东交流，不能认为自己技术最强，别人的资源就要向他靠拢。创始人的技术也不该是最强的，要能找到比他强的人，没有一个人比他厉害，公司就会很难做。其实，他最厉害的应该是个人魅力。]]></description>
+				<author><![CDATA[张之颖]]></author>
+				<pubDate>Wed, 19 Aug 2015 18:39:43</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825496]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[软件定义数据中心在国家电网的应用实践]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825495]]></link>
+				<description><![CDATA[伴随着国家电网的IT架构演变历程，南瑞集成在虚拟化和云计算领域进行了深入的探索，历经了传统架构到虚拟化再到软件定义数据中心的演变。在本文中，南瑞集成CTO徐戟深度介绍了国家电网的软件定义数据中心应用实践。]]></description>
+				<author><![CDATA[徐戟]]></author>
+				<pubDate>Wed, 19 Aug 2015 16:54:21</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825495]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[微软2015上海互操作开发者日]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825494]]></link>
+				<description><![CDATA[微软Office拥有超过12亿的强大用户群，是最具战略性的开发者平台之一。学习如何在Office365开发者平台上创新，通过Office商店和OData开发，获取我们的用户群，显著提高您的竞争力。]]></description>
+				<author><![CDATA[CSDN]]></author>
+				<pubDate>Wed, 19 Aug 2015 16:49:40</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825494]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Espresso实战：快速的Android UI自动化测试]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825493-using-espresso-for-easy-ui-testing]]></link>
+				<description><![CDATA[很多Android开发者在应用开发过程中并不注重测试环节，原因在于他们认为Android测试太难实现，或难以集成到现有工程中等，但实际上，写一个Espresso并不难，而且能够非常方便地集成到工程中。]]></description>
+				<author><![CDATA[Michael Evans]]></author>
+				<pubDate>Wed, 19 Aug 2015 15:03:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825493-using-espresso-for-easy-ui-testing]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[深度剖析Android MVPR架构模式（一）]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825482]]></link>
+				<description><![CDATA[循环依赖是Android应用架构存在大问题的征兆：Activity和Presenter都违反了单一职责原则。本文作者提出一种新架构，并尝试总结开发新的Android应用架构的原因。]]></description>
+				<author><![CDATA[Matthew Dupree]]></author>
+				<pubDate>Wed, 19 Aug 2015 11:15:58</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825482]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Docker Toolbox：联合Compose、Boot2Docker、Kitematic]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825490]]></link>
+				<description><![CDATA[桌面用户在使用Docker时，一直是分成几个独立部分：精简的Boot2Docker Linux镜像，用于运行Docker、MAC工具kitematic 和Docker Compose，Docker计划把所有这些碎片浓缩成一个单独的产品Toolbox。]]></description>
+				<author><![CDATA[Serdar Yegulalp]]></author>
+				<pubDate>Wed, 19 Aug 2015 11:15:15</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825490]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[MDCC2015：25+嘉宾名单公布 8月31日前官网购票赠小米手机]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825488]]></link>
+				<description><![CDATA[目前，MDCC2015大会各项筹备工作都在计划中推进，此前已经公布了七场专题技术论坛内容，以及首批演讲嘉宾名单。现在，主委会又公布了更多的讲师名单，精英云集，阵容强大。]]></description>
+				<author><![CDATA[子曰]]></author>
+				<pubDate>Wed, 19 Aug 2015 08:06:18</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825488]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[《近匠》专访Depth VR：浅析VR交互技术选型中的瓶颈与机遇]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825479-jinjiang-depth-vr]]></link>
+				<description><![CDATA[《近匠》第101期：业界目前普遍看好VR领域。但是，VR本身还有许多需要探索的问题，比如交互、使用场景等。李今在采访中分享了一些可用于定位、交互方面的技术分析，以及他们所采用的技术方案。]]></description>
+				<author><![CDATA[翟方庆]]></author>
+				<pubDate>Tue, 18 Aug 2015 21:02:29</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825479-jinjiang-depth-vr]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[开发者创业 IBM愿资助企业12万美元云额度]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825487]]></link>
+				<description><![CDATA[IBM推出全球创业计画，通过强力主打的Bluemix云平台，并且5年内资注12万美元的云计算信用额度，中国约有60多家新创企业已经申请成功。以下是IBM大中华区云计算生态合作发展部总监詹海萍在记者会现场的精彩对谈。]]></description>
+				<author><![CDATA[张之颖]]></author>
+				<pubDate>Tue, 18 Aug 2015 18:55:16</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825487]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[如何设计一款优秀的软件架构]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825486]]></link>
+				<description><![CDATA[为了给企业提供稳定可靠且优质的服务，作为一名软件架构师，在应用的架构设计上也是费尽心思，本文作者来自“风语者客服+”的CTO黄耀华，他从自己多年的实践出发，总结了软件架构设计的一些经验，分享给大家。]]></description>
+				<author><![CDATA[黄耀华]]></author>
+				<pubDate>Tue, 18 Aug 2015 17:28:00</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825486]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[中国开发者调查报告：40%开发者考虑创业]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825485]]></link>
+				<description><![CDATA[这是一个开发者的时代，但在这最好的时代，开发者要如何从平凡脱颖而出？CSDN针对1000位开发者进行的“中国开发者调查报告”针对开发者面临的三大挑战、最关心的学习领域等等，进行了深度调查。]]></description>
+				<author><![CDATA[张之颖]]></author>
+				<pubDate>Tue, 18 Aug 2015 17:08:37</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825485]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Rust一周集锦（三）：关闭3个RFC并为1.4版本做准备]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825484-rust]]></link>
+				<description><![CDATA[Hello大家好，欢迎来到这周的《Rust一周精彩回顾》，Rust是一种追求安全性、并发性和速度的系统语言。这是来自 http://this-week-in-rust.org/网站关于Rust的新的一周博文、活动、版本开发、贡献者的集锦。]]></description>
+				<author><![CDATA[ThisWeekInRust]]></author>
+				<pubDate>Tue, 18 Aug 2015 16:12:59</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825484-rust]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【CTO讲堂】将“简单快速”渗透到移动开发测试每个环节，从fir.im团队说起]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825483-CTO]]></link>
+				<description><![CDATA[fir.im是36kr氪空间第一家入驻的创业团队，创始人王猛2008年开始从事iOS应用程序开发，GitHub中国Objc Top20。CTO讲堂邀请他来谈谈国内外移动开发测试市场情况、移动开发测试的痛点以及移动内测分发的技术难点。]]></description>
+				<author><![CDATA[蒲婧]]></author>
+				<pubDate>Tue, 18 Aug 2015 15:43:37</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825483-CTO]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【大运维之七】七年之痒：云计算2.0时代]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825481]]></link>
+				<description><![CDATA[从事多年云计算行业工作的何宝宏，从云计算1.0时代公有私有云、开源闭源到2.0时代的标志，商业模式的进化、数据等几个问题的发展带来此次经验的分享。]]></description>
+				<author><![CDATA[何宝宏（何博） 萧田国]]></author>
+				<pubDate>Tue, 18 Aug 2015 09:29:10</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825481]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[《Java并发编程的艺术》作者方腾飞：感谢Java，带我一路前行！]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-18/2825480-Java]]></link>
+				<description><![CDATA[日前，CSDN采访了方腾飞，他表示，从毕业到现在一直从事Java开发，对Java有感恩之心，是Java伴随着他走到现在。他崇尚团队合作，为了培养团队合作氛围，经常会实行交叉Review代码、结对编程、互为备份等协作氛围。]]></description>
+				<author><![CDATA[夏梦竹]]></author>
+				<pubDate>Tue, 18 Aug 2015 08:40:43</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-18/2825480-Java]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[以coroutine-rs为例深入浅出Rust协程库]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-15/2825469]]></link>
+				<description><![CDATA[8月13日晚，CSDN Rust 学习交流微信群邀请了微信游戏开发组工程师、Rust 资深使用者 Elton 带了一节在线视频分享课，深入浅出地带你重新认识协程库，本文本次分享的视频、文字整理。]]></description>
+				<author><![CDATA[Elton]]></author>
+				<pubDate>Tue, 18 Aug 2015 00:09:11</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-15/2825469]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[丁香园CTO冯大辉独家回应前CSDN CTO范凯出任技术副总裁]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825478]]></link>
+				<description><![CDATA[8月17日，医疗健康互联网公司丁香园今日宣布，技术专家范凯加盟丁香园，出任技术副总裁，负责公司技术团队的管理工作。该公司CTO冯大辉独家回应了此次的人才引进。]]></description>
+				<author><![CDATA[钱曙光]]></author>
+				<pubDate>Mon, 17 Aug 2015 23:33:08</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825478]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[全球开发者报告：Windows Phone已死，Windows 10长存]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825475-visionmobile-developer-economics-q3-2015]]></link>
+				<description><![CDATA[VisionMobile于近日发布2015年度最新一期Developer Economics调查报告。尽管Swift表现非常强劲，但拥有多年开发经验的开发者依然钟情于老牌语言，而Windows Phone开发者正在向Windows 10转移。]]></description>
+				<author><![CDATA[Banbury]]></author>
+				<pubDate>Mon, 17 Aug 2015 17:05:02</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825475-visionmobile-developer-economics-q3-2015]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[高德开放平台发力到家类应用  呱呱洗车如何玩转LBS+]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825476]]></link>
+				<description><![CDATA[在活动现场，魏凯明继续重申了高德将继续专注于支持开发者垂直应用服务创新，不与开发者争利，避免既做裁判员又当运动员的承诺。]]></description>
+				<author><![CDATA[付江]]></author>
+				<pubDate>Mon, 17 Aug 2015 16:19:53</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825476]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[使用JSON和WatchKit构建简单的天气应用程序]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825474]]></link>
+				<description><![CDATA[本文作者以自己做Apple Watch开发的实际经验，展示了如何使用第三方API和WatchKit构建简单的天气应用程序，以及为何在可穿戴设备上进行开发如此重要。]]></description>
+				<author><![CDATA[Gregory Tareyev]]></author>
+				<pubDate>Mon, 17 Aug 2015 14:38:29</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825474]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Crystal：一个类似于Ruby语法的编程语言]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825458-Crystal]]></link>
+				<description><![CDATA[Crystal是一个开源的、类似于Ruby语法的编程语言，支持静态类型检查，可在Crystal内通过代码绑定调用C代码等等。有开发者称其真的酷毙了。]]></description>
+				<author><![CDATA[伍昆]]></author>
+				<pubDate>Mon, 17 Aug 2015 13:58:45</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825458-Crystal]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[苹果官方博客：从SDK详说Swift代码的改变]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825473-swift-er-sdk]]></link>
+				<description><![CDATA[Xcode 7中，几乎所有常见框架都指定了其API的nullability注解，包括其集合类型的元素，这使得Swift代码的样子发生了变化，而通过To Latest Swift Syntax会将实现从Swift 1.2到2.0的代码转换。]]></description>
+				<author><![CDATA[Apple]]></author>
+				<pubDate>Mon, 17 Aug 2015 13:30:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825473-swift-er-sdk]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[程序员2015年8月B：安全‧实践]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825472]]></link>
+				<description><![CDATA[安全边界正被无限拓宽且日益复杂，传统的固定边界在新信息攻防形式下逐渐无效，Design for Failure、攻击面控制、纵深防御、实时安全情报感知等新安全体系建设开始崭露头角，更多企业的安全实践已经“从0到1”。]]></description>
+				<author><![CDATA[程序员杂志]]></author>
+				<pubDate>Mon, 17 Aug 2015 08:09:23</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825472]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[深度神经网络的灰色区域：可解释性问题]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825471]]></link>
+				<description><![CDATA[深度学习系统中分类器和特征模块都是自动学习的，神经网络可解释性问题就成了一个灰色区域，思考这个问题对神经网络效率的保证是有必要的。在本文中，机器学习PhD、软件架构师Adnan Masood针对这个问题进行了反思。]]></description>
+				<author><![CDATA[Adnan Masood]]></author>
+				<pubDate>Tue, 18 Aug 2015 08:15:15</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825471]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[东软：UniEAP&SaCa从被动到主动开放 业务基础平台迎来春天]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-16/2825470]]></link>
+				<description><![CDATA[在行业方面，东软SaCa定制了5套行业互联网+参考架构，包括互动媒体、智慧民生、物联网、云应用支撑与管理、电子商务，并提供了一套开发指南和培训流程帮助用户敏捷转型。]]></description>
+				<author><![CDATA[付江]]></author>
+				<pubDate>Sun, 16 Aug 2015 22:27:47</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-16/2825470]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[谷歌语音转录背后的神经网络]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-15/2825468]]></link>
+				<description><![CDATA[最近，谷歌宣布了在语音转录上使用长短期记忆递归神经网络（LSTM RNNs）所取得的成就，本文详细叙述了实现的过程。]]></description>
+				<author><![CDATA[Françoise Beaufays, Research Scientist]]></author>
+				<pubDate>Mon, 17 Aug 2015 08:48:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-15/2825468]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[弹性MapReduce 4.0.0版本发布，更新应用已可用]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-17/2825477]]></link>
+				<description><![CDATA[Amazon EMR是一个托管的集群平台，它简化了大数据框架（如Apache Hadoop和Apache Spark）在AWS上的运行，可以处理和分析大量的数据。]]></description>
+				<author><![CDATA[Jeff Barr]]></author>
+				<pubDate>Mon, 17 Aug 2015 18:22:16</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-17/2825477]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[MEAN实践——LAMP的新时代替代方案]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825465]]></link>
+				<description><![CDATA[90年代，LAMP曾风靡一时，然而随着需求的变迁和数据流量的激增，LAMP已不可避免的走下神坛。近日，在MongoDB Blog中，Dana Groce介绍了一个基于新时代架构的实践MEAN，下面一起走进。]]></description>
+				<author><![CDATA[Dana Groce]]></author>
+				<pubDate>Fri, 14 Aug 2015 17:37:10</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825465]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[VaaS之后，乐视云8.18有何大招？]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825466]]></link>
+				<description><![CDATA[2015年中国云计算市场的战略发布，产品布局，生态建设已经进入白热化。8月18日“蜕变”为主题的乐视云发布会将揭晓乐视云如何将VaaS能力输入到各行各业，帮助企业实现业务创新。]]></description>
+				<author><![CDATA[CSDN]]></author>
+				<pubDate>Fri, 14 Aug 2015 16:58:14</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825466]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Android Hook神器：XPosed入门与登陆劫持演示]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825462]]></link>
+				<description><![CDATA[Xposed是一款可以在不修改APK的情况下影响程序运行的框架服务，基于Xposed能够制作出许多功能强大的模块，且在功能不冲突的情况下同时运作。在本文中，作者详细介绍了Xposed的操作步骤以及登陆劫持实战演练。]]></description>
+				<author><![CDATA[周圣韬]]></author>
+				<pubDate>Fri, 14 Aug 2015 16:39:18</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825462]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[无责任Windows Azure SDK .NET开发入门（二）：Azure AD 管理用户信息]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825461]]></link>
+				<description><![CDATA[无责任Windows Azure SDK .NET开发入门篇，将带来一系列基础文章：从Windows Azure开发前准备工作、使用Azure AD 管理用户信息、创建管理“云”服务、到使用Blob Storage服务等，帮助读者轻易上手使用这套开发工具。]]></description>
+				<author><![CDATA[王豫翔]]></author>
+				<pubDate>Fri, 14 Aug 2015 16:29:52</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825461]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[TalkingData CTO肖文峰：研发工程师，你为啥升不上去？]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825463]]></link>
+				<description><![CDATA[TalkingData CTO肖文峰：不同公司虽然有不同的薪资级别体系，但是在职位设定上，概念差别不大，都经过了从初级、中级、高级到资深的发展过程，每个阶段都有侧重的要求。这是一篇很好的技术人员的成长图谱。]]></description>
+				<author><![CDATA[肖文峰]]></author>
+				<pubDate>Fri, 14 Aug 2015 16:06:05</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825463]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【探秘ES6】系列专栏（十一）：类语法]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825464-es6-in-depth-classes]]></link>
+				<description><![CDATA[新一代JavaScript标准ES6正式发布。【探秘ES6】系列专栏将一一剖析ES6的诸多新特性，让Web开发者对此有清晰全面的了解。本文为系列的第十一篇，带你了解ES6的类语法。]]></description>
+				<author><![CDATA[Eric Faust]]></author>
+				<pubDate>Fri, 14 Aug 2015 16:05:54</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825464-es6-in-depth-classes]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[谷歌推出正式版Cloud Dataflow和Cloud Pub/Sub 可支持每秒100万个消息]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825460]]></link>
+				<description><![CDATA[Cloud Dataflow可执行复杂的计算，比如批量的或者以流传输模式提取-转换-加载（ETL）大量的数据，这在四月的测试版上得到实现。Cloud Pub/Sub是一个以消息的形式向应用程序发送和接收数据的工具，三月上线了测试版。]]></description>
+				<author><![CDATA[Jordan Novet]]></author>
+				<pubDate>Fri, 14 Aug 2015 14:09:18</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825460]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【快讯】阿里巴巴加入Linux基金会，更多参与到技术与标准制定中]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825459]]></link>
+				<description><![CDATA[8月14日，阿里巴巴集团宣布正式加入Linux基金会，同时还成为开源项目Xen的顾问委员会成员，阿里云CTO章文嵩表示，将更多地参与到技术与标准制定讨论当中，主动把握未来软件发展方向。]]></description>
+				<author><![CDATA[CSDN]]></author>
+				<pubDate>Fri, 14 Aug 2015 14:00:20</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825459]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[Swift 2中字符串设计的背后思想]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825454]]></link>
+				<description><![CDATA[Swift提供高性能、兼容Unicode的String作为标准库的一部分。在Swift 2.0中，String类型不再符合CollectionType协议，转而提供一个公开字符集视图的charactes属性。为什么会变？苹果在其Swift官方博客中给出了答案。]]></description>
+				<author><![CDATA[Apple]]></author>
+				<pubDate>Fri, 14 Aug 2015 11:03:22</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825454]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【大运维之六】DevOps年中盘点：国外最受欢迎的10篇技术文章（下）]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-14/2825457]]></link>
+				<description><![CDATA[近日，国外有技术专家在 SEI 撰文盘点了当下流行的 DevOps 思想和工具，其中包括Fabric、Ansible、Docker、Chaos Monkey等。本文系OneAPM与高效运维联合编译整理，CSDN授权联合首发。]]></description>
+				<author><![CDATA[王鹏 高浩淼]]></author>
+				<pubDate>Fri, 14 Aug 2015 10:39:15</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-14/2825457]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[全新的Logstash插件–使用Elasticsearch搜索DynamoDB内容]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-19/2825491]]></link>
+				<description><![CDATA[当我观察最近的业务发布，将观察结果与GitHub上与AWS相关的知识库相比较时，一个很有趣的趋势变得显而易见。在我看来，将AWS业务互相结合和与第三方工具相结合变得越来越常见。]]></description>
+				<author><![CDATA[Jeff Barr]]></author>
+				<pubDate>Wed, 19 Aug 2015 11:31:08</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-19/2825491]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[沈国阳：美团推荐系统整体框架与关键工作]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825455]]></link>
+				<description><![CDATA[美团推荐与个性化团队技术经理沈国阳来到CSDN在线视频分享平台，为我们深度解析美团本地生活服务推荐的工作经验，并与群友进行互动交流。沈国阳重点介绍了美团推荐系统的架构和特色，以及在排序层面的主要工作。]]></description>
+				<author><![CDATA[周建丁]]></author>
+				<pubDate>Thu, 13 Aug 2015 22:00:56</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825455]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[架构设计中的6种常见安全误区]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825453]]></link>
+				<description><![CDATA[系统先天架构设计至关重要。深入讨论兼容性设计、黑名单防御、封闭设计等6个误区，以帮助研发人员设计出更安全健壮的架构。]]></description>
+				<author><![CDATA[付山阳]]></author>
+				<pubDate>Thu, 13 Aug 2015 17:31:09</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825453]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【探秘ES6】系列专栏（十）：更深入了解生成器]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825452-es6-in-depth-generators-continued]]></link>
+				<description><![CDATA[新一代JavaScript标准ES6正式发布。【探秘ES6】系列专栏将一一剖析ES6的诸多新特性，让Web开发者对此有清晰全面的了解。本文为系列的第十篇，带你进一步了解有关生成器的更多特性。]]></description>
+				<author><![CDATA[Jason Orendorff]]></author>
+				<pubDate>Thu, 13 Aug 2015 16:57:15</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825452-es6-in-depth-generators-continued]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[【大运维之五】OKR: Google和Facebook高效管理的秘密]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825451]]></link>
+				<description><![CDATA[什么是OKR？OKR的好处是什么？OKR和KPI考核的区别是什么？从这三个方面入手，多年来负责云计算、移动分销、开放平台等领域的工作的黄哲铿为我们详细介绍了实施OKR的前提条件和步骤，分享了实施过程中的经验总结。]]></description>
+				<author><![CDATA[黄哲铿 董伟]]></author>
+				<pubDate>Thu, 13 Aug 2015 15:55:36</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825451]]></guid>
+			</item> 
+					<item>
+				<title><![CDATA[杭州兆合陈洋：微气象大民生，气象微信平台研发探索]]></title>
+				<link><![CDATA[http://www.csdn.net/article/2015-08-13/2825449-micro-meteorology]]></link>
+				<description><![CDATA[本文选自《程序员》2014年9月刊，杭州兆合陈洋表示气象作为老百姓最关注的日常生活信息之一，将微信与气象相结合，在民生工程上将大有可为。他在文中分享了曾参与的某气象局微信平台的开发过程和研发经验。]]></description>
+				<author><![CDATA[陈洋]]></author>
+				<pubDate>Thu, 13 Aug 2015 11:55:44</pubDate>
+				<guid><![CDATA[http://www.csdn.net/article/2015-08-13/2825449-micro-meteorology]]></guid>
+			</item> 
+			</channel> 
+</rss> 

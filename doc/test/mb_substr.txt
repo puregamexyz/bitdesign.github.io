@@ -1,0 +1,17 @@
+$str = "123123阿萨,德发123123dfsf是的冯绍峰";
+
+$encoding = 'utf-8';
+
+$length = mb_strlen($str,$encoding);
+
+$breakpoint = rand(1,$length);
+
+$p1 = mb_substr( $str, 0, $breakpoint, $encoding );
+$p2 = mb_substr( $str, $breakpoint, $length-$breakpoint, $encoding ) ;
+
+echo $p1;  echo "<br/>";
+echo $p2;  echo "<br/>";
+
+
+echo $p1.$p2;  echo "<br/>";
+echo $str;  echo "<br/>";

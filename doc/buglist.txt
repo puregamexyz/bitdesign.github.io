@@ -1,0 +1,13 @@
+1. 保存草稿后， 首页没剔除草稿  0716
+2. 推荐没到第一篇 0717
+3. 编辑器的上传进度
+
+SVN上的index.html
+
+
+初始化脚本 block指定的ID未生效, 修改了block_id的自增模式
+
+ALTER TABLE
+    _bit_blog.block MODIFY COLUMN block_id INT NOT NULL
+
+ALTER TABLE block MODIFY COLUMN block_id INT NOT NULL

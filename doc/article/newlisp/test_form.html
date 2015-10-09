@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>newlisp formtest</title>
+    </head>
+
+    <body>
+
+        <form action="/test_form" method="POST">
+
+            <input name="userName" type="text" />
+
+            <input type="submit" value="Submit" name="Submit" />
+
+        </form>
+
+        <% (when ($POST "userName") %>
+        <p>My name is <%=($POST "userName")%></p>
+        <%)%>
+    </body>
+</html>
+
+
+

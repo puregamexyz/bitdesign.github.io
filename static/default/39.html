@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/39.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b7.html">游戏创造</a>&gt;
-            <a href="http://www.b.com/static/default/39.html" >完全掌握粒子系统(前言）</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>完全掌握粒子系统(前言）</a>
           </div>
           <div class="info-title">
             <h4>完全掌握粒子系统(前言）</h4>
@@ -74,8 +78,15 @@
             <div>&nbsp; &nbsp;<a href="http://www.bit1010.com/default_39.html" target="_blank"> 粒子系统是做出好游戏的一道天然屏障，是亮点，更是难点。</a>只靠在网络上搜罗别人的特效是没有前途的，必须深刻理解，才能为所欲为。</div><div>&nbsp; &nbsp; 粒子系统在wikipedia中的定义为: A particle system is a technique in game physics and computer graphics that uses a large number of very small sprites or other graphic objects to simulate certain kinds of "fuzzy" phenomena. <a href="http://www.bit1010.com/default_39.html" target="_blank">用大量的精灵或其他图形对象模拟出的“毛茸茸的，模糊的，混沌”的对象</a>。关键字为“大量”和“模拟”,所有使用粒子系统的主要内容就是为大量的例子调试各种模拟参数以达到自己想象中的效果。</div><div>&nbsp; &nbsp; 本文以Quick3.5为开发环境，以Cocos2d Particle Builder为粒子编辑器，一起实践学习并最终真正掌握cocos中的粒子系统。</div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/39.html">http://www.b.com/static/default/39.html</a></li>
-                <li>转载请注明: Administrator 2015-08-12 11:26:05 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-08-12 11:26:05 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=39">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

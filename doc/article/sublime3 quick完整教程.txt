@@ -1,0 +1,72 @@
+﻿sublime3+quick3.5 完整使用教程
+
+1.先安装Sublime3
+
+Help--Enter License
+输入以下内容，包含----- BEGIN LICENSE ----- 和------ END LICENSE ------
+
+----- BEGIN LICENSE -----
+Andrew Weber
+Single User License
+EA7E-855605
+813A03DD 5E4AD9E6 6C0EEB94 BC99798F
+942194A6 02396E98 E62C9979 4BB979FE
+91424C9D A45400BF F6747D88 2FB88078
+90F5CC94 1CDC92DC 8457107A F151657B
+1D22E383 A997F016 42397640 33F41CFC
+E1D0AE85 A0BBD039 0E9C8D55 E1B89D5D
+5CDB7036 E56DE1C0 EFCC0840 650CD3A6
+B98FC99C 8FAC73EE D2B95564 DF450523
+------ END LICENSE ------
+
+2. 安装模拟器启动插件
+打开 https://github.com/FloydaGitHub/RunQuickSimulator 点击右侧的Download ZIP
+解压下载的 RunQuickSimulator-master.zip ，得到RunQuickSimulator-master， 改名为RunQuickSimulator
+注意 RunQuickSimulator 应该是顶层文件夹，不应再包含子文件夹
+
+运行sublime3， Preferences--Browse Packages
+例如我的路径是： C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Packages
+将RunQuickSimulator文件整个拷贝到Packages里
+
+
+3.安装设置代码自动提示
+先安装PackegeControl
+下载 https://sublime.wbond.net/Package%20Control.sublime-package
+将Package Control.sublime-package粘贴到Sublime3安装目录的Packages文件夹
+例如：C:Program Files (x86)\Sublime Text 3\Packages
+
+重启Sublime3
+Preferences--Packege Control然后选择Packege Control：Install Packege
+输入QuickXDev
+等待完成安装即可
+
+代码格式化：Edit->Line->Reindent 即可。
+
+
+4.创建项目，例如项目名为CoolShoot
+在命令行下切到quick-3.5final的toolscocos2d-consolebin下，例如，我的是
+cd E:\company\quick-3.5final\tools\cocos2d-console\bin
+cocos new CoolShoot -p com.bit.coolshoot -l lua -d E:\company\quickcocos
+
+
+cocos new FiveElement -p com.bit.five -l lua -d E:\company\quickcocos
+
+
+cocos new Tetris -p com.bit.tetris -l lua -d
+
+工程名 -- CoolShoot
+包名 -- com.bit.coolshoot
+工程目录名 -- E:\company\quickcocos
+
+导入CoolShoot项目到Sublime
+Projects-- Add folder to project
+
+打开任意lua文件 ，按F1 启动模拟器
+
+
+其他：Sublime3的常用快捷键
+删除当前行 Ctrl+X
+查找替换 Ctrl+Shift+F 其中当前文件
+复制当前行 Ctrl+Shift+D
+注释当前行 Ctrl + /
+注释选中的多行 Ctrl+Shift+ /

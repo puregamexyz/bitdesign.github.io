@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/8.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b2.html">网站建设</a>&gt;
-            <a href="http://www.b.com/static/default/8.html" >基于URL重写的请求派发器</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>基于URL重写的请求派发器</a>
           </div>
           <div class="info-title">
             <h4>基于URL重写的请求派发器</h4>
@@ -74,8 +78,15 @@
             <div>作者对Java式干练利落的Web请求格式情有独钟，<span style="line-height: 1.42857143;">例如:要访问某个类ClassName的某个方法MethodName，我们确定一个URL请求格式: http://www.bf.com/ClassName!MethodName?para1=xxx&amp;para2=yyy</span></div><div>在Java中，这个对这个URL的解析是在自然不过的，在PHP中，我们的框架如何支持呢? 我们通过URL重写完成 。</div><div>&nbsp;</div><div>1.在开始之前，请先搭建好您的PHP开发环境，有任何疑问可自行搜索。</div><div>我们先建立一个controller目录，存放我们的控制类，其他目录后续增加。</div><div><br></div><div>在目录中增加一个类Controller.php ，内容如下:</div><div><br></div><div><span style="font-style: italic;">&lt;?</span></div><div><span style="font-style: italic;">class TestController{</span></div><div><span style="font-style: italic;"><br></span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>function __construct(){</span></div><div><span class="Apple-tab-span" style="white-space: pre; font-style: italic;">		</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>}</span></div><div><span class="Apple-tab-span" style="white-space: pre; font-style: italic;">	</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>function test(){</span></div><div><span class="Apple-tab-span" style="white-space: pre; font-style: italic;">		</span></div><div><span style="font-style: italic;">&nbsp; &nbsp; &nbsp; &nbsp; echo "hi,bit frameword!"</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>}</span></div><div><span style="font-style: italic;">}</span></div><div><br></div><div>2.正常情况下，应该怎么调用TestController中的test方法呢？ 下面我们在根目录增加一个router.php类，用来统一派发用户的请求, 内容如下:</div><div><br></div><div><br></div><div><span style="font-style: italic;">&lt;?</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>$controller = ucfirst($_GET['c']);</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>$method &nbsp; &nbsp; = $_GET['m'];</span></div><div><span class="Apple-tab-span" style="white-space: pre; font-style: italic;">	</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>$controller_name = $controller.'Controller';</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>require('controller/'.$controller_name.'.php');</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>$controller = new $controller_name();</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>$controller-&gt;$method();</span></div><div><span class="Apple-tab-span" style="white-space: pre; font-style: italic;">	</span></div><div><br></div><div><br></div><div>内容很简单，即根据http get方法上送的c参数和m参数，判断调用哪个Controller的哪个方法</div><div><br></div><div>在URL重写前，我们是这样调用的</div><div>http://www.bf.com/router.php?c=Test&amp;m=test</div><div><br></div><div><br></div><div>3.本节的关键问题来了，如何将 http://www.bf.com/router.php?c=Test&amp;m=test 重写成 http://www.bf.com/Test!test</div><div>在Apache中，我们是这样做的</div><div>首先，开启Apache的.htaccess支持并在网站根目录增加一个.htaccess文件，有问题的，请充分利用网络资源，本文不再赘述。.htaccess内容如下:</div><div><br></div><div><span style="font-style: italic;">Options +FollowSymLinks</span></div><div><span style="font-style: italic;">&lt;IfModule mod_rewrite.c&gt;</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>RewriteBase /</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>RewriteEngine on</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>RewriteCond %{QUERY_STRING} ^$</span></div><div><span style="font-style: italic;"><span class="Apple-tab-span" style="white-space:pre">	</span>Rewriterule ([a-z]*)!([a-z]*)$ router.php?c=$1&amp;m=$2 [NC]<span class="Apple-tab-span" style="white-space:pre">	</span></span></div><div><span style="font-style: italic;">&lt;/IfModule&gt;</span></div><div><br></div><div>然后访问 http://www.bf.com/Test!test 看看, 成功了。</div><div>&nbsp;</div><div>&nbsp;</div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/8.html">http://www.b.com/static/default/8.html</a></li>
-                <li>转载请注明: Administrator 2015-06-29 17:23:20 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-06-29 17:23:20 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=8">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

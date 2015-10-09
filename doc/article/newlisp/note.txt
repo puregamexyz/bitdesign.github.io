@@ -1,0 +1,143 @@
+database.lsp  --> D:\AppServ\dragonfly-newlisp-master\example-site\dragonfly-framework\lib
+
+
+
+
+
+database_sqlite3.lsp  --> D:\AppServ\dragonfly-newlisp-master\example-site\dragonfly-framework\plugins-inactive\db
+(load "D://database.lsp")
+(string (env "PROGRAMFILES") "D://sqlite3.dll") ; Win32/MinGW
+
+
+http://localhost:8080/dragonfly_sqlite3
+
+
+
+NewLisp Web开发实战(1)--环境搭建
+
+1. 安装newlisp
+
+从https://github.com/kosh04/newlisp下载源码包 newlisp-develop.zip
+
+安装newlisp的依赖
+yum install libffi libffi-devel readline-devel
+
+编译安装 newlisp
+unzip newlisp-develop.zip
+cd newlisp-develop
+./configure
+make 
+make install
+
+2. 安装newlisp的httpserver - dragonfly
+
+从 https://github.com/taoeffect/dragonfly-newlisp 下载 dragonfly-newlisp并解压
+cd dragonfly-newlisp-master/example-site
+/newlispServer
+
+访问： http://www.bit1010.com:8080/
+
+
+NewLisp Web开发实战(2)--添加自定义页面
+
+1. 添加静态页面
+
+在dragonfly-newlisp-master/example-site/views下新建hello.html, 内容如下
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>newlisp</title>
+    </head>
+    <body>
+
+       hello word!
+
+    </body>
+</html>
+
+访问测试 
+//http://127.0.0.1:8080/hello
+
+http://www.bit1010.com:8080/hello
+
+2. 添加动态页面
+动态页面也是添加views下，默认后缀同样为html，以POST一个Form表单为例， test_form.html, 内容如下
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>newlisp formtest</title>
+    </head>
+
+    <body>
+
+        <form action="/test_form" method="POST">
+
+            <input name="userName" type="text" />
+
+            <input type="submit" value="Submit" name="Submit" />
+
+        </form>
+
+        <% (when ($POST "userName") %>
+        <p><%=($POST "foo")%></p>
+        <%)%>
+    </body>
+</html>
+
+http://www.bit1010.com:8080/test_form
+
+
+
+
+
+
+http://www.bit1010.com:8080/test_sql
+
+
+cd /root/dragonfly-newlisp-master/example-site/dragonfly-framework/plugins-inactive/db
+wget https://www.taoeffect.com/newlisp/database_sqlite3.lsp.txt 
+mv database_sqlite3.lsp.txt database_sqlite3.lsp
+
+cd /root/dragonfly-newlisp-master/example-site/dragonfly-framework/lib
+wget https://www.taoeffect.com/newlisp/database.lsp.txt
+mv database.lsp.txt database.lsp
+
+
+
+NewLisp Web开发实战(3)--使用数据库MySQL
+
+现在服务器安装MySQL， 测试MySQL
+
+直接输入 newlisp， 例如
+
+[root@localhost views]# newlisp
+newLISP v.10.6.3 64-bit on Linux IPv4/6 UTF-8 libffi, options: newlisp -h
+
+>(module "mysql.lsp")
+
+> (MySQL:init)
+true
+> (MySQL:connect "127.0.0.1" "root" "yourpassword" "mysql")
+true
+>(MySQL:query "select * from user;")
+true
+
+>(println (MySQL:fetch-all))
+
+> (MySQL:close-db)
+true
+
+
+
+<%
+(module "mysql.lsp")
+
+(MySQL:init)
+(MySQL:connect "127.0.0.1" "root" "sjzott" "mysql")
+(MySQL:query "select * from user;")
+(println (MySQL:fetch-all))
+(MySQL:close-db)
+
+%>

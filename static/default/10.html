@@ -49,7 +49,11 @@
 
 
 
-
+    
+    <script>
+        var fix_url = "http://"+document.domain+"/static/default/10.html";
+    </script>
+        
     
     <div class="main" >
 
@@ -59,7 +63,7 @@
           <div class="info-nav">
             <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
             <a href="/static/default/b2.html">网站建设</a>&gt;
-            <a href="http://www.b.com/static/default/10.html" >真正好用的PHP中文RSS 解析器</a>
+            <script>document.write("<a href='"+fix_url+"'>");</script>真正好用的PHP中文RSS 解析器</a>
           </div>
           <div class="info-title">
             <h4>真正好用的PHP中文RSS 解析器</h4>
@@ -74,8 +78,15 @@
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近需求要用PHP解析RSS源，经百度各种现成的Reader，各种乱码，缓存莫名失效，CDATA处理不干净，没响应等等。最后还是要自己动手丰衣足食, 已正式使用，支持各种规则的，不规则的各种中文网站。支持编码自动转换，缓存，清理CDATA标签等。如有任何问题，可留言。</div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&lt;?php</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">class RssReader{</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; function fetch($url){</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $cacheDir = "cache/";</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $cacheName = base64_encode($url);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $fullUrl = $cacheDir.$cacheName;</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $hasCache = is_file($fullUrl);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; if ( $hasCache ){ // 有缓存且缓存的时间不超过6小时则使用缓存</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $t1 = filemtime($fullUrl);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $t2 = time();</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $inter = &nbsp;$t2 - $t1;</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if( $inter &lt; 3600 * 6 ){</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $url = $fullUrl;</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }else{</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $hasCache = false;</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; }</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $buff = "";</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $timeout=array(</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'http'=&gt;array(</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'timeout'=&gt;20 //超时时间，单位为秒</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; );</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $ctx=stream_context_create($timeout);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $fp = fopen($url,"r",false,$ctx);</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; if( !$fp){ return false; }</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; while ( !feof($fp) ) { $buff .= fgets($fp,4096); }</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; fclose($fp);</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; if(strlen($buff) &lt;= 0){</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; }</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $from_str ="encoding="gb2312"";</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $to_str ="encoding="UTF-8"";</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; $char_set = mb_detect_encoding($buff);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; if( $char_set == 'UTF-8'){</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; }else{</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $buff = mb_convert_encoding($buff,'utf-8','gb2312');</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $buff = str_replace($from_str,$to_str,$buff);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; }</span></div><div><span style="color: rgb(8, 82, 148);"><br></span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; if ( !$hasCache){</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cacheFp = fopen($fullUrl, 'w+');</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fwrite($cacheFp, $buff);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fclose($cacheFp);</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; }</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; &nbsp; &nbsp; return simplexml_load_string($buff, 'SimpleXMLElement', LIBXML_NOCDATA );</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">&nbsp; &nbsp; }</span></div><div><span style="font-size: 12px; color: rgb(8, 82, 148);">}</span></div>            <br/>
 
             <ul>
-              <li>本文固定链接: <a href="http://www.b.com/static/default/10.html">http://www.b.com/static/default/10.html</a></li>
-                <li>转载请注明: Administrator 2015-07-03 11:07:38 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+              <li>本文固定链接: 
+              <script>document.write("<a href='"+fix_url+"'>"+fix_url);</script>
+               
+               </a></li>
+              
+              
+                <li>转载请注明: Administrator 2015-07-03 11:07:38 于 
+                    
+                    <script>document.write("<a href='http://"+document.domain+"'>");</script>比特核 - 视野</a> 发表</li>
 
                 </ul>
 
@@ -85,56 +96,7 @@
             </div><!--panel-->
 
 
-
-            <div class="row margin-top20">
-              <div class="info-nav">
-                <i class="fa fa-fw fa-comments"></i> Comment
-              </div>
-
-              <div class="row">
-                <form id="myform" method="post" action="Home!info?id=10">
-                  <!-- end-->
-                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
-			<script language="JavaScript">
-				$(function(){
-						$("#navdiv a").click(function(){
-								clickId = $(this).attr("id");
-								var curNo = $("#skipValue").val();
-								if (typeof(clickId) == "undefined")  return;
-								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
-								else if(clickId=="next") clickId = parseInt(curNo)+1;
-								$("#skipValue").attr("value",clickId);
-								$(this).parents("form").submit();
-						});
-					});
-			</script>
-
-			<style>
-			    
-			    #navdiv{
-			        float:right; margin:30px 30px 0 0;
-			    }
-			    
-				#navdiv a{
-					text-decoration:none; border:none; 
-					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
-				}
-			</style>
--->			
-			<input name='oldPerPageCnt' type='hidden' value='10'/>
-			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
-			
-			<div id="navdiv">
-								
-			</div>
-                </form>
-              </div>
-
-              <div class="row">
-                              </div>
-            </div>
-
-
+             
 
 
 

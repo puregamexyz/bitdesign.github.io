@@ -1,0 +1,26 @@
+    cocos2dx中分为点粒子系统CCParticleSystemPoint和方形粒子系统CCParticleSystemQuad， quick中的例子系统均以CCParticleSystemQuad为基础,即cc.ParticleSystemQuad。系统本身提供了"丰富“”的例子效果，爆炸,烟花,火焰,花束,星系,流星,漩涡,雪,烟,太阳,雨等。不用太当真，每次放开一行注释， 把每种自带的效果运行一下看看热闹就可以了，实际中没什么用。
+    
+    function MainScene:ctor()
+    
+        local emitter = nil
+    
+    
+        -- 每次放开一行 运行查看效果
+        -- emitter = cc.ParticleFlower:create()
+        -- emitter = cc.ParticleGalaxy:create()
+        -- emitter = cc.ParticleFireworks:create()
+        -- emitter = cc.ParticleSpiral:create()
+        -- emitter = cc.ParticleSun:create()
+        -- emitter = cc.ParticleMeteor:create()
+        -- emitter = cc.ParticleFire:create()
+        -- emitter = cc.ParticleSmoke:create()
+        -- emitter = cc.ParticleExplosion:create()
+        -- emitter = cc.ParticleSnow:create()
+        emitter = cc.ParticleRain:create()
+    
+    
+        emitter:setAutoRemoveOnFinish(true)
+        emitter:setPosition(display.cx, display.cy)
+        emitter:addTo(self)
+    
+    end
