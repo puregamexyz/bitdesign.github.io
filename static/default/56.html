@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>深入分析Docker镜像原理</title>
+    <meta name="Keywords" content="深入分析Docker镜像原理" />
+    <meta name="Description" content="深入分析Docker镜像原理" />
+
+    <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+-->
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+
+  </head>
+
+
+  <div class="container">
+
+    <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png"/></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/static/default/b0.html" title="价值收藏">价值收藏</a></li>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/admin!dashboard" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+
+    
+    <div class="main" >
+
+      <div class="main-left">
+
+        <div class="row margin-top20">
+          <div class="info-nav">
+            <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+            <a href="/static/default/b0.html">价值收藏</a>&gt;
+            <a href="http://www.b.com/static/default/56.html" >深入分析Docker镜像原理</a>
+          </div>
+          <div class="info-title">
+            <h4>深入分析Docker镜像原理</h4>
+            <h5>
+              <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+              <i class="fa fa-fw fa-clock-o"></i>2015-08-25 13:58:25&nbsp;&nbsp;
+            </h5>
+          </div>
+          <div class="info-text">
+
+            <!--<i class="fa fa-fw fa-map-marker"></i>-->
+            <p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"><span style="background-color: initial;">分享简介：Dockerfile重塑新镜像，定义的不仅仅是镜像中的磁盘文件；Docker镜像是Dockerfile的产 物，自底之上打包软件及其环境，是软件的交付品；容器是镜像的运行态体现，一切信息来源于镜像。本次分享将深入分析Dockerfile、Docker镜 像和Docker容器三者之间的具体关系。</span></p><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">以下为分享全部内容：</h3><h2 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">第一部分：Docker镜像的基本知识</h2><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"><b>1.1 什么是Docker镜像</b></h3><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">从整体的角度来讲，一个完整的Docker镜像可以支撑一个Docker容器的运行，在 Docker容器运行过程中主要提供文件系统视角。例如一个ubuntu:14.04的镜像，提供了一个基本的ubuntu:14.04的发行版，当然此 镜像是不包含操作系统Linux内核的。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">说到此，可能就需要注意一下，linux内核和ubuntu:14.04Docker镜像的区别了。传统虚拟机安装ubuntu:14.04会包含两部分，第一，某一个Linux内核的发行版本，比如Linux 3.8版本的内核；第二，第一个特定的Ubuntu发行版，这部分内容不包含Linux内核，但是包含Linux之外的软件管理方式，软件驱动，如 apt-get软件管理包等。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">理解以上内容之后，就可以理解，为什么在一个Linux内核版本为3.8的ubuntu:14.04基础上，可以把Linux内核版本升级到3.18，而ubuntu的版本依然是14.04。最主要的就是：Linux内核版本与ubuntu操作系统发行版之间的区别。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Linux内核＋ubuntu操作系统发行版，组成一台工作的机器让用户体验。那么灵活替换ubuntu操作系统发行版，那是不是也可以实现呢。那么Docker很方便的利用了这一点，技术手段就是Docker镜像。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker的架构中，Docker镜像就是类似于“ubuntu操作系统发行版”，可 以在任何满足要求的Linux内核之上运行。简单一点有“Debian操作系统发行版”Docker镜像、“Ubuntu操作系统发行版”Docker镜 像；如果在Debian镜像中安装MySQL 5.6，那我们可以将其命名为Mysql:5.6镜像；如果在Debian镜像中安装有Golang 1.3,那我们可以将其命名为golang:1.3镜像；以此类推，大家可以根据自己安装的软件，得到任何自己想要的镜像。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">那么镜像最后的作用是什么呢？很好理解，回到Linux内核上来运行，通过镜像来运行时我们常常将提供的环境称为容器。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">以上内容是从宏观的角度看看Docker镜像是什么，我们再从微观的角度进一步深入 Docker镜像。刚才提到了“Debian镜像中安装MySQL 5.6，就成了mysql:5.6镜像”，其实在此时Docker镜像的层级概念就体现出来了。底层一个Debian操作系统镜像，上面叠加一个 mysql层，就完成了一个mysql镜像的构建。层级概念就不难理解，此时我们一般debian操作系统镜像称为mysql镜像层的父镜像。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">层级管理的方式大大便捷了Docker镜像的分发与存储。说到分发，大家自然会联想到 Docker镜像的灵活性，传输的便捷性，以及高超的移植性。Docker Hub，作为全球的镜像仓库，作为Docker生态中的数据仓库，将全世界的Docker数据汇聚在一起，是Docker生态的命脉。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker有两方面的技术非常重要，第一是Linux 容器方面的技术，第二是Docker镜像的技术。从技术本身来讲，两者的可复制性很强，不存在绝对的技术难点，然而Docker Hub由于存在大量的数据的原因，导致Docker Hub的可复制性几乎不存在，这需要一个生态的营造。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"><b>1.2 Docker镜像的内容</b></h3><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">大致介绍了Docker镜像是什么，我们来看看Docker镜像中有哪些内容？</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">介绍之前，我先分享一下，我个人在接触Docker的两年时间中，对Docker镜像内容认识的变化。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">第一阶段：初步接触Docker。相信很多爱好者都会和我一样，有这样一个认识：Docker 镜像代表一个容器的文件系统内容；</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">第二阶段：初步接触联合文件系统。联合文件系统的概念，让我意识到镜像层级管理的技术，每一层镜像都是容器文件系统内容的一部分。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">第三阶段：研究镜像与容器的关系：容器是一个动态的环境，每一层镜像中的文件属于静态内 容，然而 Dockerfile 中的 ENV、VOLUME、CMD 等内容最终都需要落实到容器的运行环境中，而这些内容均不可能直接坐落到每一层镜像所包含的文件系统内容中，那此时每一个Docker镜像还会包含 json文件记录与容器之间的关系。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">因此，Docker镜像的内容主要包含两个部分：第一，镜像层文件内容；第二，镜像json文件。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"><b>1.3 Docker镜像存储位置</b></h3><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">既然是说镜像存储的位置，那么应该包含：镜像层文件和镜像json文件。如一个ubuntu:14.04镜像，包含4个镜像层，在aufs存储驱动的情况下，在磁盘上的情况可以如以下图所示：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h4 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-weight: bold; font-stretch: normal; font-size: 14px; line-height: 24px; font-family: Helvetica, Tahoma, Arial, sans-serif;">1.3.1 查看镜像层组成：</h4><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">我们可以通过命令 docker history ubuntu:14.04 查看 ubuntu:14.04，结果如下：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px; text-align: center;"><img src="http://img.ptcms.csdn.net/article/201508/21/55d6b1fa0ffa1.jpg" style="border-style: none; border-width: initial;"><br></p><h4 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-weight: bold; font-stretch: normal; font-size: 14px; line-height: 24px; font-family: Helvetica, Tahoma, Arial, sans-serif;">1.3.2 镜像层文件内容存储</h4><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker 镜像层的内容一般在 Docker 根目录的 aufs 路径下，为 /var/lib/docker/aufs/diff/，具体情况如下：&nbsp;</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px; text-align: center;"><img src="http://img.ptcms.csdn.net/article/201508/21/55d6b29e80853.jpg" style="border-style: none; border-width: initial;"><br></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"><span style="background-color: initial;">图中显示了镜像 ubuntu:14.04 的 4 个镜像层内容，以及每个镜像层内的一级目录情况。需要额外注意的是：镜像层 d2a0ecffe6fa 中没有任何内容，也就是所谓的空镜像。</span></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h4 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-weight: bold; font-stretch: normal; font-size: 14px; line-height: 24px; font-family: Helvetica, Tahoma, Arial, sans-serif;">1.3.3 镜像 json 文件存储</h4><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">对于每一个镜像层，Docker 都会保存一份相应的 json 文件，json 文件的存储路径为 /var/lib/docker/graph，ubuntu:14.04 所有镜像层的 json 文件存储路径展示如下：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px; text-align: center;"><img src="http://img.ptcms.csdn.net/article/201508/21/55d6b3047073a.jpg" style="border-style: none; border-width: initial;"><br></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">除了 json 文件，大家还看到每一个镜像层还包含一个 layersize 文件，该文件主要记录镜像层内部文件内容的总大小。既然谈到了镜像 json 文件，为了给下文铺垫，以下贴出 ubuntu:14.04 中空镜像层 d2a0ecffe6fa 的 json 文件：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px; text-align: center;"><img src="http://img.ptcms.csdn.net/article/201508/21/55d6b33582a36.jpg" style="border-style: none; border-width: initial;"><br></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker镜像存储，就和大家一起先看到这。同时介绍Docker镜像的基本知识也告一段落。以下我们进入此次分享的第二部分。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h2 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">第二部分 Dockerfile、Docker镜像和Docker容器的关系</h2><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Dockerfile 是软件的原材料，Docker 镜像是软件的交付品，而 Docker 容器则可以认为是软件的运行态。从应用软件的角度来看，Dockerfile、Docker 镜像与 Docker 容器分别代表软件的三个不同阶段，Dockerfile 面向开发，Docker 镜像成为交付标准，Docker 容器则涉及部署与运维，三者缺一不可，合力充当 Docker 体系的基石。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">简单来讲，Dockerfile构建出Docker镜像，通过Docker镜像运行Docker容器。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">我们可以从Docker容器的角度，来反推三者的关系。首先可以来看下图：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px; text-align: center;"><img src="http://img.ptcms.csdn.net/article/201508/21/55d6b3921573e.jpg" style="border-style: none; border-width: initial;"><br></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">我们假设这个容器的镜像通过以下Dockerfile构建而得：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><pre class="" name="code" style="margin-bottom: 1em; padding: 10px; list-style: none; overflow: hidden; white-space: pre-wrap; border-color: rgb(221, 221, 221); font-size: 14px; line-height: 24px; background: rgb(247, 247, 247);">FROM ubuntu:14.04  
+
+ADD run.sh /  
+
+VOLUME /data  
+
+CMD ["./run.sh"]  </pre><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">2.1 Dockerfile与Docker镜像</h3><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">首先，我们结合上图来看看Dockerfile与Docker镜像之间的关系。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">FROM ubuntu:14.04：设置基础镜像，此时会使用基础镜像 ubuntu:14.04 的所有镜像层，为简单起见，图中将其作为一个整体展示。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">ADD run.sh /：将 Dockerfile 所在目录的文件 run.sh 加至镜像的根目录，此时新一层的镜像只有一项内容，即根目录下的 run.sh。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">VOLUME /data：设定镜像的 VOLUME，此 VOLUME 在容器内部的路径为 /data。需要注意的是，此时并未在新一层的镜像中添加任何文件，即构建出的磁层镜像中文件为空，但更新了镜像的 json 文件，以便通过此镜像启动容器时获取这方面的信息。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">CMD ["./run.sh"]：设置镜像的默认执行入口，此命令同样不会在新建镜像中添加任何文件，仅仅在上一层镜像 json 文件的基础上更新新建镜像的 json 文件。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">因此，通过以上分析，以上的Dockerfile可以构建出一个新的镜像，包含4个镜像层，每一条命令会和一个镜像层对应，镜像之间会存在父子关系。<span style="background-color: initial;">图中很清楚的表明了这些关系。</span></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><h3 style="margin: 0.75em 0px; padding: 0px; list-style: none; color: rgb(51, 51, 51); font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">2.2 Docker镜像与Docker容器的关系</h3><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker镜像是Docker容器运行的基础，没有Docker镜像，就不可能有Docker容器，这也是Docker的设计原则之一。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">可以理解的是：Docker镜像毕竟是镜像，属于静态的内容；而Docker容器就不一样了，容器属于动态的内容。动态的内容，大家很容易联想到进程，内存，CPU等之类的东西。的确，Docker容器作为动态的内容，都会包含这些。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">为了便于理解，大家可以把Docker容器，理解为一个或多个运行进程，而这些运行进程将占有相应的内存，相应的CPU计算资源，相应的虚拟网络设备以及相应的文件系统资源。而Docker容器所占用的文件系统资源，则通过Docker镜像的镜像层文件来提供。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">那么作为静态的镜像，如何才有能力转化为一个动态的Docker容器呢？此时，我们可以想象：第一，转化的依据是什么；第二，由谁来执行这个转化操作。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">其实，转化的依据是每个镜像的json文件，Docker可以通过解析Docker镜像的json的文件，获知应该在这个镜像之上运行什么样的进程，应该为进程配置怎么样的环境变量，此时也就实现了静态向动态的转变。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">谁来执行这个转化工作？答案是Docker守护进程。也许大家早就理解这样一句 话：Docker容器实质上就是一个或者多个进程，而容器的父进程就是Docker守护进程。这样的，转化工作的执行就不难理解了：Docker守护进程 手握Docker镜像的json文件，为容器配置相应的环境，并真正运行Docker镜像所指定的进程，完成Docker容器的真正创建。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">Docker容器运行起来之后，Docker镜像json文件就失去作用了。此时Docker镜像的绝大部分作用就是：为Docker容器提供一个文件系统的视角，供容器内部的进程访问文件资源。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">再次回到上图，我们再来看看容器和镜像之间的一些特殊关系。<span style="background-color: initial;">首先，之前已经提及Docker镜像是分层管理的，管理Docker容器的时候，Docker镜像仍然是分层管理的。由于此时动态的容器中已经存在进程，进程就会对文件系统视角内的文件进行读写操作，因此，就会涉及一个问题：容器是否会篡改Docker镜像的内容？</span></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">答案自然是不会的。统一来讲，正如上图，所有的Docker镜像层对于容器来说，都是只读的，容器对于文件的写操作绝对不会作用在镜像中。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">既然如此，实现的原理就很重要，究其根本：Docker守护进程会在Docker镜像的 最上层之上，再添加一个可读写层，容器所有的写操作都会作用到这一层中。而如果Docker容器需要写底层Docker镜像中的文件，那么此时就会涉及一 个叫Copy－on－Write的机制，即aufs等联合文件系统保证：首先将此文件从Docker镜像层中拷贝至最上层的可读写层，然后容器进程再对读 写层中的副本进行写操纵。对于容器进程来讲，它只能看到最上层的文件。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">那最后我们再来说说：Docker容器的文件系统视角中，到底是不是存在一些内容，不是存储于Docker镜像中的？</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">这次的答案依旧是肯定的。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">再次重申一点，Docker镜像中存储的都是一些静态文件。这些文件原则上应该和容器具体信息以及主机信息完全解藕。那么Docker容器中不存在Docker镜像中的内容主要有以下几点：</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">1./proc以及/sys等虚拟文件系统的内容</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">2.容器的hosts文件，hostname文件以及resolv.conf文件，这些事具体环境的信息，原则上的确不应该被打入镜像。</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">3.容器的Volume路径，这部分的视角来源于从宿主机上挂载到容器内部的路径</p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;"></p><p style="margin-bottom: 1.5em; padding: 0px; list-style: none; font-family: Helvetica, Tahoma, Arial, sans-serif; line-height: 24px;">4.部分的设备文件</p>            <br/>
+
+            <ul>
+              <li>本文固定链接: <a href="http://www.b.com/static/default/56.html">http://www.b.com/static/default/56.html</a></li>
+                <li>转载请注明: Administrator 2015-08-25 13:58:25 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+
+                </ul>
+
+                <br/>
+              </div>
+
+            </div><!--panel-->
+
+
+
+            <div class="row margin-top20">
+              <div class="info-nav">
+                <i class="fa fa-fw fa-comments"></i> Comment
+              </div>
+
+              <div class="row">
+                <form id="myform" method="post" action="Home!info?id=56">
+                  <!-- end-->
+                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
+			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+-->			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                </form>
+              </div>
+
+              <div class="row">
+                                <form id="msgForm">
+
+                  <input type="hidden" name="par_id" value="56"/>
+                  <input type="hidden"   name="usr_name" value="default"/>
+                  <div class="row align-center">
+                    <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>
+                  </div>
+
+                  <div class="align-right padding20">
+                    <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                    <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                    <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                  </div>
+
+                </form>
+                              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div><!--main-left-->
+
+          <div class="main-right">
+            <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/static/default/55.html" title="终于有人把“约炮经济学”讲清楚了">终于有人把“约炮经济学”讲清楚了</a></li>
+                <li><a href="/static/default/51.html" title="一句话讲明白碰撞检测中3个掩码的关系">一句话讲明白碰撞检测中3个掩码的关系</a></li>
+                <li><a href="/static/default/41.html" title="完全掌握粒子系统（2） - 彻底弄清楚每一个参数">完全掌握粒子系统（2） - 彻底弄清楚每一个参数</a></li>
+                <li><a href="/static/default/44.html" title="网站极限优化-百度评分49分提升到95分实战">网站极限优化-百度评分49分提升到95分实战</a></li>
+                <li><a href="/static/default/40.html" title="完全掌握粒子系统（1） - 自带的一些实现">完全掌握粒子系统（1） - 自带的一些实现</a></li>
+                <li><a href="/static/default/39.html" title="完全掌握粒子系统(前言）">完全掌握粒子系统(前言）</a></li>
+                <li><a href="/static/default/30.html" title="NewLisp Web开发实战(2)–添加自定义页面">NewLisp Web开发实战(2)–添加自定义页面</a></li>
+                <li><a href="/static/default/29.html" title="NewLisp Web开发实战(1)–环境搭建">NewLisp Web开发实战(1)–环境搭建</a></li>
+                <li><a href="/static/default/9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/static/default/3.html" title="关于BitWord - 响应速度最快的个人博客系统">关于BitWord - 响应速度最快的个人博客系统</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/static/default/b0.html" title="价值收藏">价值收藏 (10)</a></li>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设 (9)</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造 (10)</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础 (5)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+          </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+  
+<!--
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+-->
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7d31d9fa69f80346d831e707f6ba1149";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      </div><!--container-->
+
+
+      <script type="text/javascript" src="/Count!addVisits?id=56"></script>
+     <!--
+      <script language="javascript" type="text/javascript">
+        document.oncontextmenu=new Function('event.returnValue=false;');
+        document.onselectstart=new Function('event.returnValue=false;');
+      </script>
+      -->
+    </body>
+
+
+
+  </html>
+
+  <script language="javascript" type="text/javascript">
+
+
+    $(document).ready(function() {
+
+      $("img.panel-img").lazyload();
+
+      var hasMoved = 0;
+      $(window).scroll(function () {
+
+        offset = $(window).scrollTop();
+        if (offset >0) {
+          if( hasMoved == 0){
+            $("#float").animate( {bottom:'100px'});
+            hasMoved = 1;
+          }
+
+        }else{
+          if( hasMoved == 1){
+            $("#float").animate( {bottom:'-300px'});
+            hasMoved = 0;
+          }
+        }
+      });
+    });
+
+
+    function doSubmit(){
+      if( $("#rep_ctx").val() == ''){
+        alert("Please enter you words");
+        return;
+      }
+      if( $("#validationCode").val() == ''){
+        alert("Validation code error");
+        return;
+      }
+      $.post("/Reply!save",$('#msgForm').formSerialize(),
+      function(data) {
+        if(data == "true"){
+          location.reload();
+        }else if(data == "0"){
+          alert("Validation code error");
+        }else if(data == "-1"){
+          alert("Function closed");
+        }else{
+          alert(data);
+        }
+      },"html"
+      );
+    }
+
+    function getNewValCode(){
+      $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+    }
+
+  </script>

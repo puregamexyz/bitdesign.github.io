@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>网站极限优化-百度评分49分提升到95分实战</title>
+    <meta name="Keywords" content="网站极限优化-百度评分49分提升到95分实战" />
+    <meta name="Description" content="网站极限优化-百度评分49分提升到95分实战" />
+
+    <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+-->
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+
+  </head>
+
+
+  <div class="container">
+
+    <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png"/></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/static/default/b0.html" title="价值收藏">价值收藏</a></li>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/admin!dashboard" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+
+    
+    <div class="main" >
+
+      <div class="main-left">
+
+        <div class="row margin-top20">
+          <div class="info-nav">
+            <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+            <a href="/static/default/b2.html">网站建设</a>&gt;
+            <a href="http://www.b.com/static/default/44.html" >网站极限优化-百度评分49分提升到95分实战</a>
+          </div>
+          <div class="info-title">
+            <h4>网站极限优化-百度评分49分提升到95分实战</h4>
+            <h5>
+              <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+              <i class="fa fa-fw fa-clock-o"></i>2015-08-15 02:54:34&nbsp;&nbsp;
+            </h5>
+          </div>
+          <div class="info-text">
+
+            <!--<i class="fa fa-fw fa-map-marker"></i>-->
+            <div><br></div>
+<div>本文以<a href="http://www.bit1010.com" target="_blank">www.bit1010.com</a>的优化实战为例，打造百度高评分网站。直接切入主题，优化前评分49分，如图:</div>
+<div><br></div>
+<div><img src="/upload/20150815025129456.png" style="width: 560px;"><br></div>
+<div><br></div>
+<div><span style="font-weight: bold;"><a href="http://www.bit1010.com/default_44.html" target="_blank">根据诊断建议，总结需要优化的点如下</a></span></div>
+<div><span style="font-weight: bold;"><br></span></div>
+<div><span style="font-weight: bold;">1. 使用CDN优化JS加载时间</span></div>
+<div><span style="font-weight: bold;"><br></span></div>
+<div>诊断给出的建议是“合并JS”，主要耗时的是jquery.js，jquery.form.js，分别为2秒和1秒 如图：</div>
+<div><br></div>
+<div><img src="/upload/20150815025149589.png" style="width: 652px;"><br></div>
+<div><br></div>
+<div><br></div>
+<div>但实际上我们可以看出，合并着这2个公共文件并不科学，那么要减少这2个文件的加载时间的最好方法就是使用CDN，经测试bootstrap的CDN在各个链路都有很好的速度，以下为优化后的截图，速度有了显著的提升。</div>
+<div><br></div>
+<div><img src="/upload/20150815025236942.png" style="width: 634px;"><br></div>
+<div><br></div>
+<div> 使用CDN的另一个好处还能降低网站自身的流量压力，何乐而不为呢?</div>
+<div><br></div>
+<div><span style="font-weight: bold;">2. 启用服务器压缩</span></div>
+<div><span style="font-weight: bold;"><br></span></div>
+<div>本站用的是PHP和Nginx。开启PHP的压缩，修改php.ini &nbsp;&nbsp;</div>
+<div>zlib.output_compression = On&nbsp;</div>
+<div>zlib.output_compression_level = 3</div>
+<div>修改完后重启PHP，命令： &nbsp;php-fpm &nbsp;restart</div>
+<div><br></div>
+<div>Nginx则修改 nginx.conf， 最简单的就是在http模块里添加一行</div>
+<div>gzip &nbsp;on;</div>
+<div>修改完后重新加载配置文件,命令: nginx -s reload</div>
+<div><br></div>
+<div><span style="font-weight: bold;">3. 检查CSS样式的定义位置</span></div>
+<div>务必将css文件和&lt;style&gt;...&lt;/style&gt;定义放到 body标签之前，放到head里。否则页面需要重新渲染，打开速度受到影响。</div>
+<div><br></div>
+<div><span style="font-weight: bold;">4. 检查JS脚本的定义位置</span></div>
+<div>在不打乱整体架构的前提下，尽量将JS放在页面最后。虽然放在最后加载时该block的依然block，但从人机感觉上加载快了很多，可以将对整个页面的显示的影响降到最低。</div>
+<div><br></div>
+<div><span style="font-weight: bold;">5. 图片大小的定义</span></div>
+<div>在确定的图片大小的情况下，定义图片的widht和height属性，减少页面自动计算图片大小的压力。</div>
+<div><br></div>
+<div>经过以上的几项优化，应该可以有比较大的提升了。这是优化后的分数截图，95分：</div>
+<div><br></div>
+<div><img src="/upload/20150815025327252.png" style="width: 561px;"><br></div>
+<div><br></div>
+<div><br></div>
+<div><span style="font-weight: bold;"><a href="http://www.bit1010.com/default_44.html" target="_blank">看看剩下的几项</a></span></div>
+<div><br></div>
+<div>1.&nbsp;<img src="/upload/20150815025350771.png" style="line-height: 1.42857143; width: 650px;"></div>
+<div>这里可压缩的数据量实际上非常少，只有33.7k，考虑到如果每次都要压缩，非常麻烦，且实际影响可以忽略，这里的2分果断放弃。</div>
+<div><br></div>
+<div>2.<img src="/upload/20150815025411526.png" style="width: 540px;"></div>
+<div>第一处的js为百度的异步统计代码，因为是异步的，且本代码放到的footer里，footer被很多页面引用，如果为了放到页面最后单独拿到每个页面或为此再加一个公共引用文件，得不偿失。</div>
+<div>第二处的js是为了计算页面加载时间用的，这里定义的是起始时间，必须放在页面的最上端。</div>
+<div>以上2处扣2分，忍了。</div>
+<div><br></div>
+<div>3. 还有个1分的扣分项是建议合并js的，由于使用的是外部的cdn上的js，且加载时间已经降到20ms以内了，这个扣分项实际是上分析上的偏颇,直接无视。</div>            <br/>
+
+            <ul>
+              <li>本文固定链接: <a href="http://www.b.com/static/default/44.html">http://www.b.com/static/default/44.html</a></li>
+                <li>转载请注明: Administrator 2015-08-15 02:54:34 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+
+                </ul>
+
+                <br/>
+              </div>
+
+            </div><!--panel-->
+
+
+
+            <div class="row margin-top20">
+              <div class="info-nav">
+                <i class="fa fa-fw fa-comments"></i> Comment
+              </div>
+
+              <div class="row">
+                <form id="myform" method="post" action="Home!info?id=44">
+                  <!-- end-->
+                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
+			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+-->			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                </form>
+              </div>
+
+              <div class="row">
+                                <form id="msgForm">
+
+                  <input type="hidden" name="par_id" value="44"/>
+                  <input type="hidden"   name="usr_name" value="default"/>
+                  <div class="row align-center">
+                    <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>
+                  </div>
+
+                  <div class="align-right padding20">
+                    <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                    <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                    <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                  </div>
+
+                </form>
+                              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div><!--main-left-->
+
+          <div class="main-right">
+            <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/static/default/51.html" title="一句话讲明白碰撞检测中3个掩码的关系">一句话讲明白碰撞检测中3个掩码的关系</a></li>
+                <li><a href="/static/default/41.html" title="完全掌握粒子系统（2） - 彻底弄清楚每一个参数">完全掌握粒子系统（2） - 彻底弄清楚每一个参数</a></li>
+                <li><a href="/static/default/44.html" title="网站极限优化-百度评分49分提升到95分实战">网站极限优化-百度评分49分提升到95分实战</a></li>
+                <li><a href="/static/default/40.html" title="完全掌握粒子系统（1） - 自带的一些实现">完全掌握粒子系统（1） - 自带的一些实现</a></li>
+                <li><a href="/static/default/39.html" title="完全掌握粒子系统(前言）">完全掌握粒子系统(前言）</a></li>
+                <li><a href="/static/default/30.html" title="NewLisp Web开发实战(2)–添加自定义页面">NewLisp Web开发实战(2)–添加自定义页面</a></li>
+                <li><a href="/static/default/29.html" title="NewLisp Web开发实战(1)–环境搭建">NewLisp Web开发实战(1)–环境搭建</a></li>
+                <li><a href="/static/default/9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/static/default/3.html" title="关于BitWord - 响应速度最快的个人博客系统">关于BitWord - 响应速度最快的个人博客系统</a></li>
+                <li><a href="/static/default/20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设 (9)</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造 (10)</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础 (5)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+          </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+  
+<!--
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+-->
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7d31d9fa69f80346d831e707f6ba1149";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      </div><!--container-->
+
+
+      <script type="text/javascript" src="/Count!addVisits?id=44"></script>
+     <!--
+      <script language="javascript" type="text/javascript">
+        document.oncontextmenu=new Function('event.returnValue=false;');
+        document.onselectstart=new Function('event.returnValue=false;');
+      </script>
+      -->
+    </body>
+
+
+
+  </html>
+
+  <script language="javascript" type="text/javascript">
+
+
+    $(document).ready(function() {
+
+      $("img.panel-img").lazyload();
+
+      var hasMoved = 0;
+      $(window).scroll(function () {
+
+        offset = $(window).scrollTop();
+        if (offset >0) {
+          if( hasMoved == 0){
+            $("#float").animate( {bottom:'100px'});
+            hasMoved = 1;
+          }
+
+        }else{
+          if( hasMoved == 1){
+            $("#float").animate( {bottom:'-300px'});
+            hasMoved = 0;
+          }
+        }
+      });
+    });
+
+
+    function doSubmit(){
+      if( $("#rep_ctx").val() == ''){
+        alert("Please enter you words");
+        return;
+      }
+      if( $("#validationCode").val() == ''){
+        alert("Validation code error");
+        return;
+      }
+      $.post("/Reply!save",$('#msgForm').formSerialize(),
+      function(data) {
+        if(data == "true"){
+          location.reload();
+        }else if(data == "0"){
+          alert("Validation code error");
+        }else if(data == "-1"){
+          alert("Function closed");
+        }else{
+          alert(data);
+        }
+      },"html"
+      );
+    }
+
+    function getNewValCode(){
+      $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+    }
+
+  </script>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BitWord</title>
+        <meta name="Keywords" content="BitWord" />
+        <meta name="Description" content="BitWord" />
+
+        <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function() {
+                $("img.panel-img").lazyload();
+
+
+                var hasMoved = 0;
+                $(window).scroll(function () {
+
+                    offset = $(window).scrollTop();
+                    if (offset >0) {
+                        if( hasMoved == 0){
+                            $("#float").animate( {bottom:'100px'});
+                            hasMoved = 1;
+                        }
+
+                    }else{
+                        if( hasMoved == 1){
+                            $("#float").animate( {bottom:'-300px'});
+                            hasMoved = 0;
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png" /></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/default_b2.html" title="互联网">互联网</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/content!listPage" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+            
+
+            <div class="main" >
+
+                <div class="main-left">
+                    <form  method="post" action="Home!index">
+                        
+                        <div class="panel margin-top20">
+
+                            <div class="panel-header">
+                                <a href="default_31.html" >
+                                    windows自带的grep功能                                                                    </a>
+                            </div>
+
+                                                        <div class="panel-body">
+                                <div class="panel-left">
+                                    <img src="/upload/image/transparent.gif" data-original="upload/20150807163126708.png" class="panel-img"/>
+                                </div>
+                                <div class="panel-right panel-text">
+                                    在Linux下查找文件内容，我们有grep的命令，用的那个爽快。可惜的是在windwos下，默认情况下只能在后缀为txt，html等常见后缀的文件内容中进行搜索。下面就通过几步简单设置，添加任意我们要搜索的后缀格式。1. 首先设置文件夹选项， 如图2. 然后设置索引选项，如图完成以上2步就可以使用windows的带的搜索功能，在人任意后缀为lsp的文件中搜索内容了。根据需要添加自己需要的后缀类型即…                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="panel-footer">
+                                <hr/>
+                                <i class="fa fa-fw fa-hand-o-right"></i>日常应用&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-fw fa-clock-o"></i>2015-08-07                            </div>
+
+                        </div>
+                                                			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+			
+			<input name='oldPerPageCnt' type='hidden' value='50'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="1"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                    </form>
+                </div>
+
+                <div class="main-right">
+
+
+                    <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/default_9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/default_20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/default_b2.html" title="互联网">互联网 (6)</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人 (4)</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用 (1)</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记 (7)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+                    <!--
+                                                            -->
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+        </div>
+
+
+
+    </body>
+</html>

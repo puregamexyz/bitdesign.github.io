@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>最纯粹的英雄-切格瓦拉完整版1</title>
+        <meta name="Keywords" content="最纯粹的英雄-切格瓦拉完整版1" />
+        <meta name="Description" content="最纯粹的英雄-切格瓦拉完整版1" />
+        
+        <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            
+            
+             $(document).ready(function() {
+                
+                 $("img.panel-img").lazyload();
+                 
+                var hasMoved = 0;
+                $(window).scroll(function () {
+
+                    offset = $(window).scrollTop();
+                    if (offset >0) {
+                        if( hasMoved == 0){
+                            $("#float").animate( {bottom:'100px'});
+                            hasMoved = 1;
+                        }
+
+                    }else{
+                        if( hasMoved == 1){
+                            $("#float").animate( {bottom:'-300px'});
+                            hasMoved = 0;
+                        }
+                    }
+                });
+            });
+            
+           
+            function doSubmit(){
+                if( $("#rep_ctx").val() == ''){
+                    alert("Please enter you words");
+                    return;
+                }
+                if( $("#validationCode").val() == ''){
+                    alert("Validation code error");
+                    return;
+                }
+                $.post("/Reply!save",$('#msgForm').formSerialize(),
+                function(data) {
+                    if(data == "true"){
+                        location.reload();
+                    }else if(data == "0"){
+                        alert("Validation code error");
+                    }else if(data == "-1"){
+                        alert("Function closed");
+                    }else{
+                        alert(data);
+                    }
+                },"html"
+                );
+            }
+
+            function getNewValCode(){
+                $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+            }
+
+        </script>
+    </head>
+
+
+    <div class="container">
+
+        <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png" /></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/default_b2.html" title="互联网">互联网</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/content!listPage" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+        
+         
+        <div class="main" >
+
+            <div class="main-left">
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+                        <a href="/default_b9.html">读书笔记</a>&gt;
+                        <a href="default_33.html" >最纯粹的英雄-切格瓦拉完整版1</a>
+                    </div>
+                    <div class="info-title">
+                        <h4>最纯粹的英雄-切格瓦拉完整版1</h4>
+                        <h5>
+                            <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+                            <i class="fa fa-fw fa-clock-o"></i>2015-08-10 10:23:39&nbsp;&nbsp;
+                        </h5>
+                    </div>
+                    <div class="info-text">
+
+                        <!--<i class="fa fa-fw fa-map-marker"></i>-->
+                        <div>序章</div><div><br></div><div>　　20世纪的悲伤浪漫英雄</div><div><br></div><div>　　一路上，格瓦拉涉足的是一个对他来说完全陌生的世界，越往北走，接近印第安人居住的区域，这种感觉就越强烈，22岁的青年在他的笔记中写道：</div><div><br></div><div>　　要了解一个民族，不能只凭借参观天主教堂、当地的神庙、博物馆甚至是什么圣母显灵地，这些只是最表象的东西。在医院里的病人、监狱里的犯人或是忧心忡忡的路人身上，才会体现出一个民族的真正灵魂，你应该去跟他们交朋友。</div><div><br></div><div>　　旅行的最后一站是安第斯山脚下的门多萨，当他满身污垢地出现在姑妈面前时，她差点以为面前站着的是个乞丐。3月，学校开学，他如期回到学校，重新恢复了一个风度翩翩的医科学生形象。</div><div><br></div><div>　　人们都叫她“奇奇娜”。与格瓦拉一样，她也出生名门，家里马球场、游泳池、网球场这些设施一应俱全。奇奇娜的家人很不喜欢格瓦拉，他们相信这个年轻人是“共产党”。不过，这反而越发点燃起奇奇娜对格瓦拉的热爱，她决定与格瓦拉私订终身。</div><div><br></div><div>　　1950年10月，格瓦拉全家来到科尔多瓦，参加好友的婚礼。在婚礼上，格瓦拉认识了16岁的玛丽亚·德尔·费雷依拉，一个既漂亮又热情的女孩，人们都叫她“奇奇娜”。与格瓦拉一样，她也出生名门，家里马球场、游泳池、网球场这些设施一应俱全。</div><div><br></div><div>　　初次见面，奇奇娜便发现，格瓦拉与她以往认识的那群公子哥儿很不一样。首先是外表，虽然长得很英俊，可格瓦拉完全不懂得打扮自己，头发乱蓬蓬的，穿着一件破破烂烂的夹克，裤子也很脏。可他那种大大咧咧的气质和激进的语气，对于16岁的女孩来说，却是一种独特的刺激。奇奇娜发现，她竟然对这个年轻人产生了好感。</div><div><br></div><div>　　奇奇娜的家人却很不喜欢格瓦拉，他们相信这个年轻人是“共产党”。那是在一次家庭聚会上，奇奇娜家的亲戚们正在热情赞美英国首相丘吉尔，一向不喜欢跟他们凑在一块儿的格瓦拉突然接上了话茬儿，大骂特骂丘吉尔：“这个贵族，是帝国主义的代表，他的目的只不过是要保住大英帝国，扼杀一切要独立的国家。”数年后，当格瓦拉回忆起这个小插曲时，他承认说：“这样做，一方面确实是因为我极其痛恨丘吉尔，另一方面也是因为奇奇娜，我希望引起她的注意，希望她能崇拜我。”可是，他已经彻底得罪了奇奇娜的家人，他们禁止她再与格瓦拉这个“野蛮人”交往。不过，这反而越发点燃起奇奇娜对格瓦拉的热爱，她决定与格瓦拉私订终身。</div><div><br></div><div>　　1950年，格瓦拉一下子通过了三门考试，还差21个学分他就可以拿到博士学位了。1951年，在朋友的介绍下，他去阿根廷的货船上打工，当护士，到过库拉索岛、特里尼达岛和多巴哥岛这些地方。可是格瓦拉意犹未尽，因为“航行15天，才能在一个肮脏的港口停留4个钟头”，无法真正踏足他所经过的城市与乡村。不过这种单调的生活也有一个好处，他可以在船上复习功课，后来回到学校时，他一口气通过了6门考试，比校方规定的速度快了一倍。</div><div><br></div><div>　　旅行的计划，在他的心中越来越清晰。他仍然在与奇奇娜热恋，偷偷摸摸地与情人相会，可是，带着娇滴滴的未婚妻长途旅行？这未免太不现实了。他在筹划着一场真正属于男人的旅行，而范围，将是整个拉丁美洲。</div><div><br></div><div>　　1967年10月9日，在近代革命史上，乃是个悲伤的日子，因为就在这一天，近代最伟大的传奇革命英雄格瓦拉壮烈而亡，死时年仅39岁。</div><div><br></div><div>　　格瓦拉最后的那几天，过得实在非常凄厉。当时他所带领的游击队，在玻利维亚和美国联手实施高科技式坚壁清野的围剿战术下，已愈打愈少。到了10月初，只剩下16人而已，最后被围困在一处叫做“无花果村”的北面山脊。10月8日，玻利维亚军队展开攻击，格瓦拉在还击时，他的卡宾枪被击中，右臂也被击中，由于失去了反击能力，只得投降被俘，时在当天下午4时左右。同时被俘的还有两名他的战友。</div><div><br></div><div>　　格瓦拉被俘后，玻利维亚军方以及一名美国中央情报局人员罗德里古兹立即展开侦讯，但他拒绝做任何答复。而同时，他被俘的消息也立即被呈报到了玻利维亚首都拉巴斯，总统达伦多斯立即邀集了陆军将领和美国中情局人员，举行紧急会议，结论是不能让格瓦拉活着受审，否则他一定会在法庭上借机鼓吹革命。于是，立即把他处死的命令传送到了前线。10月9日下午4时许，即他被俘后整整24小时，一个士官进来，对他的手脚进行射击，当时是希望把他弄成伤重不治的模样。但很快地，他们觉得这太麻烦，干脆直接杀死。于是几个士兵进来，对他一阵射击，格瓦拉当场死亡。后来被证实，他当时一共挨了9枪，有两枪是打中致命的要害。而就在格瓦拉被射杀的同时，另外两名被俘的战友也被立即处决。</div><div><br></div><div>　　那些人，包括美国中央情报局人员，在射杀他之后，搭乘直升机返回首都拉巴斯，而格瓦拉的遗体则被帆布包裹，用另一架直升机送往陆军总部所在地的瓦诺果安德市，他的遗体首先被送进当地一家医院验明正身，美国中情局人员全程参与监控。当时全球主要媒体的记者都已闻风而至。于是在检验完毕后，用了很短的时间让摄影记者拍照。玻利维亚军方和美国中央情报局一定没有想到，让格瓦拉的遗体被拍照，已替20世纪创造出了一个具有耶稣形象的受难英雄。</div><div><br></div><div>　　因为，格瓦拉的那张死容照片，实在太奇迹了。他躺在担架上，上身裸露，躯体瘦削无比，仿佛正对世界的不义做着最后的指控。而他长着胡须的脸孔，有着那种受难的神圣气质，脸上泛着一缕悲伤的笑容，整个神情非常有耶稣受难的相似性。这张照片被全球媒体刊登出来之后，它不但未曾达到宣告格瓦拉已死的意义，反而让他的道德形象因为他的死亡而被更加抬高。他成了现代的“被钉十字架的神人偶像”（icon of cnlified demigod）。格瓦拉的那张头戴革命扁帽的头像照片，以及那张死在床上的照片，不但在20世纪60年代欧美青年反抗运动时，成了每个人的图腾，甚至到了今天，他的头像都还被印在青年人的 T 恤上。格瓦拉个人的革命事业虽然戏剧性的并未完成，但只要人们的希望不死，总是会有人在他的感召下前仆后继。20世纪有太多的英雄豪杰，但像他那么纯粹、洁净、头上罩着道德光环的悲伤英雄，可谓绝无仅有。格瓦拉不朽，是因为他对世界的不义充满了悲伤，并把自己的生命献给了这个悲伤的命运。这个长得十分英俊，出身上流世家，自己也是医生的革命家，他的人生如果选择的是另一条路，一定娇妻美妾，荣华富贵到老，但他却硬是抛弃了这一切，自己提枪走向全世界的穷山恶水。这是伟大的人道浪漫，要用一个人的力量去和那个足以征服全世界的大美国对敌。他当然没有成功，但他革命的终极理想真的永远不会成功吗？</div><div><br></div><div>　　我们等着看吧！</div><div><br></div><div>　　格瓦拉是20世纪几乎再也看不到的浪漫英雄，而他之所以成为英雄，乃在于他是如此的独特，以至于变成了一则几乎不可能的传奇。</div><div><br></div><div>　　格瓦拉生于1928年6月14日，他的父亲是阿根廷的著名医师，为上流社会的活跃人物，而他的母亲则是漂亮的社交名媛。在他还没有记忆的幼年，有一次他的母亲带着他去参加上流社会帆船俱乐部的活动，由于母亲自顾自地嬉游，任由他被疾风吹袭，这场灾难使他大病一场，并留下了终生不愈的哮喘病，但他却拒绝向这个麻烦的病屈服。在青少年的时候，他明知自己哮喘严重，但却硬是去玩那种最激烈，也最和呼吸器官挑战的美式足球活动。他自组了一个球队，运动时总是带着药以备急需。有次比赛中病情发作，而药却遗失，几乎让他丢掉了性命，仅仅由这样的故事，格瓦拉那种不向命运低头的个性，即已一览无遗。</div><div><br></div><div>　　由于出身上流社会，格瓦拉自幼生活优裕。他的父亲希望儿子继承家业，继续行医，而放任的母亲则鼓励他自行发展。于是他遂自行选择了医学的道路，后来进了阿根廷最好的布宜诺斯艾利斯大学医学系。</div><div><br></div><div>　　而就在这习医期间，1951年他偕同年龄较长的朋友阿尔贝托·格拉纳多，像美国前卫嬉皮青年一样，两度骑着摩托车和靠在公路上拦车，到南美洲五国漫游，全程12000公里。从后来出版的《革命前夕的摩托车之旅》一书中，已可看出在那个时候，他那种素朴的社会良心与人道关怀已经开始萌芽生根。</div><div><br></div><div>　　而促使格瓦拉成为革命家的最主要机缘乃是1954年。那一年他到危地马拉探索玛雅文化，就在那时，危地马拉的进步总统阿本兹为了改革社会、抵制美国的垄断剥削，决定将美国的“联合水果公司”收归国有。于是，美国中央情报局与“联合水果公司”的高干，遂和危国军人勾结，发动政变，轻轻松松就把阿本兹总统推翻。危地马拉的事件，使格瓦拉看到了拉丁美洲被美国主宰操纵下的悲剧。于是，追求拉丁美洲自主，反对帝国主义宰割的革命思想进入了他的心意中。同一年，除了由危地马拉的事件得到启发外，当年他漫游到了墨西哥，当时在古巴搞革命而流亡的律师卡斯特罗也在墨西哥，两人在朋友的引介下，于1955年在墨西哥城的近郊首次见面。卡斯特罗找到了他革命事业的最重要伙伴，而格瓦拉则找到了他泛拉丁美洲的第一个献身国家——古巴。</div><div><br></div><div>　　于是，1956年11月，卡斯特罗、格瓦拉等一共82个知识分子，搭乘一艘破船“格拉玛号”，偷渡回古巴。在抢滩上岸时遇到古巴独裁者巴蒂斯塔军队的伏击，只有12人幸存。他们召唤到一批学生和知识分子，开始进入古巴东部的马埃斯特腊山区打游击。当时的古巴正被美国严重剥削垄断，而巴蒂斯塔政权则助纣为虐，因此古巴650万人口里，有100万买不起鞋子，50万从未喝过牛奶或吃过肉，240万劳动人口中有20万人完全失业，而独裁者虽残暴但却无能，以至于美国中央情报局根本不认为这些学生游击队可以成就大事，因而未介入对他们的围剿。这些因素，使得古巴革命成了一场相当幸运的革命。只不过两年的时间，这一群知识分子游击队就在圣克拉拉一役之后，势如破竹地驱逐了巴蒂斯塔。这一支衣衫褴褛的军队长驱进入哈瓦那，古巴革命成功。</div><div><br></div><div>　　古巴革命后，格瓦拉先后出任过陆军副总司令，国家银行总裁及工业发展部长。从1959年到1964年他担任古巴政府要职期间的表现，我们已可看出他的两个思考主线：</div><div><br></div><div>　　其一：他那种泛拉丁美洲，甚至泛全球的革命浪漫主义开始增强，认为古巴知识青年以意志力为基础的革命实验，应向所有被帝国主义及独裁者双重压迫的国家推展。</div><div><br></div><div>　　其二：他是个中庸社会主义者，认为古巴应摆脱依靠糖出口美国的方向，走出另外一种更加多元自主的发展道路。当时的古巴在美国的杯葛颠覆下，被迫不得不向苏联靠拢，对此他大为不满。</div><div><br></div><div>　　其后，1964年格瓦拉失势，隐居古巴西南海外的松岛，在那里专心著书。他那本对后来激进新左派曾发挥过很大启蒙作用的《游击战》，即在那个时候完成。在那本著作里，他认为革命家从不等待革命情势的到来，而是要去创造革命情势。他不认为城市内的共产党官僚体系或工人组织可以发挥革命的作用，而是应由纯粹理想主义的知识分子组织乡村游击队，每个游击小组是个小马达，全部加起来就会成为革命的大马达。这就是他的“革命核心点理论”。</div><div><br></div><div>　　为了推广他的理论，1965年初他曾从古巴失踪了大约半年之久。这个谜团在多年后被揭开，即他写的《非洲之爱：刚果革命斗争日记》。原本他率领了百名古巴游击战士到了刚果，要协助刚果人民摆脱殖民帝国的噩梦，但他的“非洲之爱”最后被证明本身即是个不可能成立的噩梦。他和游击队员对刚果毫无了解，只有意志和信心完全没用。刚果经验是格瓦拉浪漫主义的首度遇挫。</div><div><br></div><div>　　但刚果经验并未让格瓦拉灰心。1966年11月，他又率领一小队知识分子游击战士，化装为乌拉圭商人，进入南美的玻利维亚，而后辗转到了该国中部的大谷区和大河区。但在玻利维亚即将满一周年的时候，他们的游击战却告失败，格瓦拉亦告死亡，这段经验，他都写在《玻利维亚日记》里。这本日记忠实地把他在玻利维亚所遭遇到的艰难革命历程，做了最坦白的记录。</div><div><br></div><div>　　其实，格瓦拉在玻利维亚遇挫，这并不难理解。自从古巴革命成功后，美国即开始担心拉丁美洲能否会脱出它的掌控，而让美国利益受损。于是，美国一方面封锁古巴，另一方面则是和拉丁美洲国家的右翼政府加强合作，要肃清各国的反美游击活动。美国对巴拿马施加压力，在那里设置了反游击战基地，从拉美各国征得了两万多人加以集训，这个基地后来也是美国颠覆尼加拉瓜右翼政府的基地。此外，美国的特种绿贝蕾帽部队也进入拉丁美洲各国。美国部队在战场上使用遥感探测科技，格瓦拉的游击队甚至连煮饭都会被侦测到。在美国和各个右翼政府合作下，格瓦拉的游击战已形同少数人与大举动员的美国之间的战争，格瓦拉当然不可能成功。</div><div><br></div><div>　　因此，格瓦拉在玻利维亚的革命经验有如一场梦魇。玻利维亚乃是南美洲穷国，他们游击队的活动地区更是最穷的地方，那里瘟疫盛行，生存维艰，甚至连基本的枪械弹药都补给困难，他的游击战士愈打愈少，终于在1967年10月9日结束了他璀璨、短暂，让人感动的一生。</div><div><br></div><div>　　格瓦拉传奇英雄的地位，在他死后开始形成，正如同耶稣是在受难中成就了伟大一样。他被20世纪反抗哲学家萨特推荐为“当代最伟大的英雄”，20世纪60年代欧美新左翼知识青年运动有如狂飙般兴起，有七个人物被列为新左派英雄，格瓦拉为七人之首。他那张头戴游击扁帽，像电影明星克拉克·盖博的肖像，被反叛青年印在海报上，杂志里，更多的则是印在年轻人的 T 恤上。他被人膜拜，乃是他的一生在这个一切都庸俗化的时代已形同一则不可能的神话，他用这种不可能向人们的良心发出呼唤，并对世界的不公不义做出浪漫的抵抗。举世之人都像古巴人一样称他为“切”（CHE），那是亲切的“大兄”，格瓦拉大兄（CHE GUEVARA）成了他的代号。</div><div><br></div><div>　　而一生都是传奇的格瓦拉，他的革命生涯传奇，他的死亡也传奇，甚至他的遗骸也是传奇。他死亡之后，玻利维亚军方和美国中情局将他的手割下送给了卡斯特罗，但尸体本身却被草草地和其他游击队员埋到了一个秘密坟墓里。玻利维亚几经改朝换代，他的墓渐渐被遗忘，而后，1997年7月，终于找到了这个坟墓。在经过鉴定无误后，当年9月他和同埋的其他五名游击战士的骸骨被送回古巴，古巴为了安葬他们，特地在距离首都哈瓦那东南方300公里的圣克拉拉辟建纪念馆。1997年10月14日，星期二，他们的骨骸抵达该市，整个城市一片悼念的花海，数十万人都挤到了这里。1959年元旦，当时格瓦拉所率的第八纵队在一番血战后攻下圣克拉拉，他率队进城时受到英雄般的欢迎，该役之后，古巴的革命大军有如洪水决堤，不可遏抑。隔了38年，他的遗骸再度进城，这时他已是全球的受难英雄，受到的欢呼更胜过从前。而1997年，乃是格瓦拉逝世30周年，除了纪念堂外，这一年的10月，也是全球的“格瓦拉日”。在欧洲和美国,印着他相片的 T 恤和纪念品都告大卖，有好几本他的传记在出版，美国华纳电影公司推出他的传记电影，一个摇滚乐团推出新专辑，以他的肖像为封面，许多中年一辈的人则到玻利维亚他当年被杀的无花果村去朝圣，使得那个荒凉的高山小径，刹那之间成了国际观光的热点。在这个一切都商品化的时代，格瓦拉已成了一个好商品，对此，他的女儿阿莱达说得很好：“有许多投机的人都在剥削着他的形象，这当然让人觉得有点讨厌，但只要一想到青年男女们都穿着印了他照片的 T 恤，我们应当知道这对他们而言，是有某种他们相信的东西在里面，而这是件好事。”</div><div><br></div><div>　　一个传奇英雄出现后，即注定会一直传奇下去。1997年他逝世30周年的纪念高峰期过了之后，2003年巴西电影界拍了一部喜剧片，情节是格瓦拉并未死亡，他逃到了巴西的亚马逊原始雨林，在那里开了一家店，专卖印着自己肖像的 T 恤，这是“后现代式”的小聪明。许多人犬儒般地认为现在已是个“无事可为”的时代，当他们自己没有了热情，就去嘲谑一切的热情。</div><div><br></div><div>　　而最特殊的，乃是巴西另外拍的一部电影，以他早年的摩托车之旅为主轴，这部电影是2004年坎城影展的话题影片之一。这部电影2004年6月在巴西首映。</div><div><br></div><div>　　在这个一切都成了商品，甚至英雄人物也在商业中被消费的时代，格瓦拉的意义被扭曲，被改变，甚至被变成喜剧，这正如同有关耶稣的电影也可以被拍得和情色诱惑挂起钩来一样。但尽管意义可变，格瓦拉那真实的反抗意义却是不可能改变的。近年来，中南美洲几次重大革命事件，从墨西哥的“扎巴蒂斯塔农民及原住民起义”到秘鲁的国巴克游击队占据日本大使馆事件，他们所用的标志，都是格瓦拉的那张头像照片。近年来，中南美洲多位追求国家自主、反抗美国宰制的领袖，如巴西总统卢拉，委内瑞拉总统查维斯，他们也都是格瓦拉的信徒。由于他们追求国家的自主，当然难免遭到丑化，甚至有被颠覆掉的危险，但我们至少可以相信，有了格瓦拉的呼唤，拉丁美洲尽管在美国强势宰制下前途仍然坎坷，但这条自主不屈从的路，早晚一定会被走出来的。真正的受难悲伤英雄永远不死，只要大国对小国的压迫、宰制，甚至帝国主义式的侵略不止，他就会一直存在，变成对后人的呼唤与叮咛。全球有那么多人崇拜格瓦拉，所反映的，或许即是大家心中拒绝死灭的那种对公平正义的终极向往吧！</div><div><br></div><div>　　我一向尊敬格瓦拉这样的“神人”型悲剧英雄，并深信世界的获救就在这种英雄人物的榜样行为中。在这个世界复归野蛮，大国任意凌辱弱国，而且可以炮制假证据肆意侵略的时代，难道像格瓦拉这样的人不应该更多一些吗？&nbsp;</div>                        <br/>
+                       
+                        <ul>
+                            <li>本文固定链接: <a href="http://www.b.com/default_33.html">http://www.b.com/default_33.html</a></li>
+                            <li>转载请注明: Administrator 2015-08-10 10:23:39 于 <a href="http://www.b.com">BitWord</a> 发表</li>
+                       
+                        </ul>
+                        
+                        <br/>
+                    </div>
+
+                </div><!--panel-->
+
+
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <i class="fa fa-fw fa-comments"></i> Comment
+                    </div>
+
+                    <div class="row">
+                        <form id="myform" method="post" action="Home!info?id=33">
+                            <!-- end-->
+                            			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                                                <form id="msgForm">
+                            
+                            <input type="hidden" name="par_id" value="33"/>
+                            <input type="hidden"   name="usr_name" value="default"/>
+                            <div class="row align-center">
+                                <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>    
+                            </div>
+
+                            <div class="align-right padding20">
+                                <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                                <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                                <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                            </div>
+
+                        </form>
+                                            </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div><!--main-left-->
+
+            <div class="main-right">
+                <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/default_9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/default_20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/default_b2.html" title="互联网">互联网 (6)</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人 (4)</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用 (1)</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记 (7)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+            </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+
+    </div><!--container-->
+
+
+    <script type="text/javascript" src="/Count!addVisits?id=33"></script>
+</body>
+
+
+
+</html>

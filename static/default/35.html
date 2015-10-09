@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>最纯粹的英雄-切格瓦拉完整版4</title>
+        <meta name="Keywords" content="最纯粹的英雄-切格瓦拉完整版4" />
+        <meta name="Description" content="最纯粹的英雄-切格瓦拉完整版4" />
+        
+        <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            
+            
+             $(document).ready(function() {
+                
+                 $("img.panel-img").lazyload();
+                 
+                var hasMoved = 0;
+                $(window).scroll(function () {
+
+                    offset = $(window).scrollTop();
+                    if (offset >0) {
+                        if( hasMoved == 0){
+                            $("#float").animate( {bottom:'100px'});
+                            hasMoved = 1;
+                        }
+
+                    }else{
+                        if( hasMoved == 1){
+                            $("#float").animate( {bottom:'-300px'});
+                            hasMoved = 0;
+                        }
+                    }
+                });
+            });
+            
+           
+            function doSubmit(){
+                if( $("#rep_ctx").val() == ''){
+                    alert("Please enter you words");
+                    return;
+                }
+                if( $("#validationCode").val() == ''){
+                    alert("Validation code error");
+                    return;
+                }
+                $.post("/Reply!save",$('#msgForm').formSerialize(),
+                function(data) {
+                    if(data == "true"){
+                        location.reload();
+                    }else if(data == "0"){
+                        alert("Validation code error");
+                    }else if(data == "-1"){
+                        alert("Function closed");
+                    }else{
+                        alert(data);
+                    }
+                },"html"
+                );
+            }
+
+            function getNewValCode(){
+                $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+            }
+
+        </script>
+    </head>
+
+
+    <div class="container">
+
+        <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png" /></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/default_b2.html" title="互联网">互联网</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/content!listPage" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+        
+         
+        <div class="main" >
+
+            <div class="main-left">
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+                        <a href="/default_b9.html">读书笔记</a>&gt;
+                        <a href="default_35.html" >最纯粹的英雄-切格瓦拉完整版4</a>
+                    </div>
+                    <div class="info-title">
+                        <h4>最纯粹的英雄-切格瓦拉完整版4</h4>
+                        <h5>
+                            <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+                            <i class="fa fa-fw fa-clock-o"></i>2015-08-10 10:33:15&nbsp;&nbsp;
+                        </h5>
+                    </div>
+                    <div class="info-text">
+
+                        <!--<i class="fa fa-fw fa-map-marker"></i>-->
+                        <div>第三章 古巴革命中的格瓦拉</div><div><br></div><div>　　只能装下25个人的小船，硬生生塞进82个壮丁和大量军火补给；海水浸入甲板，大家把能扔的东西都扔掉后，才醒觉那不过是个误会；原定的航程拖延了整整两天，原先设定好的策应计划统统用不上。</div><div><br></div><div>　　……</div><div><br></div><div>　　登陆，成为一场闹剧。</div><div><br></div><div>　　浪漫的海上漂流，很快就变成了一桩惨剧。他们遇上了暴风雨，小船在海面上乱摇乱晃，几乎所有人都晕船。格瓦拉医生倒还保持了镇定，可他很快哮喘病发作，这时才发现，他根本就没有随身带上平喘的喷雾剂。</div><div><br></div><div>　　只能装下25个人的小船，硬生生塞进了82个壮丁，还有大量军火和补给，“格拉玛号”已经吃不消了，海水浸入甲板。卡斯特罗命令助手福斯蒂诺·佩雷斯用水泵抽水，结果船上的积水居然越抽越多。格瓦拉于是建议大家把能扔的东西都扔掉，然后弃船游上海岸。大伙儿按照他的建议做了，吸了一口气正准备跳海，佩雷斯这时终于觉醒，原来以为进水的那个地方根本就没问题，是一个救火用的水龙头不知为什么被打开了。可是，此时他们已经把带着的补给都扔掉了，很多人晕船症状刚刚缓解，就又面临饿肚子的痛苦。</div><div><br></div><div>　　由于船负载过重，原定五天的航程，拖延了整整两天。结果原先设定好的完美计划统统用不上。按照原有的计划，1956年11月30日这天，“七二六运动”在圣地亚哥的分部策应登陆，发动起义，不到30名战士烧毁了警察的驻地，抢走了海事警备所的枪支，巷战持续到了次日清晨。可是，面对400名闻讯赶来的正规军，他们不得不放弃攻打蒙卡达军营，留下9具尸体匆匆撤退。巴蒂斯塔确认卡斯特罗的军队将从古巴南部的奥连特省登陆，于是宣布整个奥连特省戒严，布下天罗地网，就等着活捉卡斯特罗及其部下。</div><div><br></div><div>　　12月2日清晨，在淡水和燃料都已经用尽的情况下，他们终于接近了奥连特省的尼科罗海滩。上岸时，一方面是因为他们根本没有找对登陆的地点，距离原定计划偏了两公里，另一方面也是因为他们晚到了两天，接应他们的同志不得不撤退了。</div><div><br></div><div>　　他们登陆的似乎不是个好地方。刚刚踩上陆地，他们就发现，这里好像是片烂泥地。卡斯特罗人高马大，受的折磨也就最厉害，污泥一直淹到他肚子上。格瓦拉是最后下船的，在漂泊了一星期后，这位老兄看来一点都没有回到陆地上的喜悦之情，他用惯常的语气说：“这不是登陆，倒像是一次海上遇难。”从烂泥里走了出来，紧接着他们发现眼前出现了一大片长满刺的灌木丛，饿了许久的蚊子也赶忙来欢迎他们。祸不单行，一艘巡逻艇发现了他们，立刻将消息通报给了陆上的驻军，飞机开始向他们扫射，好在他们跑到了一片茂密的红树林里，躲开了密集的子弹。</div><div><br></div><div>　　这是群完全缺乏实战经验的人，没有一个人知道如何辨认方向，格瓦拉后来在他的日记中写道：“这些战士彻底迷失了方向，不停地在丛林里兜着圈子，活像是一群受到机械控制的幽灵部队。”最后，他们好不容易走上了结实的土地，所有人都立刻躺在地上，一动都不能动。一个农民出身的战士路易斯·克雷斯波发现犯了哮喘病的格瓦拉已经奄奄一息，于是好心好意地上前，主动要为他背包，没想到格瓦拉居然对他大吼：“你不如去照顾你妈！我是来战斗的，不是让人来照顾我的。”好脾气的克雷斯波不以为意，他已经习惯了格瓦拉的说话方式，最后，他还是背起了格瓦拉的包。</div><div><br></div><div>　　面前一个是药箱，另一个是子弹箱，两样都拿他没有力气。他扛起了子弹箱。从这一刻开始，格瓦拉彻底抛弃了文质彬彬的医生身份，走上了一条战士的道路。</div><div><br></div><div>　　这天下午，清点一下人数，此时他们只剩下了74人，有8个人迷了路。佩雷斯形容了他们此时的困境：“没有房子，没有水。我们既找不到向导，也找不到庄稼，不远的地方，飞机还在扫射。菲德尔下令昼伏夜出。”</div><div><br></div><div>　　接下来的两天，他们倒是找到了当地的农民为他们带路。吃的东西，就是沿路能看见的大米和豆子，可是由于连日行军，加上他们穿着的都是新靴子，大多数人的脚都被磨烂了。12月5日清晨，几乎没有人能再走下去，他们在甘蔗地里倒头就睡。</div><div><br></div><div>　　中午时分，格瓦拉先醒来了，他立刻行使一位军医的职责，为大家包扎脚上的伤口。就在此时，突然一阵弹雨向他们射来。所有人都乱了阵脚，四处散开逃命。</div><div><br></div><div>　　一个同伴将一箱子弹扔到了格瓦拉的脚下，神色恐怖地说：“我们完蛋了，现在不是管子弹箱的时候！”格瓦拉面临一个相当现实的抉择，他的面前有两个箱子，一个是药箱，另一个是子弹箱，两样都拿，他没有力气。于是，他扛起了子弹箱，将药箱扔掉了。这是个意味深长的时刻，就从这一刻开始，格瓦拉彻底抛弃了文质彬彬的医生身份，放弃了他研究多年的过敏反应症，走上了一条战士的道路。</div><div><br></div><div>　　敌人从空中和地面对这群毫无章法的战士扫射，格瓦拉被流弹打伤了脖子和胸部。事后，他没有掩饰自己一时的惊慌失措，他写道：“我觉得胸部被打中了，脖子上也挂了彩。我就要死了。躺在地上，我对福斯蒂诺说，‘我受了重伤！’他一边举着冲锋枪射击，一边横了我一眼说，‘这点伤根本不碍事！’在他的目光中，我看到了谴责，这比我的伤还让我难过。”格瓦拉的伤确实不碍事，子弹擦着他的脖子飞过，虽然伤口很痛，但只是皮外伤。在战友阿梅伊达的率领下，他和其他四个人穿过甘蔗田，躲进了一片隐蔽的树林里，终于逃过了这一劫。5个大难不死的同志一起发誓，一定要战斗到死——他们都活了下来。</div><div><br></div><div>　　他们仍然在夜间行军，方向就全凭格瓦拉的天文知识，按照北极星朝东走，希望可以到达马埃斯特腊山。几个月后格瓦拉才在无意中发现，那颗领着他们向东走的星星压根儿就不是北极星。行军中他们的粮食，就是海滩边上的螃蟹，由于不能生火，大家只能生吃螃蟹肉，所有人都口干舌燥。在月光下，他们发现了一个渔夫的小茅棚，进去一看，里面竟然是三个同志。大家喜极而泣，拥抱在一起。</div><div><br></div><div>　　8个人又累又渴，已经没有力气再走下去，只好绝望地去敲一户农民的大门。这个农民友好地接待了他们，第二天又把这群战士介绍给了其他农民，当地人纷纷拿出自家最好的美食来招待战士们。虚弱的肠胃一下子遭遇到这么多美味佳肴，立刻就出了问题，8个人全部上吐下泻，连站起来的力气都没有了。好在农民告诉他们卡斯特罗还活着，战士们又重新振奋了起来。格瓦拉此时要做的第一件事，是给家人写信报平安，他写道：“我很好，用了两条命，还剩５条命。我还忙着同样的事，会不时地写信。记住，上帝是阿根廷人。”这封信似乎很费解，可他的父母立刻就明白了儿子的意思，在布宜诺斯艾利斯的谚语中，猫有7条命，这就是说，格瓦拉暗示他经过了两次危险，但都挺了过来，上帝始终眷顾他。</div><div><br></div><div>　　12月21日，格瓦拉等人终于来到了蒙戈·佩雷斯的农庄，在这里与卡斯特罗他们会合。</div><div><br></div><div>　　最后清点人数，“格拉玛号”登陆以来，82个人中，有50人阵亡，另有20人被俘后遭军队杀害，只有12人活了下来。阵亡者中，包括了格瓦拉最好的朋友尼科。卡斯特罗决定转入马埃斯特腊山，在那里展开游击斗争，格瓦拉后来在他的《游击战》中，形象地将游击战解释为“打了就跑。等待、窥探，再打了就跑。这种退却、不正面作战的特点，都来自于游击战的总战略，而最终的目的，都是要赢得胜利，消灭敌人”。</div><div><br></div><div>　　格瓦拉第一次打中了敌人，他看到一个士兵藏在茅屋里，第一枪没打中，第二枪正中他的胸膛。“一个游击队员，最大的快乐就是战斗，这是生活的最高层次。”</div><div><br></div><div>　　游击队在山里的地狱溪附近安营扎寨，虽然敌人就在后面紧追不舍，他们还是获得了一丝喘息之机。就在这时，出了个让人惊出一身冷汗的事故。格瓦拉在前几次的战争中得到了一个小小的战利品—— 一顶巴蒂斯塔军队里一个下士的帽子，帽子很好看，他“无比骄傲地将帽子戴在头上”。结果，他的战友卡米洛以为敌军已经追了上来，毫不犹豫地向“敌人”开枪。好在他的自动步枪竟然卡了壳，否则，格瓦拉就要死在他好朋友的枪口底下了。从此，格瓦拉再也不敢胡闹。</div><div><br></div><div>　　格瓦拉从不掩饰他对战斗的渴望。3年前，当他在危地马拉遇到轰炸时，就已经显示出了无比的兴奋，而今置身战争，他竟然感觉到一种狂喜，战争于他，似乎有种感官上的刺激。在写给父亲的信中，他说：“我们大家都等待战斗，就像等待解放一样。在这个热血沸腾的时刻，即便是神经坚如钢铁的人，都感觉到膝盖上轻微的战栗。一个游击队员，最大的快乐就是战斗，这是生活的最高层次。”这一点，卡斯特罗也看得很明白，他说，“作为一个游击队员，切有阿克琉斯的天分，他争强好胜，蔑视危险。”</div><div><br></div><div>　　战斗终于打响了。1957年1月22日中午，敌人靠近了他们。格瓦拉第一次打中了敌人，他看到一个士兵藏在茅屋里，“第一枪没打中，第二枪正中他的胸膛。”他兴奋地跳了起来，抢走了对方的弹药和一枝美制步枪。这一战打得很成功，敌方死了5个人，游击队员这一边却毫发无损。</div><div><br></div><div>　　骗过《纽约时报》记者，卡斯特罗的讲话和他优哉游哉抽着雪茄的照片传遍世界，再一次点燃了古巴人民的希望。</div><div><br></div><div>　　巴蒂斯塔政府妄想采取愚民政策，自“格拉玛号”登陆那一刻起，政府就宣布“叛徒”已全军覆没，几乎没有人知道游击队的存在。卡斯特罗深感宣传的重要性，于是联络“七二六运动”的地下负责人，请他们找一位西方记者来采访，这个人，最好是美国人。</div><div><br></div><div>　　此时，57岁的《纽约时报》记者赫伯特·马修斯刚巧在哈瓦那度假，得知这个消息，老记者觉得异常兴奋，他说：“我想让那些年轻人看看，一个57岁的老头子还能抢新闻。”他与妻子装作是想要在古巴买土地的美国商人，顺利通过关卡。2月17日，他采访了卡斯特罗。</div><div><br></div><div>　　卡斯特罗一边猛抽着雪茄，一面对马修斯炫耀自己的兵力。事实上他手下一共只有12个人，可是他却告诉美国人，他的部队人数众多，有20到41个小队，分散在深山中作战，而政府军还在不断投诚。为了制造出他实力强大的假象，他派人拿来一大捆古巴比索（每捆值4000美元），同时让一个机灵点的战士扮演传令兵，由他不时跑进来汇报各个分队的战况。而劳尔·卡斯特罗则率领着同一拨兄弟，每隔一段时间就在卡斯特罗和美国人面前表演一次正步走。结果，曾经采访过西班牙内战的马修斯竟然完全被这帮人给骗了，他相信82名“格拉玛号”上的战士都平安登陆，而且有越来越多的人加入游击队，他连续采写了好几篇关于游击队的报道，在文章开头他热情洋溢地写道：“领导古巴青年的菲德尔·卡斯特罗还活着！他正在马埃斯特腊山的要塞中，英勇地战斗着！”</div><div><br></div><div>　　马修斯并不能完全看清游击队的核心思想，他写道：“卡斯特罗声称这起革命行动是社会主义行动。同时，它还是民族主义斗争，矛头直指美国。他们的意图模糊不清，可是无论如何，这都是一次古巴的新尝试，本质上是激进的、民主的、反共产主义的。他们要求推翻巴蒂斯塔总统的独裁统治，建立民主、自由，实现社会公正，同时要改写宪法，建立普选制度。”而卡斯特罗则叫马修斯放心，他说：“你必须明确一点，我们对美国和美国人民没有任何敌意，我们只想建立一个民主的古巴。”格瓦拉没有参加采访，10年后，马修斯才突然反应过来，当时卡斯特罗身边确实有个老是在嘀咕着什么的战士。可是，他看起来那么年轻，他一点也没有意识到，这个人将在古巴革命中起到如此重要的作用。</div><div><br></div><div>　　从卡斯特罗的话可以看出，他与格瓦拉在思想上有很大的分歧。直到1960年，卡斯特罗仍然表示他并不支持“社会主义”，而格瓦拉则是“七二六运动”中，对政治思考得最多的人。他在与墨西哥的一位医生朋友大卫·米特拉尼的谈话中表示，他希望将古巴改造成社会主义国家，而卡斯特罗并不支持。</div><div><br></div><div>　　无论如何，卡斯特罗的讲话和他优哉游哉抽着雪茄的照片，再一次点燃了古巴人民的希望，而巴蒂斯塔政府则感到脸上无光，他们关于卡斯特罗及其军队已被全部消灭的声明就刊登在卡斯特罗的照片旁边。</div><div><br></div><div>　　大家都非常崇拜这个来自遥远国度的硬汉。格瓦拉被敌人打中了左脚踝骨，子弹挖出来后的几个星期，格瓦拉像个孩子一样，将这粒子弹挂在脖子上。</div><div><br></div><div>　　到了7月，这支队伍已经拥有了200来号人马。人数太多，不利于保持灵活性，卡斯特罗对军队进行了整编，第一纵队由卡斯特罗管理，其余75人则交给了格瓦拉。为了迷惑敌人，格瓦拉这支人马对外宣称为第四纵队。不过，格瓦拉自己打趣地说，他们这班人拿的武器、穿的衣服都是五花八门，不如叫他们“农民盲流”。格瓦拉本人的军衔也水涨船高，现在，他是少校了。</div><div><br></div><div>　　格瓦拉天真地承认，他对这个称号非常开心。他刚刚29岁，在游击队里，他是较早得到这种最高军阶的人物。而且，他不再是军医，而是实实在在的少校了。他在日记中写道：“在我们中间，谁还没有小小的虚荣呢？我接过了一颗小星，这是我荣升的标志，甚至还有一块手表呢。”从这时起，格瓦拉成为一个真正的领袖。之前，他是有些拈花惹草的毛病，打游击时，还和一个当地的女孩来往过好一阵子；可是现在，他开始选择做一个严于律己的苦行僧。因为他相信，惟有如此，他才能令自己的手下信服。</div><div><br></div><div>　　格瓦拉把这支纵队分成三个小分队，一面带领他们战斗，一面向他们进行政治教育。很快，格瓦拉的权威在纵队中树立了起来，大家都非常崇拜这个来自遥远国度的硬汉——他竟然能在哮喘病发作时坚持扛着子弹箱进行战斗！而社会主义的基本知识也在这群“农民盲流”中得到普及。他在自己的纵队里建立了一个“尖刀连”，专门执行最危险的任务，格瓦拉发现，他的士兵们很快就显露出了难得的战斗精神。他在日记中写道：“‘尖刀连’是革命精神的典范，只有经过精心筛选的志愿者才能加入。每当‘尖刀连’有人死去——这是每场战役不能避免的事情，我们就会找到新的人选。这时我会发现，那些没有选上的人表现得非常痛苦，有些孩子甚至会失声痛哭。看到这些高贵的勇士们流下绝望的眼泪，我的心里真是百感交集。”</div><div><br></div><div>　　人们对格瓦拉又敬又畏，因为有时候他甚至可以用“残忍”来形容。站稳脚跟后，他们发现眼下必须清除当地的一些土匪。有一次，他们生擒了当地的土匪头子，这个人无恶不作，和他一起被抓到的，还有强暴妇女的三个农民。他把土匪头子枪毙了，却给其他三个人留下一条小命。但是，格瓦拉下令将他们的眼睛蒙上，来一次假处决。“朝天开了三枪后，他们发现自己居然还活着，其中一个人向我跑过来，跪在我面前亲了我一口，好像我是他爸爸一样。”记者圣乔治·安德鲁把这一幕写在了《观点》（Look）杂志上，还因此得了奖。</div><div><br></div><div>　　1957年12月的一场战斗中，格瓦拉被敌人打中了左脚踝骨。后来，在拉梅萨小学的课桌上，马恰迪托大夫用一把剃须刀，将他踝骨上的子弹挖了出来。马恰迪托后来成了政府的卫生部长。接下来的几个星期，像一个孩子一样，格瓦拉将这粒子弹挂在脖子上。</div><div><br></div><div>　　古巴解放了。卡斯特罗不能让一个外国人第一个进入哈瓦那。于是，1959年1月2日，哈瓦那人卡米洛，兵不血刃第一个走进哈瓦那；而格瓦拉却驻扎在几个钟头路程以外的卡瓦尼亚堡，接受政府军的投降。</div><div><br></div><div>　　他还忙里偷闲谈起了恋爱，阿莱伊达·马奇成为格瓦拉的第二任妻子。</div><div><br></div><div>　　1958年2月，卡斯特罗发动了全新攻势：破坏糖厂、炼油厂、烟厂、公共设施和铁路，他的口号是，“有巴蒂斯塔就没有收成，有收成就没有巴蒂斯塔。”到8月底，“七二六运动”共破坏了古巴200万吨的糖产。</div><div><br></div><div>　　美国的态度值得玩味。总的思想当然是控制事态发展，只有这样才能确保商业利益。可是华盛顿内部的分歧却很大，国防部和美国驻古巴的军队，与反共机构BRAC合作，想要继续支持巴蒂斯塔政权，摧毁游击队。与此同时，国务院和CIA却认为，让巴蒂斯塔彻底滚蛋才是控制局势的最有效方法。也正因为如此，种种证据表明，在1957至1958年间，CIA暗地里向“七二六运动”提供了大笔资金。到了1958年3月，美国停止向巴蒂斯塔供应武器，政府军已经到了崩溃边缘。</div><div><br></div><div>　　4月，卡斯特罗号召工人起义；26日，总罢工开始。这是一次彻底失败的行动，具体领导罢工的福斯蒂诺·佩雷斯并没有动员一切反对派的力量，甚至没有在各处张贴告示，告知大家罢工的具体时间。结果到了预定时间，只有一些家庭主妇在电台里听到了这个消息。少数几支支持罢工的游行队伍被镇压在血泊中，150余人被杀，100多人被捕。</div><div><br></div><div>　　巴蒂斯塔以为卡斯特罗就快不行了，加派1万余兵力以及飞机、大炮、舰艇，决定将山区里的280个游击队员一举歼灭。这场热战没有像巴蒂斯塔想像中那样轻而易举地结束，战斗持续了76天，游击队熟悉地形，打了就跑，诱敌深入，政府军被歼灭1000余人，还送给游击队600多件武器，其中包括一辆坦克和20门大炮。到了8月底，政府军将游击队的交通道路全部破坏，格瓦拉和他的游击队只有打着赤脚，在泥地上艰难行走。10月2日，格瓦拉的日记这样写道，“我们已经三天没有吃饭，也没有睡觉了。完全是在靠意志坚持着。坚持不住了就在泥地里偶尔打个盹。”格瓦拉的哮喘病又发作了，可他仍然最后一个睡、第一个醒来，夜里还不时地出去巡视。</div><div><br></div><div>　　9月初，格瓦拉和当初差点误杀了他的老友卡米洛会师。两队人马，一共230个战士，被格瓦拉用尽了各种方法，逼着往前挪动脚步。10月16日，他们终于赶到拉斯·维拉斯省的埃斯冈布拉伊山，这里激流很多，陡峭的山脉刚好适合打伏击战，政府军不敢深入敌后，格瓦拉终于有了点空间，他在这里建立弹药厂，又进行了一次土地改革，同时开办军校培养新兵。</div><div><br></div><div>　　他还忙里偷闲谈起了恋爱，他遇见了阿莱伊达·马奇，她又年轻又漂亮，长着一头金发。更重要的是，她与格瓦拉在思想上完全一致，她本人也参加了“七二六运动”。后来，她成为格瓦拉的第二任妻子。</div><div><br></div><div>　　12月21日，首战告捷，游击队攻下了卡瓦甘和瓜亚约的两处军营。在卡瓦甘，格瓦拉少校跳上一个小楼的屋顶指挥作战，不料被一根电视天线绊倒，滚了下去，摔在一个花盆上。他右眉弓被撕裂，左手腕脱臼，军医将他的左手前臂打上绷带，再用一块黑布吊了起来，倒让他看起来更潇洒。</div><div><br></div><div>　　12月27日，格瓦拉和他的部下解放了8000平方公里土地和50万人民。他们现在的主要目标是圣克拉拉，古巴第二大城市。这里驻扎了3200名士兵，并配备了坦克和大炮。而格瓦拉与同伴卡米洛率领的队伍，加在一起才只有360人。仔细研究地图后，格瓦拉发现可以走一条小路潜入城中。28日凌晨，战斗开始，到了第五天，也就是1959年元旦，守军指挥官逃走了。收音机里传来更震撼人心的消息：巴蒂斯塔在例行的元旦晚宴上，胡乱吃了点饭，便向在场的人士宣布，现在事态已经超出了他的控制，他要离开古巴。随后，他携带巨款和家人登机逃往圣多明哥，而后流亡美国。夜里12点半，最后一批守军投降。凌晨两点，格瓦拉和卡米洛向哈瓦那挺进。</div><div><br></div><div>　　1月2日，临时政府总统乌鲁希在圣地亚哥宣誓就职，卡斯特罗的大学老师米罗·卡迪纳担任总理，卡斯特罗被任命为古巴武装部队总司令。</div><div><br></div><div>　　此时，卡斯特罗玩了一点花招，他不能让一个外国人第一个进入哈瓦那，他一再表示，应由“卡米洛的纵队当先头部队，首先攻占哈瓦那”。于是，1959年1月2日，在哈瓦那土生土长的卡米洛，兵不血刃地第一个走进哈瓦那。而格瓦拉却驻扎在几个钟头路程以外的卡瓦尼亚堡，接受政府军的投降。</div>                        <br/>
+                       
+                        <ul>
+                            <li>本文固定链接: <a href="http://www.b.com/default_35.html">http://www.b.com/default_35.html</a></li>
+                            <li>转载请注明: Administrator 2015-08-10 10:33:15 于 <a href="http://www.b.com">BitWord</a> 发表</li>
+                       
+                        </ul>
+                        
+                        <br/>
+                    </div>
+
+                </div><!--panel-->
+
+
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <i class="fa fa-fw fa-comments"></i> Comment
+                    </div>
+
+                    <div class="row">
+                        <form id="myform" method="post" action="Home!info?id=35">
+                            <!-- end-->
+                            			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                                                <form id="msgForm">
+                            
+                            <input type="hidden" name="par_id" value="35"/>
+                            <input type="hidden"   name="usr_name" value="default"/>
+                            <div class="row align-center">
+                                <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>    
+                            </div>
+
+                            <div class="align-right padding20">
+                                <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                                <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                                <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                            </div>
+
+                        </form>
+                                            </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div><!--main-left-->
+
+            <div class="main-right">
+                <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/default_9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/default_20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/default_b2.html" title="互联网">互联网 (6)</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人 (4)</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用 (1)</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记 (7)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+            </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+
+    </div><!--container-->
+
+
+    <script type="text/javascript" src="/Count!addVisits?id=35"></script>
+</body>
+
+
+
+</html>

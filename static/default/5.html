@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>4444</title>
+        <meta name="Keywords" content="4444" />
+        <meta name="Description" content="4444" />
+        
+        <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            
+            
+             $(document).ready(function() {
+                
+                 $("img.panel-img").lazyload();
+                 
+                var hasMoved = 0;
+                $(window).scroll(function () {
+
+                    offset = $(window).scrollTop();
+                    if (offset >0) {
+                        if( hasMoved == 0){
+                            $("#float").animate( {bottom:'100px'});
+                            hasMoved = 1;
+                        }
+
+                    }else{
+                        if( hasMoved == 1){
+                            $("#float").animate( {bottom:'-300px'});
+                            hasMoved = 0;
+                        }
+                    }
+                });
+            });
+            
+           
+            function doSubmit(){
+                if( $("#rep_ctx").val() == ''){
+                    alert("Please enter you words");
+                    return;
+                }
+                if( $("#validationCode").val() == ''){
+                    alert("Validation code error");
+                    return;
+                }
+                $.post("/Reply!save",$('#msgForm').formSerialize(),
+                function(data) {
+                    if(data == "true"){
+                        location.reload();
+                    }else if(data == "0"){
+                        alert("Validation code error");
+                    }else if(data == "-1"){
+                        alert("Function closed");
+                    }else{
+                        alert(data);
+                    }
+                },"html"
+                );
+            }
+
+            function getNewValCode(){
+                $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+            }
+
+        </script>
+    </head>
+
+
+    <div class="container">
+
+        <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png" /></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/default_b1.html" title="Share">Share</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/content!listPage" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+        
+         
+        <div class="main" >
+
+            <div class="main-left">
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+                        <a href="/default_b1.html">Share</a>&gt;
+                        <a href="default_5.html" >4444</a>
+                    </div>
+                    <div class="info-title">
+                        <h4>4444</h4>
+                        <h5>
+                            <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+                            <i class="fa fa-fw fa-clock-o"></i>2015-08-14 08:57:54&nbsp;&nbsp;
+                        </h5>
+                    </div>
+                    <div class="info-text">
+
+                        <!--<i class="fa fa-fw fa-map-marker"></i>-->
+                        <div style='display:none;'><script>if( document.domain != "www.b.com") location.href="http://www.b.com/default_5.html";</script></div><div class="info-title" style="margin: 0px; padding: 20px 0px; border: none; color: rgb(0, 0, 0); font-family: 'Microsoft YaHei', ����, Tahoma, Helvetica, Arial, 宋体, sans-serif; line-height: normal;"><h4 style="margin: 0px; padding: 0px; border: none; font-family: 'Microsoft YaHei', ����, Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 20px; text-align: center; height: 40px; line-height: 1.1em; color: rgb(51, 51, 51);">30行代码打造自己的log4php</h4><h5 style="margin: 0px; padding: 0px; border: none; font-family: 'Microsoft YaHei', ����, Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 1em; text-align: center; width: 700px; color: rgb(153, 153, 153);"><span class="fa fa-fw fa-user" style="margin: 0px; padding: 0px; border: none;"></span>Administrator&nbsp;&nbsp;&nbsp;<span class="fa fa-fw fa-clock-o" style="margin: 0px; padding: 0px; border: none;"></span>2015-07-02 17:56:57&nbsp;&nbsp;</h5></div><div class="info-text" style="margin: 0px; padding: 0px 25px; border: none; line-height: 1.8em; font-size: 1.1em; color: rgb(34, 51, 68); font-family: 'Microsoft YaHei', ����, Tahoma, Helvetica, Arial, 宋体, sans-serif;"><div style="margin: 0px; padding: 0px; border: none;">一切本着极简的思想，于是有了如下的PHP日志类。<a href="http://www.bit1010.com/default_9.html" target="_blank" style="margin: 0px; padding: 0px; border: none; color: rgb(102, 102, 102);">0配置，日志不分级，可增加自己的debug和error方法。</a></div><div style="margin: 0px; padding: 0px; border: none;"><br style="margin: 0px; padding: 0px; border: none;"></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;">class LogUtil {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><br style="margin: 0px; padding: 0px; border: none;"></span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>private &nbsp;$fp;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>public static $logger;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>public static $log_file_name;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre; font-style: italic;">	</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>function __construct($file_name, $mode="a") {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>if($this-&gt;fp != null ){</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>&nbsp;fclose($this-&gt;fp);</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>$this-&gt;fp = fopen($file_name, $mode);</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre; font-style: italic;">	</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>static function getLogger($dir="log/"){</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>if (LogUtil::$logger == null || &nbsp;LogUtil::$log_file_name != "sys_".date('Y_m_d').".log") {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>LogUtil::$log_file_name = "sys_".date('Y_m_d').".log";</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>LogUtil::$logger = new LogUtil($dir.LogUtil::$log_file_name);;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>return LogUtil::$logger;<span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span></span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre; font-style: italic;">	</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>function info( $str ){</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>$curTm = date("Y-m-d H:i:s",time());</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>fwrite($this-&gt;fp, "[$curTm] $str rn");</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>function release() {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>if ($this-&gt;fp != null) {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>fclose($this-&gt;fp);</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>LogUtil::$logger = null;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>function __destruct() {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>if ($this-&gt;fp != null) {</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>fclose($this-&gt;fp);</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">			</span>LogUtil::$logger = null;</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">		</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;"><span class="Apple-tab-span" style="margin: 0px; padding: 0px; border: none; white-space: pre;">	</span>}</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; font-style: italic;">}</span></div><div style="margin: 0px; padding: 0px; border: none;"><br style="margin: 0px; padding: 0px; border: none;"></div><div style="margin: 0px; padding: 0px; border: none;">调用方法:</div><div style="margin: 0px; padding: 0px; border: none;">require_once('LogUtil.php');</div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; line-height: 1.42857143;">$logger = LogUtil::getLogger();</span><br style="margin: 0px; padding: 0px; border: none;"></div><div style="margin: 0px; padding: 0px; border: none;"><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; line-height: 1.42857143;">$logger-&gt;info($dsp_img);</span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; line-height: 1.42857143;"><br style="margin: 0px; padding: 0px; border: none;"></span></div><div style="margin: 0px; padding: 0px; border: none;"><span style="margin: 0px; padding: 0px; border: none; line-height: 1.42857143;">显示如&nbsp;</span>sys_2015_06_30.log<br style="margin: 0px; padding: 0px; border: none;"><div style="margin: 0px; padding: 0px; border: none;">[2015-06-30 01:57:05] hello&nbsp;</div><div style="margin: 0px; padding: 0px; border: none;">[2015-06-30 10:12:26] finished</div></div></div></div>                        <br/>
+                       
+                        <ul>
+                            <li>本文固定链接: <a href="http://www.b.com/default_5.html">http://www.b.com/default_5.html</a></li>
+                            <li>转载请注明: Administrator 2015-08-14 08:57:54 于 <a href="http://www.b.com">BitWord</a> 发表</li>
+                       
+                        </ul>
+                        
+                        <br/>
+                    </div>
+
+                </div><!--panel-->
+
+
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <i class="fa fa-fw fa-comments"></i> Comment
+                    </div>
+
+                    <div class="row">
+                        <form id="myform" method="post" action="Home!info?id=5">
+                            <!-- end-->
+                            			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                                                <form id="msgForm">
+                            
+                            <input type="hidden" name="par_id" value="5"/>
+                            <input type="hidden"   name="usr_name" value="default"/>
+                            <div class="row align-center">
+                                <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>    
+                            </div>
+
+                            <div class="align-right padding20">
+                                <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                                <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                                <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                            </div>
+
+                        </form>
+                                            </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div><!--main-left-->
+
+            <div class="main-right">
+                <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/default_b1.html" title="Share">Share (1)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+            </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+
+    </div><!--container-->
+
+
+    <script type="text/javascript" src="/Count!addVisits?id=5"></script>
+   
+</body>
+
+
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>完全掌握粒子系统（2） - 彻底弄清楚每一个参数</title>
+    <meta name="Keywords" content="完全掌握粒子系统（2） - 彻底弄清楚每一个参数" />
+    <meta name="Description" content="完全掌握粒子系统（2） - 彻底弄清楚每一个参数" />
+
+    <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+-->
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+
+  </head>
+
+
+  <div class="container">
+
+    <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png"/></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/static/default/b0.html" title="价值收藏">价值收藏</a></li>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/admin!dashboard" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+
+    
+    <div class="main" >
+
+      <div class="main-left">
+
+        <div class="row margin-top20">
+          <div class="info-nav">
+            <a href="/index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+            <a href="/static/default/b7.html">游戏创造</a>&gt;
+            <a href="http://www.b.com/static/default/41.html" >完全掌握粒子系统（2） - 彻底弄清楚每一个参数</a>
+          </div>
+          <div class="info-title">
+            <h4>完全掌握粒子系统（2） - 彻底弄清楚每一个参数</h4>
+            <h5>
+              <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+              <i class="fa fa-fw fa-clock-o"></i>2015-08-13 10:38:24&nbsp;&nbsp;
+            </h5>
+          </div>
+          <div class="info-text">
+
+            <!--<i class="fa fa-fw fa-map-marker"></i>-->
+            <div>&nbsp; &nbsp; 粒子系统中的参数很多，但并不是无限多，只要有足够耐心是可以逐个搞清楚的。本次实验中作者对例子系统的参数进行了粗略统计和分类。共3大类，19个小类，38个参数。以下面的例子描述每个参数的具体含义，如果真要得心应手，光靠看一遍是没用的，必须一个一个参数自己调一遍。</div><div><br></div><div style="padding: 0px 20px; background: rgb(238, 238, 238);"><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">function TestScene:ctor()</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 以指定粒子数目创建粒子系统</div><div style="font-size: 1em; line-height: 1.5em;">local emitter = cc.ParticleSystemQuad:createWithTotalParticles(1000)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--<a href="http://www.bit1010.com/default_41.html" target="_blank">设置粒子属性 共3大类，19个小类，38个参数</a></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 一. 粒子常规属性设置 &nbsp;共6小类 18个参数</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 1. 粒子大小</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 粒子出生时的大小为多少个像素</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartSize(100.0)</div><div style="font-size: 1em; line-height: 1.5em;">-- 出生时大小的浮动值</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartSizeVar(100.0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 粒子消亡时的大小 cc.PARTICLE_START_SIZE_EQUAL_TO_END_SIZE 表示一生中大小不变</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndSize(cc.PARTICLE_START_SIZE_EQUAL_TO_END_SIZE )</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndSizeVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 2. 粒子的颜色</div><div style="font-size: 1em; line-height: 1.5em;">-- cc.c4f 的4个数值分别代表红 绿 蓝 &nbsp;透明度 取值范围都是0到1</div><div style="font-size: 1em; line-height: 1.5em;">其中透明度实际上是可见度，如果为0表示可见度为0，即完全看不到。</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartColor(cc.c4f(0.5, 0.5, 0.5, 1.0))</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartColorVar(cc.c4f(0.5, 0.5, 0.5, 1.0))</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndColor(cc.c4f(0.1, 0.1, 0.1, 0.2))</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndColorVar(cc.c4f(0.1, 0.1, 0.1, 0.2))</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--3. 每个粒子的自转速度</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartSpin(0)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setStartSizeVar(0)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndSpin(0)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setEndSpinVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--4. 粒子的寿命 时间单位：秒</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setLife(2)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setLifeVar(0.3)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--5. 粒子的发射角度 和允许角度的浮动范围</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setAngle(0)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setAngleVar(360)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--6. 粒子的出生坐标</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setPosition(display.cx, display.cy)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setPosVar(cc.p(0, 0))</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">--<a href="http://www.bit1010.com/default_41.html" target="_blank"> 二 .粒子的发射模式 &nbsp;共8小类 14个参数</a></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;--1. 半径模式 从圆心向周围发射粒子</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setEmitterMode(cc.PARTICLE_MODE_RADIUS)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 2. 重力模式 向重力加速度的向量方向发射粒子</div><div style="font-size: 1em; line-height: 1.5em;">-- emitter:setEmitterMode(cc.PARTICLE_MODE_GRAVITY)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">if emitter:getEmitterMode() == cc.PARTICLE_MODE_RADIUS then</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- 半径模式下以下属性生效</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- a. 粒子生成时距离圆心的距离 即起始半径</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setStartRadius(100)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setStartRadiusVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- b. 消亡时的半径</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setEndRadius(500)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setEndRadiusVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- c. 围绕生成点的公转速度</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setRotatePerSecond(10)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setRotatePerSecondVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">else</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- 重力模式下以下属性生效</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- a. 重力的方向</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setGravity(cc.p(0, 0))</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- b. 射出时的速度</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setSpeed(50)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setSpeedVar(10)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- c. 半径加速度</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setRadialAccel(80)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setRadialAccelVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; -- d. 正切加速度</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setTangentialAccel(0)</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; &nbsp; emitter:setTangentialAccelVar(0)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">end</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;--<a href="http://www.bit1010.com/default_41.html" target="_blank"> 三. 系统属性 共5小类 6个参数</a></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;-- 1. 发射速率，即每秒发射多少个粒子</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;emitter:setEmissionRate(emitter:getTotalParticles() / emitter:getLife())</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 2. 粒子系统的持续时间 -1表示无限时间</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setDuration(-1)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 3. 渲染方式</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; -- 用于系统渲染的OpenGL的渲染函数</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;-- emitter:setBlendFunc(cc.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA))</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp;emitter:setBlendFunc(cc.blendFunc(gl.SRC_ALPHA , gl.ONE_MINUS_SRC_ALPHA))</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">blendFunc的2个参数的取值范围都是<br></div><div><span style="line-height: 21px;">gl.ZERO</span></div><div><span style="line-height: 21px;">gl.ONE</span></div><div><span style="line-height: 21px;">gl.SRC_COLOR</span></div><div><span style="line-height: 21px;">gl.ONE_MINUS_SRC_COLOR</span></div><div><span style="line-height: 21px;">gl.SRC_ALPHA</span></div><div><span style="line-height: 21px;">gl.ONE_MINUS_SRC_ALPHA</span></div><div><span style="line-height: 21px;">gl.DST_ALPHA</span></div><div><span style="font-size: 1em; line-height: 1.5em;">gl.ONE_MINUS_DST_ALPHA&nbsp;</span></div><div style="font-size: 1em; line-height: 1.5em;"><div style="font-size: 1em; line-height: 1.5em;">其中，来源混合模式gl.SRC_ALPHA和目标混合模式gl.ONE_MINUS_SRC_ALPHA配合使用,得到的 将会是完全透明的粒子。</div><div style="font-size: 1em; line-height: 1.5em;">而来源混合模式gl.SRC_ALPHA和目标混合模式gl.ONE经常配合使用来生成递增型 的混合效</div></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; -- 是否启用高亮渲染</div><div style="font-size: 1em; line-height: 1.5em;">&nbsp; emitter:setBlendAdditive(true)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 4. 粒子的移动方式 &nbsp;具体区别，在后续的调试过程中再做区分</div><div style="font-size: 1em; line-height: 1.5em;">-- 自由移动 cc.POSITION_TYPE_FREE &nbsp; &nbsp;0x0</div><div style="font-size: 1em; line-height: 1.5em;">-- 一组一组移动 cc.POSITION_TYPE_GROUPED &nbsp;0x2</div><div style="font-size: 1em; line-height: 1.5em;">-- 相对移动 cc.POSITION_TYPE_RELATIVE 0x1</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setPositionType(cc.POSITION_TYPE_FREE)</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">-- 5. 纹理</div><div style="font-size: 1em; line-height: 1.5em;">emitter:setTexture(cc.Director:getInstance():getTextureCache():addImage("a.png"))</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">emitter:setAutoRemoveOnFinish(true)</div><div style="font-size: 1em; line-height: 1.5em;">emitter:addTo(self) &nbsp;</div><div style="font-size: 1em; line-height: 1.5em;"><br></div><div style="font-size: 1em; line-height: 1.5em;">end</div><div style="font-size: 1em; line-height: 1.5em;"><br></div></div>            <br/>
+
+            <ul>
+              <li>本文固定链接: <a href="http://www.b.com/static/default/41.html">http://www.b.com/static/default/41.html</a></li>
+                <li>转载请注明: Administrator 2015-08-13 10:38:24 于 <a href="http://www.b.com">比特核 - 视野</a> 发表</li>
+
+                </ul>
+
+                <br/>
+              </div>
+
+            </div><!--panel-->
+
+
+
+            <div class="row margin-top20">
+              <div class="info-nav">
+                <i class="fa fa-fw fa-comments"></i> Comment
+              </div>
+
+              <div class="row">
+                <form id="myform" method="post" action="Home!info?id=41">
+                  <!-- end-->
+                  <!-- script �� style �ֱ��Ƶ������ defualt.js �� simple.css
+			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+-->			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                </form>
+              </div>
+
+              <div class="row">
+                                <form id="msgForm">
+
+                  <input type="hidden" name="par_id" value="41"/>
+                  <input type="hidden"   name="usr_name" value="default"/>
+                  <div class="row align-center">
+                    <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>
+                  </div>
+
+                  <div class="align-right padding20">
+                    <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                    <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                    <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                  </div>
+
+                </form>
+                              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div><!--main-left-->
+
+          <div class="main-right">
+            <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/static/default/51.html" title="一句话讲明白碰撞检测中3个掩码的关系">一句话讲明白碰撞检测中3个掩码的关系</a></li>
+                <li><a href="/static/default/41.html" title="完全掌握粒子系统（2） - 彻底弄清楚每一个参数">完全掌握粒子系统（2） - 彻底弄清楚每一个参数</a></li>
+                <li><a href="/static/default/44.html" title="网站极限优化-百度评分49分提升到95分实战">网站极限优化-百度评分49分提升到95分实战</a></li>
+                <li><a href="/static/default/40.html" title="完全掌握粒子系统（1） - 自带的一些实现">完全掌握粒子系统（1） - 自带的一些实现</a></li>
+                <li><a href="/static/default/39.html" title="完全掌握粒子系统(前言）">完全掌握粒子系统(前言）</a></li>
+                <li><a href="/static/default/30.html" title="NewLisp Web开发实战(2)–添加自定义页面">NewLisp Web开发实战(2)–添加自定义页面</a></li>
+                <li><a href="/static/default/29.html" title="NewLisp Web开发实战(1)–环境搭建">NewLisp Web开发实战(1)–环境搭建</a></li>
+                <li><a href="/static/default/9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/static/default/3.html" title="关于BitWord - 响应速度最快的个人博客系统">关于BitWord - 响应速度最快的个人博客系统</a></li>
+                <li><a href="/static/default/20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/static/default/b2.html" title="网站建设">网站建设 (9)</a></li>
+                <li><a href="/static/default/b7.html" title="游戏创造">游戏创造 (10)</a></li>
+                <li><a href="/static/default/b10.html" title="美工基础">美工基础 (5)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+          </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+  
+<!--
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+-->
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7d31d9fa69f80346d831e707f6ba1149";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      </div><!--container-->
+
+
+      <script type="text/javascript" src="/Count!addVisits?id=41"></script>
+     <!--
+      <script language="javascript" type="text/javascript">
+        document.oncontextmenu=new Function('event.returnValue=false;');
+        document.onselectstart=new Function('event.returnValue=false;');
+      </script>
+      -->
+    </body>
+
+
+
+  </html>
+
+  <script language="javascript" type="text/javascript">
+
+
+    $(document).ready(function() {
+
+      $("img.panel-img").lazyload();
+
+      var hasMoved = 0;
+      $(window).scroll(function () {
+
+        offset = $(window).scrollTop();
+        if (offset >0) {
+          if( hasMoved == 0){
+            $("#float").animate( {bottom:'100px'});
+            hasMoved = 1;
+          }
+
+        }else{
+          if( hasMoved == 1){
+            $("#float").animate( {bottom:'-300px'});
+            hasMoved = 0;
+          }
+        }
+      });
+    });
+
+
+    function doSubmit(){
+      if( $("#rep_ctx").val() == ''){
+        alert("Please enter you words");
+        return;
+      }
+      if( $("#validationCode").val() == ''){
+        alert("Validation code error");
+        return;
+      }
+      $.post("/Reply!save",$('#msgForm').formSerialize(),
+      function(data) {
+        if(data == "true"){
+          location.reload();
+        }else if(data == "0"){
+          alert("Validation code error");
+        }else if(data == "-1"){
+          alert("Function closed");
+        }else{
+          alert(data);
+        }
+      },"html"
+      );
+    }
+
+    function getNewValCode(){
+      $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+    }
+
+  </script>

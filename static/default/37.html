@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>最纯粹的英雄-切格瓦拉完整版6</title>
+        <meta name="Keywords" content="最纯粹的英雄-切格瓦拉完整版6" />
+        <meta name="Description" content="最纯粹的英雄-切格瓦拉完整版6" />
+        
+        <script language="javascript" type="text/javascript">
+    var reqTime = new Date().getTime(); 
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="view/public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/view/template/default/css/simple.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript" src="view/public/js/jquery.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.form.js"></script>
+<script type="text/javascript" src="view/public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/view/template/default/js/defualt.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            
+            
+             $(document).ready(function() {
+                
+                 $("img.panel-img").lazyload();
+                 
+                var hasMoved = 0;
+                $(window).scroll(function () {
+
+                    offset = $(window).scrollTop();
+                    if (offset >0) {
+                        if( hasMoved == 0){
+                            $("#float").animate( {bottom:'100px'});
+                            hasMoved = 1;
+                        }
+
+                    }else{
+                        if( hasMoved == 1){
+                            $("#float").animate( {bottom:'-300px'});
+                            hasMoved = 0;
+                        }
+                    }
+                });
+            });
+            
+           
+            function doSubmit(){
+                if( $("#rep_ctx").val() == ''){
+                    alert("Please enter you words");
+                    return;
+                }
+                if( $("#validationCode").val() == ''){
+                    alert("Validation code error");
+                    return;
+                }
+                $.post("/Reply!save",$('#msgForm').formSerialize(),
+                function(data) {
+                    if(data == "true"){
+                        location.reload();
+                    }else if(data == "0"){
+                        alert("Validation code error");
+                    }else if(data == "-1"){
+                        alert("Function closed");
+                    }else{
+                        alert(data);
+                    }
+                },"html"
+                );
+            }
+
+            function getNewValCode(){
+                $('#vldCode ').attr("src",'/Validation!getCode?r='+ Math.random());
+            }
+
+        </script>
+    </head>
+
+
+    <div class="container">
+
+        <div class="header">
+    <div class="logo">
+        <a class="logo" href="/index.html"><img src="/upload/logo.png" /></a>
+    </div>
+    <div class="words">
+        世界的另外一些地方需要我去献出我微薄的力量 -- CHE.格瓦拉
+    </div>
+    <ul class="nav" >
+               <li><a href="/default_b2.html" title="互联网">互联网</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记</a></li>
+            </ul></div>
+
+
+<div id="float" style="bottom: -300px;">
+    <a id="float_gotop" class="floatbtn" href="#header" onclick="goRoll(0)" title="返回顶部" style="opacity: 0.7;"></a>
+    <a class="linbak floatbtn" href="/content!listPage" title="登陆&amp;注册" style="opacity: 0.7;"></a>
+    <a id="float_goend" class="floatbtn" href="javascript:void()" onclick="goend()" title="转到底部"></a>
+</div>
+
+
+
+
+
+        
+         
+        <div class="main" >
+
+            <div class="main-left">
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i>首页</a>&gt;
+                        <a href="/default_b9.html">读书笔记</a>&gt;
+                        <a href="default_37.html" >最纯粹的英雄-切格瓦拉完整版6</a>
+                    </div>
+                    <div class="info-title">
+                        <h4>最纯粹的英雄-切格瓦拉完整版6</h4>
+                        <h5>
+                            <i class="fa fa-fw fa-user"></i>Administrator&nbsp;&nbsp;
+                            <i class="fa fa-fw fa-clock-o"></i>2015-08-10 10:34:26&nbsp;&nbsp;
+                        </h5>
+                    </div>
+                    <div class="info-text">
+
+                        <!--<i class="fa fa-fw fa-map-marker"></i>-->
+                        <div>第五章 迷失在刚果</div><div><br></div><div>　　格瓦拉现在叫“塔图”</div><div><br></div><div>　　1965年4月1日清晨，哈瓦那机场，古巴航空公司飞往莫斯科的班机马上就要起飞了。三个乘客行色匆匆，急急忙忙登上飞机。三个人中，坐在中间的那一位看上去很像是个商人，他戴着副黑边眼镜，穿着灰色西装，打着深色领带，头发修理得很短，一丝不苟地向后梳去。他的左边是个彪形大汉，右边则是一个黑人。没有谁知道，这位一本正经的商人就是格瓦拉，而他旁边的这两位是他的保镖，一位是维克多·德雷克，另一位叫霍塞·玛利亚·马丁内斯·塔马约，不过大家都习惯叫他绰号“帕皮”。登机时他们用的都是假护照，在飞机上几乎一言不发。</div><div><br></div><div>　　4月19日，一行人终于到达坦桑尼亚的达累斯萨拉姆，格瓦拉显然不愿意暴露自己的身份，虽然与坦桑尼亚的尼雷尔总统私交甚好，他也没有前去拜访。古巴驻坦桑尼亚大使里瓦尔塔陪伴了格瓦拉几星期时间，只知道他是古巴的一位重要领导。</div><div><br></div><div>　　格瓦拉意欲将古巴革命的例子复制到刚果。可是，为什么是刚果？这里面有复杂的历史背景。</div><div><br></div><div>　　1884年至1885年的柏林会议规定，比利时国王以私人名义占有刚果河以南地区，成立“刚果自由邦”，刚果河以北地区则是法国的殖民地。</div><div><br></div><div>　　比利时所属的刚果有250多个民族，物产丰富，拥有全世界60%-80%的铀矿、工业钻石和钴，美国的第一颗原子弹就是用刚果的铀制成的。由于国际舆论一致谴责比利时在刚果的残酷统治与剥削，比利时国王干脆在1908年，以几千万美元的价格将这个国家卖给比利时政府。</div><div><br></div><div>　　比利时对刚果实行极其残酷的家长制统治，试图将刚果与整个文明世界隔离。外国报刊、书籍一律不准进入刚果，理由是害怕他们的精神遭到花花世界的玷污；刚果人不准搭建房屋，理由竟然是免得他们以后分家闹矛盾。愚民统治的后果是，一直到1960年，1400万刚果人口中，只有1个律师，26个大学毕业生，不到3万人接受过中学教育。</div><div><br></div><div>　　二战后，比属刚果开始不断要求自治。1960年1月31日，迫于压力，比利时国王博杜安一世宣布，他最终将使刚果独立，但这一过程将是“逐步的和渐进的”，按照比利时当局的计划，直到1964年，他们才将准许刚果完全独立。</div><div><br></div><div>　　可是民众再也不愿继续忍受这种没有主权的生活。“刚果民族运动”的领袖卢蒙巴要求立刻独立，1960年5月大选结束，卢蒙巴当选总理兼国防部长。6月30日，比属刚果宣布独立。</div><div><br></div><div>　　时年35岁、邮局职员出身的卢蒙巴完全没有政治经验，很快他就被推翻，刚果军队立即哗变。比利时想乘机控制局势，于是授意傀儡人物冲伯在刚果南部的加丹加地区宣布独立，因为那里的矿产最丰富。9月，莫布杜宣布暂管政权。次年1月，卢蒙巴被押解到冲伯的地盘，来到加丹加首府伊丽莎白维尔时，刚刚下飞机就被打死。从此，刚果陷入更深刻的混乱与悲哀中。</div><div><br></div><div>　　格瓦拉相信，他可以用自己的经验和力量帮助始终没有放弃革命的刚果战士。他亲手挑选了一批来自古巴的黑人战士，对他们讲解战争的计划。要到刚果的领土上打仗，他们先要从达累斯萨拉姆出发，一直走到坦桑尼亚最西端，与刚果交界的坦噶尼喀湖，在码头边他们将得到同志的策应，然后划小船渡过大约50公里宽的湖面。战士们很激动，一位叫马科·埃东尼奥的游击队士兵回忆说：“当时，想到我们就将回到非洲，我们老祖宗的出生地，我们就热血沸腾。”</div><div><br></div><div>　　战士们管这位说话声音低沉的领导叫“塔图”，德雷克在他的回忆录里，解释了这个称号的由来：“切找来一本字典，决定按斯瓦希里语给大家起名字。后来，他又觉得干脆用号码称呼更简便。编号的依据并不是各人的官衔高低，而是大家来到达累斯萨拉姆的顺序，于是，我就成了一号‘莫扎’，帕皮是二号，叫‘姆比利’，而‘塔图’是三号的意思。”没有哪个战士知道，原来“塔图”就是古巴二号人物格瓦拉。</div><div><br></div><div>　　悲哀接踵而来</div><div><br></div><div>　　格瓦拉想要投入战争的渴望，比以往任何时候都要强烈。他在各处不断搜罗一切对战争可能有用的东西，买了一艘10来米长的小木船，组织了一个看起来毫无章法的车队：一辆越野车、两辆吉普车、三辆奔驰小汽车，还有一辆大卡车。14个游击队战士就这样踏上了征程。</div><div><br></div><div>　　4月23日，穿越坦噶尼喀湖时，不知格瓦拉有没有回想起当年，他与卡斯特罗并肩在“格拉玛号”一起晕船、一起唱古巴国歌的经历。冲伯的巡逻队就在湖边不断巡视，格瓦拉他们正准备上船时，木船却出了点问题。大家有点犹豫，格瓦拉发了通火，警告大家，现在他们一定得走，无论死活。</div><div><br></div><div>　　夜幕降临，他们的船终于驶入大湖。雨季刚刚结束，湖水高涨，偏偏此时又下起大雨。据德雷克回忆说：“湖面上的风浪很大，我们的小木船忽上忽下，切突然问我们会不会游泳，我猜他已经打算弃船游到对岸去了。”到了凌晨五六点钟，小木船奇迹般地到达对岸，驶进刚果的吉邦巴码头。这一夜，格瓦拉的哮喘病发作得特别厉害。</div><div><br></div><div>　　在码头等待时，古巴人简直开始绝望，天渐渐亮了，可是他们的刚果兄弟还没来。最后，一小群刚果游击队员总算唱着歌、喊着口号慢悠悠地与古巴战友会合。</div><div><br></div><div>　　可以用格瓦拉在日记中的一句话，来概括在刚果的战斗经历：“这是一次失败的经历。”最大的障碍在于他们与刚果人所处的社会文化背景完全不同，连最起码的沟通都有问题。刚果的游击队员中，只有几个人能说一点半吊子的法语，勉强能与格瓦拉交谈。平时在一起时，这些人需要充当翻译，将格瓦拉说的话再译成当地的部落语言。同时刚果人普遍没有接受多少教育，他们不信子弹，倒更相信各种各样的巫术。一次，一个自称中校的刚果人对格瓦拉说，他们有一种神奇的药水，叫“达瓦”，可以使敌人射出的子弹轻轻落在地上。格瓦拉很快意识到这种迷信流传开来，会造成很严重的后果：“我始终担心，这种迷信活动搞到后来，受罪的还是我们，他们打了败仗不会怨‘达瓦’，只会怨我们。我曾经好几次要和各个领导人讨论这个问题，试图说服他们，但无济于事。‘达瓦’是他们信仰的标志。”</div><div><br></div><div>　　更大的分歧在于意识形态的格格不入，格瓦拉无法向他们透彻讲解关于革命的问题，刚果人所理解的革命，也与格瓦拉完全不同。在这些刚果游击队员和领袖看来，革命并不是要打倒什么帝国主义，只不过是要打倒冲伯和其他现任领袖，恢复他们被冲伯等人剥夺的权利。还有一些人相信他们的敌人就是白人。一次，几个士兵直截了当地追问格瓦拉：“你这个白人为什么要跟我们一起打仗？人家告诉我们，我们只要把你们这些白人消灭，日子就好过了。”也正因为如此，刚果人的革命简直就有点业余时间赚赚外快的意思，很多战士无心训练，闲来就喝喝酒，或者花钱弄张通行证，大摇大摆渡过大湖，去坦桑尼亚嫖妓。这种事情简直让格瓦拉目瞪口呆，他在日记中很困惑地问自己，“这些妓女由谁付钱？革命的钱跑到哪里去了？”现在，格瓦拉又回到了他的医生角色，硬着头皮医治那些染上了性病或者酒精中毒的刚果士兵。</div><div><br></div><div>　　吃喝嫖赌门门精通的刚果游击队员们，却独独不擅长打仗。古巴的托雷斯中尉曾经带着几个刚果兵去侦察，结果回来后他轻蔑地告诉格瓦拉：“刚果人一看到几个哨兵就吓得要死，边逃边喊‘冲伯的兵，冲伯的兵’，真是一群胆小鬼。”经过长期的严格训练，来自古巴的这群黑人已经被培养成为纪律严明、骁勇善战的职业军人，看到他们的非洲同伴如同一盘散沙，他们不能不感到愤懑。</div><div><br></div><div>　　母亲去世</div><div><br></div><div>　　格瓦拉第一次发现自己的时间竟然多得用不掉，他开始失眠，辗转反侧睡不着觉时，他就干脆起来读书或者写日记。他请了一个刚果小孩伊兰加当他的老师，学习当地的斯瓦希里语，作为回报，他也教伊兰加什么是帝国主义。到达刚果不到一个月，他就染上了严重的疟疾，由于过敏，他不能使用抗生素，只好吃大量的奎宁，在日记中，他写道：“我为刚果的气候付出了沉重的代价，身体虚弱，已经没有力气吃饭。”</div><div><br></div><div>　　就在格瓦拉重病时，他的母亲已经进入弥留之际。当时，关于格瓦拉的各种谣言在满天飞，但全是坏消息，甚至有人说他被关进了精神病院。5月10日，他身患晚期癌症的母亲塞莉亚住进了斯塔普霍尔医院，可是没过几天，医院就将塞莉亚赶走，理由是她的儿子是危险的共产党，这会给医院的名誉带来损害。</div><div><br></div><div>　　5月16日，老朋友罗霍给正在哈瓦那的阿莱伊达打来电话，电话中传来了塞莉亚虚弱的声音，她坚持说：“我就要死了。我想见一见埃内斯托，让他赶紧来。”阿莱伊达左右为难，不知该怎样解释，母亲已经预感到了什么，她轻轻放下电话，对罗霍说：“埃内斯托肯定碰到了什么事。”5月19日，母亲在故乡的小屋里去世了，享年58岁。她最终没能见上最喜欢的儿子一面。</div><div><br></div><div>　　3天后，负责国际行动工作的奥斯马尼又带来了34名古巴战士，在与格瓦拉絮絮叨叨地闲扯了好久后，他才告诉了格瓦拉母亲逝世的消息。</div><div><br></div><div>　　专门照顾格瓦拉的塞拉格医生，讲述了接下来发生的一切。“他坐在我的吊床上，讲起他童年的故事，也不管我听懂听不懂，他一直自顾自地讲下去，到后来，仿佛就成了他在自言自语。接着，他突然说要喝马黛茶。我说他现在身体不好，还在发着烧，还是让我替他倒茶。他没有理我。晚上，对着火炉，他唱起他们家乡的乐曲。”探戈音乐的旋律大多悲苦、惆怅，19世纪80年代，大量欧洲和非洲移民涌向布宜诺斯艾利斯，异乡人只能在酒馆和舞厅里找到一丝慰藉，探戈音乐和舞蹈就起源于这里。因此在探戈音乐里，人们常常能感受到一种深深的游子情怀。塞拉格医生没有看见格瓦拉在他面前哭，可是，他从这断断续续的歌声中，听到格瓦拉心中不为人知的悲痛。</div><div><br></div><div>　　也许，一场战争可以帮助格瓦拉振作起来，可是刚果人拖拉散漫的性格已经让他濒临绝望，他们需要等待东线的游击队领袖卡比拉下令开始战争，可是卡比拉却一直没有踪影。困在一间破茅屋里，格瓦拉惟有日复一日地等待。他也想训练一下这帮刚果战士，可是根本命令不动他们。让他们下山扛点粮食，他们就大叫：“我们不是大卡车！”要他们加紧训练，他们又大叫起来，“我们又不是古巴人！”格瓦拉原本以为，可以用5年时间帮助刚果赢得革命成功，可是现在他已经丧失信心，在日记中他痛苦地写道：“人民解放军就像是一堆寄生虫，不劳动，不训练，不打仗，只知道强迫老百姓供养他们，为他们劳动。照这样下去，刚果革命的失败是不可挽回的。”</div><div><br></div><div>　　不久，第四批古巴战士也赶到刚果基地。这些人中有两个格瓦拉的老战友，阿里·比列加斯，身体粗壮，外号“庞博”，刚刚才和格瓦拉以前的女秘书结婚；另一个叫卡洛斯·柯埃略，外号“图马”，曾长期担任格瓦拉的保镖。</div><div><br></div><div>　　7月底，他们终于进行了第一次战争，阵容看似强大：40名古巴人和140名刚果人、卢旺达人。他们装备精良，包括美式反坦克火箭筒、机关枪，还有一门中国大炮。由于未能得到游击队领袖卡比拉的批准，格瓦拉只能留守阵地。战争一开始，二三十个卢旺达人开溜，不想打仗。参加了这场战斗的德雷克很快就意识到，只有古巴人在打仗，而刚果人、卢旺达人把手中的子弹打完，就在丛林里乱跑。结果自然以惨败告终，4个古巴人和18个非洲人阵亡，60人受伤。格瓦拉在日记中语带讥讽地写道：“达瓦神奇药水失效了。”</div><div><br></div><div>　　为了避免游击队内部分化，格瓦拉仍然耐心地为非洲人辩护，可是，大家并不能领会他的好意，手下的人互相指责，连最忠心耿耿的古巴战士也流露去意。一个外号叫“中国人”、长着一副亚洲面孔的战士锡泰尼当着格瓦拉的面，要求离开刚果。他可是自从马埃斯特腊山打游击以来，就一直在格瓦拉身边的老朋友。不知道格瓦拉以什么理由将他留了下来，可是在那以后，“中国人”就再没有开口说过一句话。</div><div><br></div><div>　　“我从来没像现在这样孤独。”1965年10月3日，卡斯特罗对外宣读了格瓦拉的告别信，格瓦拉的妻子阿莱伊达穿着黑衣，端坐一旁。人们终于相信，格瓦拉已经不在人世。</div><div><br></div><div>　　在刚果的丛林里，格瓦拉的身体一直不好，他又连续腹泻一个多月，一下子瘦了20多公斤，在日记里，他用一贯直白的语气记道：“10月2日，24个小时里，拉了30多次肚子。”</div><div><br></div><div>　　当格瓦拉在刚果苦苦挣扎时，卡斯特罗却已经提前宣判了他的“死刑”。</div><div><br></div><div>　　好端端的部长突然不见了，古巴媒体不知道缘由，比古巴人更焦虑的是美国的CIA，他们到处寻觅他的踪影，有些人相信他还在古巴国内，被卡斯特罗秘密监禁，有些人认为他成了越共的军事顾问，还有人相信他已经死了。到了1965年10月3日，也就是格瓦拉正在频繁地出入茅厕的当口，卡斯特罗在古巴共产党成立大会上，宣读了格瓦拉出发前写给他的告别信：“我们分别的时候到了，我不要古巴承担任何责任。我临终时想到的将是这个民族，尤其是你。”人们注意到，就在卡斯特罗的座位不远处，端坐着格瓦拉的妻子阿莱伊达，她穿着一身黑色衣服。人们终于相信，格瓦拉已经不在人世。</div><div><br></div><div>　　“这封信只能等我死了才宣读，人还活着就被埋掉，这可不是闹着玩的。”这是格瓦拉得知这个消息后，在战友面前说的第一句话。沉吟了片刻，他又轻轻叹了一口气，说：“不管是有意还是无意，我已经被赶下国际舞台了。”</div><div><br></div><div>　　在政治上，格瓦拉远没有卡斯特罗深谋远虑，卡斯特罗始终没有解释他为什么要这么做，他的出发点也许是出于好意：公开这封所谓的遗书，一方面可以消除外界的各种谣言；另一方面也可以为格瓦拉换来雷鸣般的掌声。可是这样一来，他就断绝了格瓦拉重返古巴的一切可能。从此，格瓦拉只能隐姓埋名，再也无法见到他的亲人。</div><div><br></div><div>　　10月24日，大雨滂沱，外面突然响起了一连串枪声，一支外国雇佣兵对他们发动了袭击。营地一片混乱，刚果人却还在呼呼大睡，格瓦拉不得不叫几个士兵拎来几桶冷水，这才把他们叫醒。大家开始落荒而逃，格瓦拉殿后，一边撤退一边向敌人扫射。几个负责保护他的士兵拉住了他，责怪他太鲁莽，格瓦拉大叫：“我才是司令官！”在刚果“游而不击”长达6个月，格瓦拉再也没有耐心了。</div><div><br></div><div>　　他仍然不愿意就这样离开刚果：“我不能做可耻的逃兵，扔下我们遭难的兄弟不管，听任外国雇佣兵残杀。”他提议要从东到西横穿刚果，因为在首都利奥波德维尔附近还有一支游击队。这意味着他们要步行1500公里，穿越荒蛮的热带大森林。没有人响应他的号召。</div><div><br></div><div>　　11月19日，天还没亮，格瓦拉亲手放火，烧毁了茅屋和弹药库，站在山上，他眼睁睁地看着宝贵的弹药在隆隆爆炸声中化为灰烬，肝肠寸断。两天后，他们渡过坦噶尼喀湖，离开刚果。</div><div><br></div><div>　　格瓦拉坚决要与游击队员们分手，临别时，他对大家说：“你们回到古巴，12月24日，你们吃上圣诞大餐时，千万不要忘记这个受尽屈辱的民族，不要忘记那些留在刚果的同志们。”大家都哭了，格瓦拉却没有哭，他的心中百感交集：“在刚果这最后的时刻里，我只觉得孤独。在我漫游世界的日子里，无论是在古巴还是其他地方，我从来没像现在这样孤独。”</div><div><br></div><div>　　他躲进古巴大使馆，闭门谢客，一连在里面住了3个多月。他咳嗽得越来越厉害，医生怀疑他的结核病又犯了，可他还是像疯了一样拼命抽雪茄。他的头发又长了，他也不梳理，就让一头乱发搭在肩上。整个人瘦脱了形，1.75米的个子，现在体重还不到50公斤。</div><div><br></div><div>　　格瓦拉始终不明白，他已经将自己的整个人都献给了刚果革命，可是为什么还是会输得这么惨，他只有从自己身上找问题，在日记中他反思道：“因为一直在闭门读书，再加上我性格上的某些问题，结果使我和战士们之间的接触很少。我总想在精神上强加于人，结果我失败了。我试图让我的部下接受我关于局势的观点，结果我失败了。”他反复写着这样一句话：“我们失败了，我的责任重大。”</div><div><br></div><div>　　不久，卡斯特罗命令内务部的埃斯特拉达将格瓦拉弄回古巴去。格瓦拉拒绝接受。他们想到了一个折中的地方，经过一番乔装打扮，格瓦拉来到了布拉格。</div><div><br></div><div>　　可以从一件小事看出格瓦拉对古巴的思念。埃斯特拉达回忆说：“我们除了吃饭，整天就待在卧室不出来。可切却耍了个心眼。他从使馆一个同志口中得知，不远处一家电影院正在上映一部关于东京奥运会的电影，其中有古巴选手在百米赛跑中获胜的片断。他想到电影院亲眼看看，我说，‘司令，你不能去，这太冒险了。’可他还是趁我不注意，与使馆那位同志去看了。我立刻追了上去。在电影院里看到我，切就站起来，跟着我走了。”</div><div><br></div><div>　　从1966年3月到7月，格瓦拉在布拉格逗留了4个多月，他几乎不能出去，因为“如果有人认出了我，全世界都会立刻知道”。他只有埋头写日记，一个崭新的计划在他的头脑里渐渐勾勒成形，他的心中再次充满了战斗的激情。</div>                        <br/>
+                       
+                        <ul>
+                            <li>本文固定链接: <a href="http://www.b.com/default_37.html">http://www.b.com/default_37.html</a></li>
+                            <li>转载请注明: Administrator 2015-08-10 10:34:26 于 <a href="http://www.b.com">BitWord</a> 发表</li>
+                       
+                        </ul>
+                        
+                        <br/>
+                    </div>
+
+                </div><!--panel-->
+
+
+
+                <div class="row margin-top20">
+                    <div class="info-nav">
+                        <i class="fa fa-fw fa-comments"></i> Comment
+                    </div>
+
+                    <div class="row">
+                        <form id="myform" method="post" action="Home!info?id=37">
+                            <!-- end-->
+                            			<script language="JavaScript">
+				$(function(){
+						$("#navdiv a").click(function(){
+								clickId = $(this).attr("id");
+								var curNo = $("#skipValue").val();
+								if (typeof(clickId) == "undefined")  return;
+								else if(clickId=="pre")  clickId = parseInt(curNo)-1;
+								else if(clickId=="next") clickId = parseInt(curNo)+1;
+								$("#skipValue").attr("value",clickId);
+								$(this).parents("form").submit();
+						});
+					});
+			</script>
+
+			<style>
+			    
+			    #navdiv{
+			        float:right; margin:30px 30px 0 0;
+			    }
+			    
+				#navdiv a{
+					text-decoration:none; border:none; 
+					height:20px; line-height:20px; float:left;padding:0 7px; margin:0 1px;display:block;
+				}
+			</style>
+			
+			<input name='oldPerPageCnt' type='hidden' value='10'/>
+			<input name='skipValue' id='skipValue' type='hidden' value="0"/>
+			
+			<div id="navdiv">
+								
+			</div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                                                <form id="msgForm">
+                            
+                            <input type="hidden" name="par_id" value="37"/>
+                            <input type="hidden"   name="usr_name" value="default"/>
+                            <div class="row align-center">
+                                <textarea name="rep_ctx" id="rep_ctx" class="textarea" row="5"></textarea>    
+                            </div>
+
+                            <div class="align-right padding20">
+                                <img src="/Validation!getCode" id="vldCode" onclick="getNewValCode()" class="topalign"/>
+                                <input type="text" name="validationCode" id="validationCode" maxlength="4" class="vldcode topalign" value=""/>
+                                <button type="button" onclick="doSubmit();" class="btn topalign">Reply</button>
+                            </div>
+
+                        </form>
+                                            </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div><!--main-left-->
+
+            <div class="main-right">
+                <div class="cat margin-top20">
+    <div class="cat-header"><p>推荐阅读</p></div>
+    <ul>
+                <li><a href="/default_9.html" title="30行代码打造自己的log4php">30行代码打造自己的log4php</a></li>
+                <li><a href="/default_20.html" title="sublime3+quick3.5 完整使用教程（持续更新）">sublime3+quick3.5 完整使用教程（持续更新）</a></li>
+            </ul>
+
+
+    <div class="cat-header"><p>分类目录</p></div>
+    <ul>
+                <li><a href="/default_b2.html" title="互联网">互联网 (6)</a></li>
+                <li><a href="/default_b7.html" title="独立游戏人">独立游戏人 (4)</a></li>
+                <li><a href="/default_b8.html" title="日常应用">日常应用 (1)</a></li>
+                <li><a href="/default_b9.html" title="读书笔记">读书笔记 (7)</a></li>
+            </ul>
+
+    <div class="cat-header"><p>功能</p></div>
+    <ul>
+        <li><a href="/content!listPage" title="">登录</a></li>
+        <li><a href="https://github.com/bitdesign/bitword/archive/master.zip" title="">BitWord</a>@<a href="https://github.com/bitdesign/bitword" title="">GitHub</a></li>
+        <li><a href="mailto:bitword@163.com?subject=&body=" title="">MailToME</a></li>
+        <li style="list-style-type:none;"><img src="/upload/image/transparent.gif" data-original="/view/template/default/images/qr.png" style="width:96%;" class="panel-img"/></li>
+    </ul>
+
+</div>
+            </div>
+
+        </div><!--main-->
+
+
+
+        <div class="footer">
+    <span id="TimeShow"></span>
+    &copy; BIT1010 2014 All Rights Reserved .  Powered by <a href="http://www.bit1010.com">BITWORD v1.0</a>
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function(){ 
+        document.getElementById("TimeShow").innerHTML = "加载耗时"+ (new Date().getTime()-reqTime)/1000 +"s"; 
+    } 
+</script>
+
+
+    </div><!--container-->
+
+
+    <script type="text/javascript" src="/Count!addVisits?id=37"></script>
+</body>
+
+
+
+</html>
